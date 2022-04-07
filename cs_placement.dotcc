@@ -19,7 +19,7 @@ digraph cs_placement {
 	// page="8,10"
 
 	// There are a TON of arrows between ranks 5 and 6, so this allows more space when it needs it
-	ranksep="2.0"   // default is 0.5
+	ranksep="1.0"   // default is 0.5
 
 	// to make better bitmap versions - but use PDF!!!
 	graph [ dpi = 600 ]; 	
@@ -32,30 +32,51 @@ digraph cs_placement {
 	fontsize=90
     label="CS Placement Exams - Draft 1 - April 7, 2022"
 
+	// placement tests
+	PLACEMENT_TEST(cs_placement,"CS Placement Test",REQUIREDCS)
+	PLACEMENT_TEST(math_placement,"Math Placement Test",MATH)
+
+
 	// remedial CS course options
-    CLASS(cs1xxx_CSPL3,REMEDIALCS,FALLSPRING,CS Intro,Introductory CS)
+    CLASS(csremedial,REMEDIALCS,FALLSPRING,Intro Comp. Prog.,Introductory CS)
+	PREREQ_LABEL(csremedial,cs_placement,"CS-PL2")
+	CLASS(csremedial2,REMEDIALCS,FALLSPRING,Intro Comp. Prog.,Introductory CS)	
+	PREREQ_LABEL(csremedial2,cs_placement,"CS-PL2")
+
 
 
 	// remedial Math course options
-    CLASS(ma1200_MPL2,REMEDIALMATH,FALLSPRING,Algebra,Algebra)
-
-    CLASS(ma1300_MPL3,REMEDIALMATH,FALLSPRING,Pre Calc,Pre-Calculus)
-	PREREQ_C(ma1300_MPL3,ma1200_MPL2)
+    CLASS(ma1200,REMEDIALMATH,FALLSPRING,Algebra,Algebra)
+	PREREQ_LABEL(ma1200,math_placement,"Math-PL1")
 
 
-	// required CS courses
+    CLASS(ma1300,REMEDIALMATH,FALLSPRING,Pre Calc,Pre-Calculus)
+	NODE_OR(ma1300_or)
+	PREREQ(ma1300,ma1300_or)
+	PREREQ_C(ma1300_or,ma1200)
+	PREREQ_LABEL(ma1300_or,math_placement,"Math-PL2")
+
+
+	// required courses
     CLASS(ma2301,MATH,FALLSPRING,Calc I,Calculus I)
-	PREREQ_C(ma2301,ma1300_MPL3)
-
-	CLASS(ma2302,MATH,FALLSPRING,Calc II,Calculus II)
-	PREREQ_C(ma2302,ma2301)
+	NODE_OR(ma2301_or)
+	PREREQ(ma2301,ma2301_or)
+	PREREQ_C(ma2301_or,ma1300)
+	PREREQ_LABEL(ma2301_or,math_placement,"Math-PL3")
 
 	CLASS(cs2400,REQUIREDCS,FALLSPRING,CS1, Introduction to Computer Science I)
-	PREREQ(cs2400,ma1200_MPL2)
-	PREREQ(cs2400,cs1xxx_CSPL3)
+	NODE_OR(cs2400_or)
+	PREREQ(cs2400,cs2400_or)
+	PREREQ(cs2400_or,csremedial)
+	PREREQ(cs2400_or,csremedial2)
+	PREREQ_LABEL(cs2400_or,cs_placement,"CS-PL3")
+	NODE_OR(cs2400_mor)
+	PREREQ(cs2400_mor,ma1200)
+	PREREQ(cs2400,cs2400_mor)
+	PREREQ_LABEL(cs2400_mor,math_placement,">= MATH-PL2")
 
 	CLASS(cs2401,REQUIREDCS,FALLSPRING,CS2, Introduction to Computer Science II)
 	PREREQ(cs2401,cs2400)
-	PREREQ(cs2401,ma1300_MPL3)
+	PREREQ(cs2401,ma1300)
 	
 }

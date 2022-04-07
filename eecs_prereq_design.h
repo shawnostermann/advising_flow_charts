@@ -22,8 +22,8 @@
 // this controls what the prerequisite arrows look like
 #define PREREQ(thisclass,prevclass)  prevclass -> thisclass
 #define COREQ(thisclass,prevclass)   prevclass -> thisclass [ label = "Coreq", fontsize=60, penwidth=8, style=dotted]
-#define PREREQ_C(thisclass,prevclass)   prevclass -> thisclass [ label = " ≥C", fontsize=60, fontcolor=red, penwidth=5, color=red, style=bold]
-
+#define PREREQ_LABEL(thisclass,prevclass,condition)   prevclass -> thisclass [ label = condition, fontsize=60, fontcolor=red, penwidth=5, color=red, style=bold]
+#define PREREQ_C(thisclass,prevclass)   PREREQ_LABEL(thisclass,prevclass, " ≥C")
 
 // this controls what the "semester" tags look like
 #define SEMESTER_TEMPLATE(fontcolor,semester) <FONT COLOR=fontcolor><b> semester </b></FONT>
@@ -34,6 +34,14 @@
 
 // the next line contains non-printing spaces to paste below to get around a mixed-font centering problem in graphviz...
 //          
+
+#define PLACEMENT_TEST(testname,testtitle,type)  \
+node [type,width=0.25,margin="0,0",fontsize=28] ; testname [margin="0,0", label=\
+	  < <FONT POINT-SIZE="72"> <b> testname </b> </FONT> <br/> \
+	  	<FONT POINT-SIZE="55"> testtitle </FONT> \
+        >];
+
+#define NODE_OR(nodename)  node [shape=circle, style = "filled", penwidth=1, fontcolor=black, fillcolor=yellow] ; nodename [label=" or "]; 
 
 // Note, the "when" line below has 2 non-printing space characters ("en space", copied from Word)
 // otherwise, graphviz miscalculated "centering" whence fonts change and this moves the "semester" a little more to the left. Sigh...
