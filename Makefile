@@ -10,6 +10,7 @@ DOTCCSOURCES=${wildcard *.dotcc}
 DOTSOURCES=${DOTCCSOURCES:.dotcc=.gv}
 PNGFILES=${DOTSOURCES:.gv=.png}
 PDFFILES=${DOTSOURCES:.gv=.pdf}
+HEADERS=${wildcard *.h}
 
 default: pdf
 
@@ -20,7 +21,7 @@ png: ${PNGFILES}
 #
 # default rules
 #
-%.gv: %.dotcc
+%.gv: %.dotcc ${HEADERS}
 	cpp $*.dotcc > $*.gv 
 %.png: %.gv
 	dot -Tpng  -o $*.png $*.gv
