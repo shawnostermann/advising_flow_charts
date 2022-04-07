@@ -1,0 +1,250 @@
+// C Preprocessor Style macros
+
+// Version 0.9 - Shawn Ostermann - May 24, 2022
+
+// the look of required classes
+#define REQUIRED_TEMPLATE(color) shape=polygon, sides=10, penwidth=10, style = "filled", fontcolor=black, fillcolor=color
+#define REQUIREDCS   REQUIRED_TEMPLATE(green3)
+#define REQUIREDEE   REQUIRED_TEMPLATE(orange3)
+#define MATH 	     REQUIRED_TEMPLATE(skyblue)
+#define SCIENCE      REQUIRED_TEMPLATE(red1)
+
+// the look of elective classes
+#define ELECTIVE_TEMPLATE(color) shape = ellipse, penwidth=2, color = blueviolet, style = filled, fillcolor=color
+#define TECHELECTCS ELECTIVE_TEMPLATE(greenyellow) 
+#define TECHELECTEE ELECTIVE_TEMPLATE(orange1)
+
+// the look of remedial (Intro) classes
+#define REMEDIAL_TEMPLATE(color) shape = box, penwidth=2, style = filled, fontcolor=black, fillcolor=color
+#define REMEDIALMATH REMEDIAL_TEMPLATE(lightgoldenrod2)
+#define REMEDIALCS   REMEDIAL_TEMPLATE(lightgoldenrod2)
+
+// this controls what the prerequisite arrows look like
+#define PREREQ(thisclass,prevclass)  prevclass -> thisclass
+#define COREQ(thisclass,prevclass)   prevclass -> thisclass [ label = "Coreq", fontsize=60, penwidth=8, style=dotted]
+#define PREREQ_C(thisclass,prevclass)   prevclass -> thisclass [ label = " ≥C", fontsize=60, fontcolor=red, penwidth=5, color=red, style=bold]
+
+
+// this controls what the "semester" tags look like
+#define SEMESTER_TEMPLATE(fontcolor,semester) <FONT COLOR=fontcolor><b> semester </b></FONT>
+#define FALL       SEMESTER_TEMPLATE("goldenrod4", Fall )
+#define SPRING     SEMESTER_TEMPLATE("red", Spring)
+#define FALLSPRING SEMESTER_TEMPLATE("darkblue", F/S)
+#define TBA        SEMESTER_TEMPLATE("white", TBA)
+
+// the next line contains non-printing spaces to paste below to get around a mixed-font centering problem in graphviz...
+//          
+
+// Note, the "when" line below has 2 non-printing space characters ("en space", copied from Word)
+// otherwise, graphviz miscalculated "centering" whence fonts change and this moves the "semester" a little more to the left. Sigh...
+#define CLASS(classnumber,type,when,shortname,longname)  \
+node [type,width=0.25,margin="0,0",fontsize=28] ; classnumber [margin="0,0", label=\
+	  < \
+	  	<FONT POINT-SIZE="72"> <b> classnumber </b> </FONT> <br/> \
+	  	<FONT POINT-SIZE="55"> shortname </FONT> <FONT POINT-SIZE="50"> <br /> </FONT>\
+	  	<FONT POINT-SIZE="48" face="Impact"> when   </FONT> \
+	   >];
+
+
+
+
+// https://graphviz.org/docs/
+// https://graphviz.org/doc/info/colors.html
+// https://www.catalogs.ohio.edu/preview_program.php?catoid=70&poid=19841&hl=%22computer+science%22
+digraph cs_undergrad {
+	// draw prereqs from top to bottom
+	rankdir=TB;
+	// rankdir=LR;
+	
+	// Maximum width and height of drawing, in inches.
+	size="10,7"
+	
+	// Width and height of output pages, in inches.
+	// If only a single value is given, this is used for both the width and height.
+	// At present, page only works for PostScript output. 
+	// page="8,10"
+
+	// There are a TON of arrows between ranks 5 and 6, so this allows more space when it needs it
+	ranksep="2.0"   // default is 0.5
+
+	// to make better bitmap versions - but use PDF!!!
+	graph [ dpi = 600 ]; 	
+
+	// looks better this way
+	landscape=true	
+
+	// title for the whole page
+	labelloc="t"
+	fontsize=90
+    label="CS Prerequites - Draft 2 - Mar 29, 2022"
+
+	// make a quick legend
+	subgraph cluster_Legend {
+    	style = rounded;
+		label="Legend"
+		fontsize="60"
+	
+		CLASS(eetech,	TECHELECTEE, , 	EE Tech Elect, Electrical Engineering Technical Elective)
+		CLASS(cstech,	TECHELECTCS, , 	CS Tech Elect, Computer Science Technical Elective)
+		CLASS(eereq, 	REQUIREDEE, , 	EE Required, Electrical Engineering Required)
+		CLASS(csreq, 	REQUIREDCS, , 	CS Required, Computer Science Required)
+		CLASS(math, 	MATH, , 		Math Required, Math Required)
+    	CLASS(intro,	REMEDIALMATH, ,	Introductory,Introductory)
+
+		// these fake dependencies constrain the order of where the legend goes
+		csreq  -> eereq  -> math   [style=invis]
+		cstech -> eetech -> intro   [style=invis]
+  	};
+
+	// leave some free space to the right of the legend
+	subgraph free_space {	
+		EXTRA [ label = "S1", style = invis ]; FREESPACE1 [width=15,style = invis]; 
+  	};
+
+
+
+    CLASS(ma1200_MPL2,REMEDIALMATH,FALLSPRING,Algebra,Algebra)
+
+    CLASS(cs1xxx_CSPL3,REMEDIALCS,FALLSPRING,CS Intro,Introductory CS)
+
+    CLASS(ma1300_MPL3,REMEDIALMATH,FALLSPRING,Pre Calc,Pre-Calculus)
+	PREREQ_C(ma1300_MPL3,ma1200_MPL2)
+
+    CLASS(ma2301,MATH,FALLSPRING,Calc I,Calculus I)
+	PREREQ_C(ma2301,ma1300_MPL3)
+
+	CLASS(ma2302,MATH,FALLSPRING,Calc II,Calculus II)
+	PREREQ_C(ma2302,ma2301)
+
+	CLASS(cs2400,REQUIREDCS,FALLSPRING,CS1, Introduction to Computer Science I)
+	PREREQ(cs2400,ma1200_MPL2)
+	PREREQ(cs2400,cs1xxx_CSPL3)
+
+	CLASS(cs2401,REQUIREDCS,FALLSPRING,CS2, Introduction to Computer Science II)
+	PREREQ(cs2401,cs2400)
+	PREREQ(cs2401,ma1300_MPL3)
+
+	CLASS(cs3000,REQUIREDCS,FALLSPRING,Disc Struct, Discrete Structures)
+	PREREQ(cs3000,cs2401)
+
+	CLASS(cs3610,REQUIREDCS,FALLSPRING,Data Struct, Data Structures)
+	PREREQ_C(cs3610,cs2401)
+	PREREQ(cs3610,cs3000)
+
+	CLASS(cs3560,REQUIREDCS,FALLSPRING,Sw Tools, Software Tools)
+	COREQ(cs3560,cs3610)
+
+
+	// left out side it's not in the prereq chain
+    // CLASS(et1000,REQUIREDEE, FALLSPRING,The History of Engineering and Technology in Society)
+
+	CLASS(ee1024,REQUIREDEE, FALLSPRING, Intro CpE, Introduction to Computer Engineering)
+	PREREQ(ee1024,ma1200_MPL2)
+
+    CLASS(ee3613,REQUIREDEE, FALLSPRING,Comp Org, Computer Organization)	
+	PREREQ(ee3613,ee1024)
+	PREREQ(ee3613,cs2400)
+
+	CLASS(ee3954,REQUIREDEE, FALLSPRING, Micro, Microprocessors and Microcontrollers)
+	PREREQ(ee3954,ee1024)
+	PREREQ(ee3954,cs2400)
+
+    CLASS(ee3713,MATH,FALLSPRING,EE Stats, Applied Probability and Statistics for Electrical Engineers)
+	PREREQ(ee3713,ma2302)
+
+	CLASS(cs2653,REQUIREDCS,FALLSPRING, Comp Ethics, Professional and Ethical Aspects of Computing)
+	PREREQ(cs2653,cs2400)
+
+	CLASS(cs3200,REQUIREDCS,FALL, Prog Lang, Organization of Programming Languages)
+	PREREQ(cs3200,cs3000)
+	PREREQ(cs3200,cs2653)
+
+	CLASS(cs3610,REQUIREDCS,FALLSPRING,Data Struct, Data Structures)
+	PREREQ(cs3610,cs2653)
+
+	CLASS(cs4000,REQUIREDCS,SPRING,Dist.  Par., Introduction to Distributed Parallel and Web-Centric Computing)
+	PREREQ(cs4000,cs3610)
+	PREREQ(cs4000,cs3560)
+
+	CLASS(cs4040,REQUIREDCS,FALL, Algorithms, Design and Analysis of Algorithms)
+	PREREQ(cs4040,cs3610)
+
+	CLASS(cs4100,REQUIREDCS,SPRING, Languages, Introduction to Formal Languages and Compiler)
+	PREREQ(cs4100,cs3200)
+	PREREQ(cs4100,cs3610)
+
+	CLASS(cs4420,REQUIREDCS,FALLSPRING,Op Sys, Operating Systems)
+	PREREQ(cs4420,ee3613)
+	PREREQ(cs4420,ee3954)
+	PREREQ(cs4420,cs3610)
+
+	CLASS(cs4560,REQUIREDCS,FALL, Senior Design I, Software Design and Development I)
+	PREREQ(cs4560,cs3560)
+
+	CLASS(cs4561,REQUIREDCS,SPRING, Senior Design II, Software Design and Development II)
+	PREREQ(cs4561,cs4560)
+
+
+	// =================
+	// Tech Electives
+	// =================
+	CLASS(cs4060,TECHELECTCS, SPRING, Theory, Computation Theory)
+	PREREQ(cs4060,cs3000)
+
+#ifdef NOTOFFERED	
+	// not offered since 2012
+	CLASS(cs4120,TECHELECTCS, FALL, Par Comp I, Parallel Computing I)
+	PREREQ(cs4120,cs3610)
+	PREREQ(cs4120,cs4000)
+
+	// not offered since 2017
+	CLASS(cs4580,TECHELECTCS, FALLSPRING, Op Sys II, Operating Systems II)
+	PREREQ(cs4580,cs4420)
+	
+#endif	
+
+	CLASS(cs4160,TECHELECTCS, FALLSPRING, BioInf Tools, Problem Solving with Bioinformatics Tools)
+	PREREQ(cs4160,cs3610)
+
+	CLASS(cs4170,TECHELECTCS, FALL, Data Mining, Data Mining With Applications in the Life Sciences)
+	PREREQ(cs4170,cs3610)
+	// OR PREREQ(cs4170, PBIO 4160)
+	
+	CLASS(cs4180,TECHELECTCS, FALLSPRING, BioInf Stats, Statistical Foundation for Bioinformatics)
+	PREREQ(cs4180,cs4000)
+	// Requisites: CS 4170 and EE 3713 and (CS 4160 or PBIO 4160)
+
+	CLASS(cs4201,TECHELECTCS, TBA, Soft Verif, Software Verification)
+	PREREQ(cs4201,cs3200)
+	
+	CLASS(cs4250,TECHELECTCS, FALL, Graphics, Interactive Computer Graphics)
+	PREREQ(cs4250,cs3610) 
+	// Requisites: CS 3610 and (MATH 3200 or 3210)
+
+	CLASS(cs4440,TECHELECTCS, TBA, Data Comm, Data Communications)
+	PREREQ(cs4440,cs4420)
+	
+	CLASS(cs4620,TECHELECTCS, FALL, Database, Database Systems)
+	PREREQ(cs4620,cs3610)
+	
+	CLASS(cs4750,TECHELECTCS, FALL, Internet Engr., Internet Engineering)
+	PREREQ(cs4750,cs3610)
+	
+	CLASS(cs4800,TECHELECTCS, FALLSPRING, AI, Artificial Intelligence)
+	PREREQ(cs4800,cs3000)
+	PREREQ(cs4800,cs2401)
+	// Requisites: (CS 3000 or MATH 3050) and CS 2401
+
+	CLASS(cs4830,TECHELECTCS, FALLSPRING, Mach Learn, Machine Learning)
+	PREREQ(cs4830,cs3610)
+	// Requisites: CS 3610 and C or better in (MATH 3200 or 3210)
+
+	CLASS(ee4673,TECHELECTEE, FALLSPRING, Embed Sys, Embedded Systems)
+	PREREQ(ee4673,ee3954)	
+	// Requisites: EE 3954EE 395A or 3954
+
+	CLASS(ee4683,TECHELECTEE, FALLSPRING, Comp Arch, Computer Architecture)
+	PREREQ(ee4683,ee3613)
+	
+	
+}
