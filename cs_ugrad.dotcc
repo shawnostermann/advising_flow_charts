@@ -169,7 +169,7 @@ digraph cs_undergrad {
 	CLASS(cs4040,REQUIREDCS,FALL, Algorithms, Design and Analysis of Algorithms)
 	PREREQ(cs4040,cs3610)
 
-	CLASS(cs4100,REQUIREDCS,SPRING, Languages, Introduction to Formal Languages and Compiler)
+	CLASS(cs4100,REQUIREDCS,SPRING, Compilers, Introduction to Formal Languages and Compiler)
 	PREREQ(cs4100,cs3200)
 	PREREQ(cs4100,cs3610)
 
