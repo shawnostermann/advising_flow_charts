@@ -1,0 +1,58 @@
+// C Preprocessor Style macros
+
+#include "eecs_prereq_design.h"
+
+// https://graphviz.org/docs/
+// https://graphviz.org/doc/info/colors.html
+// https://www.catalogs.ohio.edu/preview_program.php?catoid=70&poid=19841&hl=%22computer+science%22
+digraph cs_placement {
+	// draw prereqs from top to bottom
+	rankdir=TB;
+	// rankdir=LR;
+	
+	// Maximum width and height of drawing, in inches.
+	size="10,7"
+	
+	// Width and height of output pages, in inches.
+	// If only a single value is given, this is used for both the width and height.
+	// At present, page only works for PostScript output. 
+	// page="8,10"
+
+	// There are a TON of arrows between ranks 5 and 6, so this allows more space when it needs it
+	ranksep="2.0"   // default is 0.5
+
+	// to make better bitmap versions - but use PDF!!!
+	graph [ dpi = 600 ]; 	
+
+	// looks better this way
+	landscape=true	
+
+	// title for the whole page
+	labelloc="t"
+	fontsize=90
+    label="CS Placement Exams - Draft 1 - April 7, 2022"
+
+
+
+    CLASS(ma1200_MPL2,REMEDIALMATH,FALLSPRING,Algebra,Algebra)
+
+    CLASS(cs1xxx_CSPL3,REMEDIALCS,FALLSPRING,CS Intro,Introductory CS)
+
+    CLASS(ma1300_MPL3,REMEDIALMATH,FALLSPRING,Pre Calc,Pre-Calculus)
+	PREREQ_C(ma1300_MPL3,ma1200_MPL2)
+
+    CLASS(ma2301,MATH,FALLSPRING,Calc I,Calculus I)
+	PREREQ_C(ma2301,ma1300_MPL3)
+
+	CLASS(ma2302,MATH,FALLSPRING,Calc II,Calculus II)
+	PREREQ_C(ma2302,ma2301)
+
+	CLASS(cs2400,REQUIREDCS,FALLSPRING,CS1, Introduction to Computer Science I)
+	PREREQ(cs2400,ma1200_MPL2)
+	PREREQ(cs2400,cs1xxx_CSPL3)
+
+	CLASS(cs2401,REQUIREDCS,FALLSPRING,CS2, Introduction to Computer Science II)
+	PREREQ(cs2401,cs2400)
+	PREREQ(cs2401,ma1300_MPL3)
+	
+}
