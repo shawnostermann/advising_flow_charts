@@ -33,9 +33,9 @@ png: ${PNGFILES}
 	dot -Tps  -o $*.ps $*.gv
 
 commit:
-	git add ${HEADERS} ${DOTCCSOURCES} Makefile
+	git add ${HEADERS} ${DOTCCSOURCES} ${DOTSOURCES} Makefile
 	git commit -m latest
 	git push
-	
+
 clean:
 	rm -f ${PNGFILES} ${PDFFILES}

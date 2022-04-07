@@ -2,7 +2,14 @@
 # 0 "<built-in>"
 # 0 "<command-line>"
 # 1 "cs_ugrad.dotcc"
-# 54 "cs_ugrad.dotcc"
+
+
+# 1 "eecs_prereq_design.h" 1
+# 4 "cs_ugrad.dotcc" 2
+
+
+
+
 digraph cs_undergrad {
 
  rankdir=TB;
@@ -28,7 +35,7 @@ digraph cs_undergrad {
 
  labelloc="t"
  fontsize=90
-    label="CS Prerequites - Draft 2 - Mar 29, 2022"
+    label="CS Prerequites - Final Draft - April 7, 2022"
 
 
  subgraph cluster_Legend {
@@ -142,7 +149,7 @@ digraph cs_undergrad {
 
  node [shape = ellipse, penwidth=2, greenyellow = blueviolet, style = filled, fillcolor=greenyellow,width=0.25,margin="0,0",fontsize=28] ; cs4060 [margin="0,0", label= < <FONT POINT-SIZE="72"> <b> cs4060 </b> </FONT> <br/> <FONT POINT-SIZE="55"> Theory </FONT> <FONT POINT-SIZE="50"> <br /> </FONT> <FONT POINT-SIZE="48" face="Impact"> <FONT COLOR="red"><b> Spring </b></FONT>   </FONT> >];
  cs3000 -> cs4060
-# 206 "cs_ugrad.dotcc"
+# 160 "cs_ugrad.dotcc"
  node [shape = ellipse, penwidth=2, greenyellow = blueviolet, style = filled, fillcolor=greenyellow,width=0.25,margin="0,0",fontsize=28] ; cs4160 [margin="0,0", label= < <FONT POINT-SIZE="72"> <b> cs4160 </b> </FONT> <br/> <FONT POINT-SIZE="55"> BioInf Tools </FONT> <FONT POINT-SIZE="50"> <br /> </FONT> <FONT POINT-SIZE="48" face="Impact"> <FONT COLOR="darkblue"><b> F/S </b></FONT>   </FONT> >];
  cs3610 -> cs4160
 
