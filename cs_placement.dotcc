@@ -32,15 +32,18 @@ digraph cs_placement {
 	fontsize=90
     label="CS Placement Exams - Draft 1 - April 7, 2022"
 
-
-
-    CLASS(ma1200_MPL2,REMEDIALMATH,FALLSPRING,Algebra,Algebra)
-
+	// remedial CS course options
     CLASS(cs1xxx_CSPL3,REMEDIALCS,FALLSPRING,CS Intro,Introductory CS)
+
+
+	// remedial Math course options
+    CLASS(ma1200_MPL2,REMEDIALMATH,FALLSPRING,Algebra,Algebra)
 
     CLASS(ma1300_MPL3,REMEDIALMATH,FALLSPRING,Pre Calc,Pre-Calculus)
 	PREREQ_C(ma1300_MPL3,ma1200_MPL2)
 
+
+	// required CS courses
     CLASS(ma2301,MATH,FALLSPRING,Calc I,Calculus I)
 	PREREQ_C(ma2301,ma1300_MPL3)
 

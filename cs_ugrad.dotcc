@@ -1,52 +1,6 @@
 // C Preprocessor Style macros
 
-// Version 0.9 - Shawn Ostermann - May 24, 2022
-
-// the look of required classes
-#define REQUIRED_TEMPLATE(color) shape=polygon, sides=10, penwidth=10, style = "filled", fontcolor=black, fillcolor=color
-#define REQUIREDCS   REQUIRED_TEMPLATE(green3)
-#define REQUIREDEE   REQUIRED_TEMPLATE(orange3)
-#define MATH 	     REQUIRED_TEMPLATE(skyblue)
-#define SCIENCE      REQUIRED_TEMPLATE(red1)
-
-// the look of elective classes
-#define ELECTIVE_TEMPLATE(color) shape = ellipse, penwidth=2, color = blueviolet, style = filled, fillcolor=color
-#define TECHELECTCS ELECTIVE_TEMPLATE(greenyellow) 
-#define TECHELECTEE ELECTIVE_TEMPLATE(orange1)
-
-// the look of remedial (Intro) classes
-#define REMEDIAL_TEMPLATE(color) shape = box, penwidth=2, style = filled, fontcolor=black, fillcolor=color
-#define REMEDIALMATH REMEDIAL_TEMPLATE(lightgoldenrod2)
-#define REMEDIALCS   REMEDIAL_TEMPLATE(lightgoldenrod2)
-
-// this controls what the prerequisite arrows look like
-#define PREREQ(thisclass,prevclass)  prevclass -> thisclass
-#define COREQ(thisclass,prevclass)   prevclass -> thisclass [ label = "Coreq", fontsize=60, penwidth=8, style=dotted]
-#define PREREQ_C(thisclass,prevclass)   prevclass -> thisclass [ label = " ≥C", fontsize=60, fontcolor=red, penwidth=5, color=red, style=bold]
-
-
-// this controls what the "semester" tags look like
-#define SEMESTER_TEMPLATE(fontcolor,semester) <FONT COLOR=fontcolor><b> semester </b></FONT>
-#define FALL       SEMESTER_TEMPLATE("goldenrod4", Fall )
-#define SPRING     SEMESTER_TEMPLATE("red", Spring)
-#define FALLSPRING SEMESTER_TEMPLATE("darkblue", F/S)
-#define TBA        SEMESTER_TEMPLATE("white", TBA)
-
-// the next line contains non-printing spaces to paste below to get around a mixed-font centering problem in graphviz...
-//          
-
-// Note, the "when" line below has 2 non-printing space characters ("en space", copied from Word)
-// otherwise, graphviz miscalculated "centering" whence fonts change and this moves the "semester" a little more to the left. Sigh...
-#define CLASS(classnumber,type,when,shortname,longname)  \
-node [type,width=0.25,margin="0,0",fontsize=28] ; classnumber [margin="0,0", label=\
-	  < \
-	  	<FONT POINT-SIZE="72"> <b> classnumber </b> </FONT> <br/> \
-	  	<FONT POINT-SIZE="55"> shortname </FONT> <FONT POINT-SIZE="50"> <br /> </FONT>\
-	  	<FONT POINT-SIZE="48" face="Impact"> when   </FONT> \
-	   >];
-
-
-
+#include "eecs_prereq_design.h"
 
 // https://graphviz.org/docs/
 // https://graphviz.org/doc/info/colors.html
@@ -76,7 +30,7 @@ digraph cs_undergrad {
 	// title for the whole page
 	labelloc="t"
 	fontsize=90
-    label="CS Prerequites - Draft 2 - Mar 29, 2022"
+    label="CS Prerequites - Final Draft - April 7, 2022"
 
 	// make a quick legend
 	subgraph cluster_Legend {
