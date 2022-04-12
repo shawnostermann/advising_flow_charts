@@ -20,10 +20,14 @@
 #define REMEDIALCS   REMEDIAL_TEMPLATE(lightgoldenrod2)
 
 // this controls what the prerequisite arrows look like
-#define PREREQ(thisclass,prevclass)  prevclass -> thisclass
-#define COREQ(thisclass,prevclass)   prevclass -> thisclass [ label = "Coreq", fontsize=60, penwidth=8, style=dotted]
+#define PREREQ(thisclass,prevclass)  prevclass -> thisclass [penwidth=6]
+#define COREQ(thisclass,prevclass)   prevclass -> thisclass [ label = "Coreq", fontsize=60, penwidth=10, style=dashed]
 #define PREREQ_LABEL(thisclass,prevclass,condition)   prevclass -> thisclass [ label = condition, fontsize=60, fontcolor=red, penwidth=5, color=red, style=bold]
+#define PREREQ_PL(thisclass,prevclass,condition,mycolor)   prevclass -> thisclass [ label = condition, fontsize=30, fontcolor=mycolor, penwidth=5, color=mycolor, style=bold]
+#define PREREQ_MPL(thisclass,prevclass,condition)   PREREQ_PL(thisclass,prevclass,condition,blue)
+#define PREREQ_CSPL(thisclass,prevclass,condition)  PREREQ_PL(thisclass,prevclass,condition,green3) 
 #define PREREQ_C(thisclass,prevclass)   PREREQ_LABEL(thisclass,prevclass, " ≥C")
+#define PREREQ_INVIS(thisclass,prevclass)   prevclass -> thisclass [ style=invisible, dir=none]
 
 // this controls what the "semester" tags look like
 #define SEMESTER_TEMPLATE(fontcolor,semester) <FONT COLOR=fontcolor><b> semester </b></FONT>

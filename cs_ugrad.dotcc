@@ -30,9 +30,10 @@ digraph cs_undergrad {
 	// title for the whole page
 	labelloc="t"
 	fontsize=90
-    label="CS Prerequites - Final Draft - April 7, 2022"
+    label="CS Prerequites - Final Draft 2 - April 11, 2022"
 
-	// make a quick legend
+// make a quick legend
+	
 	subgraph cluster_Legend {
     	style = rounded;
 		label="Legend"
@@ -49,39 +50,38 @@ digraph cs_undergrad {
 		csreq  -> eereq  -> math   [style=invis]
 		cstech -> eetech -> intro   [style=invis]
   	};
-
-	// leave some free space to the right of the legend
+// leave some free space to the right of the legend
 	subgraph free_space {	
 		EXTRA [ label = "S1", style = invis ]; FREESPACE1 [width=15,style = invis]; 
   	};
+	
 
+    // CLASS(ma1200_MPL2,REMEDIALMATH,FALLSPRING,Algebra,Algebra)
 
+    CLASS(cs_intro,REMEDIALCS,FALLSPRING,CS PL or Intro CS,Introductory CS)
 
-    CLASS(ma1200_MPL2,REMEDIALMATH,FALLSPRING,Algebra,Algebra)
-
-    CLASS(cs1xxx_CSPL3,REMEDIALCS,FALLSPRING,CS Intro,Introductory CS)
-
-    CLASS(ma1300_MPL3,REMEDIALMATH,FALLSPRING,Pre Calc,Pre-Calculus)
-	PREREQ_C(ma1300_MPL3,ma1200_MPL2)
+    CLASS(math_intro,REMEDIALMATH,FALLSPRING,Math PL or Intro Math,Math Placement)
 
     CLASS(ma2301,MATH,FALLSPRING,Calc I,Calculus I)
-	PREREQ_C(ma2301,ma1300_MPL3)
+	PREREQ(ma2301,math_intro)
 
 	CLASS(ma2302,MATH,FALLSPRING,Calc II,Calculus II)
 	PREREQ_C(ma2302,ma2301)
 
 	CLASS(cs2400,REQUIREDCS,FALLSPRING,CS1, Introduction to Computer Science I)
-	PREREQ(cs2400,ma1200_MPL2)
-	PREREQ(cs2400,cs1xxx_CSPL3)
+	// PREREQ(cs2400,ma1200_MPL2)
+	PREREQ(cs2400,cs_intro)
+	PREREQ(cs2400,math_intro)
 
 	CLASS(cs2401,REQUIREDCS,FALLSPRING,CS2, Introduction to Computer Science II)
 	PREREQ(cs2401,cs2400)
-	PREREQ(cs2401,ma1300_MPL3)
+	PREREQ(cs2401,math_intro)
 
 	CLASS(cs3000,REQUIREDCS,FALLSPRING,Disc Struct, Discrete Structures)
 	PREREQ(cs3000,cs2401)
 
 	CLASS(cs3610,REQUIREDCS,FALLSPRING,Data Struct, Data Structures)
+	// (CS 3000 or MATH 3050) and C or better in CS 2401
 	PREREQ_C(cs3610,cs2401)
 	PREREQ(cs3610,cs3000)
 
@@ -93,7 +93,7 @@ digraph cs_undergrad {
     // CLASS(et1000,REQUIREDEE, FALLSPRING,The History of Engineering and Technology in Society)
 
 	CLASS(ee1024,REQUIREDEE, FALLSPRING, Intro CpE, Introduction to Computer Engineering)
-	PREREQ(ee1024,ma1200_MPL2)
+	PREREQ(ee1024,math_intro)
 
     CLASS(ee3613,REQUIREDEE, FALLSPRING,Comp Org, Computer Organization)	
 	PREREQ(ee3613,ee1024)
@@ -112,9 +112,6 @@ digraph cs_undergrad {
 	CLASS(cs3200,REQUIREDCS,FALL, Prog Lang, Organization of Programming Languages)
 	PREREQ(cs3200,cs3000)
 	PREREQ(cs3200,cs2653)
-
-	CLASS(cs3610,REQUIREDCS,FALLSPRING,Data Struct, Data Structures)
-	PREREQ(cs3610,cs2653)
 
 	CLASS(cs4000,REQUIREDCS,SPRING,Dist.  Par., Introduction to Distributed Parallel and Web-Centric Computing)
 	PREREQ(cs4000,cs3610)
@@ -185,9 +182,9 @@ digraph cs_undergrad {
 	PREREQ(cs4750,cs3610)
 	
 	CLASS(cs4800,TECHELECTCS, FALLSPRING, AI, Artificial Intelligence)
+	// Requisites: (CS 3000 or MATH 3050) and CS 2401
 	PREREQ(cs4800,cs3000)
 	PREREQ(cs4800,cs2401)
-	// Requisites: (CS 3000 or MATH 3050) and CS 2401
 
 	CLASS(cs4830,TECHELECTCS, FALLSPRING, Mach Learn, Machine Learning)
 	PREREQ(cs4830,cs3610)
@@ -199,6 +196,8 @@ digraph cs_undergrad {
 
 	CLASS(ee4683,TECHELECTEE, FALLSPRING, Comp Arch, Computer Architecture)
 	PREREQ(ee4683,ee3613)
+	
+
 	
 	
 }
