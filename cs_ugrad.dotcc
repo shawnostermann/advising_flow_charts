@@ -124,14 +124,16 @@ digraph cs_undergrad {
 
 #ifdef NOTOFFERED	
 	// not offered since 2012
-	CLASS(cs4120,TECHELECTCS, FALL, Par Comp I, Parallel Computing I)
+	CLASS(cs4120,TECHELECTCS, TBA, Par Comp I, Parallel Computing I)
 	PREREQ(cs4120,cs3610)
 	PREREQ(cs4120,cs4000)
 
 	// not offered since 2017
-	CLASS(cs4580,TECHELECTCS, FALLSPRING, Op Sys II, Operating Systems II)
+	CLASS(cs4580,TECHELECTCS, TBA, Op Sys II, Operating Systems II)
 	PREREQ(cs4580,cs4420)
 	
+	CLASS(cs4201,TECHELECTCS, TBA, Soft Verif, Software Verification)
+	PREREQ(cs4201,cs3200)
 #endif	
 
 	CLASS(cs4160,TECHELECTCS, FALLSPRING, BioInf Tools, Problem Solving with Bioinformatics Tools)
@@ -144,9 +146,6 @@ digraph cs_undergrad {
 	CLASS(cs4180,TECHELECTCS, FALLSPRING, BioInf Stats, Statistical Foundation for Bioinformatics)
 	PREREQ(cs4180,cs4000)
 	// Requisites: CS 4170 and EE 3713 and (CS 4160 or PBIO 4160)
-
-	CLASS(cs4201,TECHELECTCS, TBA, Soft Verif, Software Verification)
-	PREREQ(cs4201,cs3200)
 	
 	CLASS(cs4250,TECHELECTCS, FALL, Graphics, Interactive Computer Graphics)
 	PREREQ(cs4250,cs3610) 
@@ -169,6 +168,11 @@ digraph cs_undergrad {
 	CLASS(cs4830,TECHELECTCS, FALLSPRING, Mach Learn, Machine Learning)
 	PREREQ(cs4830,cs3610)
 	// Requisites: CS 3610 and C or better in (MATH 3200 or 3210)
+
+	CLASS(cs4770,TECHELECTCS, FALLSPRING, Security, Introduction to Computer Software Security for Eng)
+	// new for Fall 22/23
+	PREREQ(cs4770,cs3610)
+	PREREQ(cs4770,cs3560)
 
 	CLASS(ee4673,TECHELECTEE, FALLSPRING, Embed Sys, Embedded Systems)
 	PREREQ(ee4673,ee3954)	
