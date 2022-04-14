@@ -38,11 +38,12 @@ digraph cs_placement {
 
 
 	// remedial CS course options
-    CLASS(cs2300,REMEDIALCS,FALLSPRING,Java,Computer Programming in JAVA
-	)
-	PREREQ_CSPL(cs2300,cs_placement,"CS-PL<3")
-	CLASS(et2100,REMEDIALCS,FALLSPRING,Engr. Prog.,Engineering Programming
+	CLASS(cs1400,REMEDIALCS,FALLSPRING,Intro Python,Fundamentals of Computing
 	)	
+	PREREQ_CSPL(cs1400,cs_placement,"CS-PL<3")
+	CLASS(cs2300,REMEDIALCS,FALLSPRING,Java,Computer Programming in JAVA)
+	PREREQ_CSPL(cs2300,cs_placement,"CS-PL<3")
+	CLASS(et2100,REMEDIALCS,FALLSPRING,Engr. Prog.,Engineering Programming)	
 	PREREQ_CSPL(et2100,cs_placement,"CS-PL<3")
 
 
@@ -74,6 +75,7 @@ digraph cs_placement {
 	// (CS 1400 or 2300 or ET 2100 or Computer Science Placement level 3)
 	NODE_OR(cs2400_or)
 	PREREQ(cs2400,cs2400_or)
+	PREREQ(cs2400_or,cs1400)
 	PREREQ(cs2400_or,cs2300)
 	PREREQ(cs2400_or,et2100)
 	PREREQ_CSPL(cs2400_or,cs_placement,"CS-PL3")
