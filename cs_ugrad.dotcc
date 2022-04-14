@@ -32,28 +32,7 @@ digraph cs_undergrad {
 	fontsize=90
     label="CS Prerequites - Final Draft 2 - April 11, 2022"
 
-// make a quick legend
-	
-	subgraph cluster_Legend {
-    	style = rounded;
-		label="Legend"
-		fontsize="60"
-	
-		CLASS(eetech,	TECHELECTEE, , 	EE Tech Elect, Electrical Engineering Technical Elective)
-		CLASS(cstech,	TECHELECTCS, , 	CS Tech Elect, Computer Science Technical Elective)
-		CLASS(eereq, 	REQUIREDEE, , 	EE Required, Electrical Engineering Required)
-		CLASS(csreq, 	REQUIREDCS, , 	CS Required, Computer Science Required)
-		CLASS(math, 	MATH, , 		Math Required, Math Required)
-    	CLASS(intro,	REMEDIALMATH, ,	Introductory,Introductory)
 
-		// these fake dependencies constrain the order of where the legend goes
-		csreq  -> eereq  -> math   [style=invis]
-		cstech -> eetech -> intro   [style=invis]
-  	};
-// leave some free space to the right of the legend
-	subgraph free_space {	
-		EXTRA [ label = "S1", style = invis ]; FREESPACE1 [width=15,style = invis]; 
-  	};
 	
 
     // CLASS(ma1200_MPL2,REMEDIALMATH,FALLSPRING,Algebra,Algebra)
@@ -198,7 +177,31 @@ digraph cs_undergrad {
 	CLASS(ee4683,TECHELECTEE, FALLSPRING, Comp Arch, Computer Architecture)
 	PREREQ(ee4683,ee3613)
 	
+// make a quick legend
+// leave some free space to the left of the legend
+	subgraph free_space {	
+		EXTRA [ label = "S1", style = invis ]; FREESPACE1 [width=15,style = invis]; 
+  	};
+	subgraph cluster_Legend {
+    	style = rounded;
+		label="Legend"
+		fontsize="60"
+	
+		CLASS(eetech,	TECHELECTEE, , 	EE Tech Elect, Electrical Engineering Technical Elective)
+		CLASS(cstech,	TECHELECTCS, , 	CS Tech Elect, Computer Science Technical Elective)
+		CLASS(eereq, 	REQUIREDEE, , 	EE Required, Electrical Engineering Required)
+		CLASS(csreq, 	REQUIREDCS, , 	CS Required, Computer Science Required)
+		CLASS(math, 	MATH, , 		Math Required, Math Required)
+    	CLASS(intro,	REMEDIALMATH, ,	Introductory,Introductory)
 
+		// these fake dependencies constrain the order of where the legend goes
+		csreq  -> eereq  -> math   [style=invis]
+		cstech -> eetech -> intro   [style=invis]
+  	};
+// leave some free space to the right of the legend
+	subgraph free_space {	
+		EXTRA [ label = "S2", style = invis ]; FREESPACE1 [width=15,style = invis]; 
+  	};
 	
 	
 }

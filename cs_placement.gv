@@ -43,11 +43,12 @@ digraph cs_placement {
 
 
 
-    node [shape = box, penwidth=2, style = filled, fontcolor=black, fillcolor=lightgoldenrod2,width=0.25,margin="0,0",fontsize=28] ; cs2300 [margin="0,0", label= < <FONT POINT-SIZE="72"> <b> cs2300 </b> </FONT> <br/> <FONT POINT-SIZE="55"> Java </FONT> <FONT POINT-SIZE="50"> <br /> </FONT> <FONT POINT-SIZE="48" face="Impact"> <FONT COLOR="darkblue"><b> F/S </b></FONT>   </FONT> >];
+ node [shape = box, penwidth=2, style = filled, fontcolor=black, fillcolor=lightgoldenrod2,width=0.25,margin="0,0",fontsize=28] ; cs1400 [margin="0,0", label= < <FONT POINT-SIZE="72"> <b> cs1400 </b> </FONT> <br/> <FONT POINT-SIZE="55"> Intro Python </FONT> <FONT POINT-SIZE="50"> <br /> </FONT> <FONT POINT-SIZE="48" face="Impact"> <FONT COLOR="darkblue"><b> F/S </b></FONT>   </FONT> >];
 
+ cs_placement -> cs1400 [ label = "CS-PL<3", fontsize=30, fontcolor=green3, penwidth=5, color=green3, style=bold]
+ node [shape = box, penwidth=2, style = filled, fontcolor=black, fillcolor=lightgoldenrod2,width=0.25,margin="0,0",fontsize=28] ; cs2300 [margin="0,0", label= < <FONT POINT-SIZE="72"> <b> cs2300 </b> </FONT> <br/> <FONT POINT-SIZE="55"> Java </FONT> <FONT POINT-SIZE="50"> <br /> </FONT> <FONT POINT-SIZE="48" face="Impact"> <FONT COLOR="darkblue"><b> F/S </b></FONT>   </FONT> >];
  cs_placement -> cs2300 [ label = "CS-PL<3", fontsize=30, fontcolor=green3, penwidth=5, color=green3, style=bold]
  node [shape = box, penwidth=2, style = filled, fontcolor=black, fillcolor=lightgoldenrod2,width=0.25,margin="0,0",fontsize=28] ; et2100 [margin="0,0", label= < <FONT POINT-SIZE="72"> <b> et2100 </b> </FONT> <br/> <FONT POINT-SIZE="55"> Engr. Prog. </FONT> <FONT POINT-SIZE="50"> <br /> </FONT> <FONT POINT-SIZE="48" face="Impact"> <FONT COLOR="darkblue"><b> F/S </b></FONT>   </FONT> >];
-
  cs_placement -> et2100 [ label = "CS-PL<3", fontsize=30, fontcolor=green3, penwidth=5, color=green3, style=bold]
 
 
@@ -79,6 +80,7 @@ digraph cs_placement {
 
  node [shape=circle, style = "filled", penwidth=1, fontcolor=black, fillcolor=yellow] ; cs2400_or [label=" or "];
  cs2400_or -> cs2400 [penwidth=6]
+ cs1400 -> cs2400_or [penwidth=6]
  cs2300 -> cs2400_or [penwidth=6]
  et2100 -> cs2400_or [penwidth=6]
  cs_placement -> cs2400_or [ label = "CS-PL3", fontsize=30, fontcolor=green3, penwidth=5, color=green3, style=bold]
