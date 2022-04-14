@@ -1,0 +1,100 @@
+# 0 "cs_placement.dotcc"
+# 0 "<built-in>"
+# 0 "<command-line>"
+# 1 "cs_placement.dotcc"
+
+
+# 1 "eecs_prereq_design.h" 1
+# 4 "cs_placement.dotcc" 2
+
+
+
+
+digraph cs_placement {
+
+ rankdir=TB;
+
+
+
+ size="10,7"
+
+
+
+
+
+
+
+ ranksep="1.0"
+
+
+ graph [ dpi = 600 ];
+
+
+ landscape=true
+
+
+ labelloc="t"
+ fontsize=90
+    label="CS Placement Exams - Draft 2 - April 12, 2022"
+
+
+ node [shape=polygon, sides=10, penwidth=10, style = "filled", fontcolor=black, fillcolor=green3,width=0.25,margin="0,0",fontsize=28] ; cs_placement [margin="0,0", label= < <FONT POINT-SIZE="72"> <b> cs_placement </b> </FONT> <br/> <FONT POINT-SIZE="55"> CS Placement Test </FONT> >];
+ node [shape=polygon, sides=10, penwidth=10, style = "filled", fontcolor=black, fillcolor=skyblue,width=0.25,margin="0,0",fontsize=28] ; math_placement [margin="0,0", label= < <FONT POINT-SIZE="72"> <b> math_placement </b> </FONT> <br/> <FONT POINT-SIZE="55"> Math Placement Test </FONT> >];
+
+
+
+ node [shape = box, penwidth=2, style = filled, fontcolor=black, fillcolor=lightgoldenrod2,width=0.25,margin="0,0",fontsize=28] ; cs1400 [margin="0,0", label= < <FONT POINT-SIZE="72"> <b> cs1400 </b> </FONT> <br/> <FONT POINT-SIZE="55"> Intro Python </FONT> <FONT POINT-SIZE="50"> <br /> </FONT> <FONT POINT-SIZE="48" face="Impact"> <FONT COLOR="darkblue"><b> F/S </b></FONT>   </FONT> >];
+
+ cs_placement -> cs1400 [ label = "CS-PL<3", fontsize=30, fontcolor=green3, penwidth=5, color=green3, style=bold]
+ node [shape = box, penwidth=2, style = filled, fontcolor=black, fillcolor=lightgoldenrod2,width=0.25,margin="0,0",fontsize=28] ; cs2300 [margin="0,0", label= < <FONT POINT-SIZE="72"> <b> cs2300 </b> </FONT> <br/> <FONT POINT-SIZE="55"> Java </FONT> <FONT POINT-SIZE="50"> <br /> </FONT> <FONT POINT-SIZE="48" face="Impact"> <FONT COLOR="darkblue"><b> F/S </b></FONT>   </FONT> >];
+ cs_placement -> cs2300 [ label = "CS-PL<3", fontsize=30, fontcolor=green3, penwidth=5, color=green3, style=bold]
+ node [shape = box, penwidth=2, style = filled, fontcolor=black, fillcolor=lightgoldenrod2,width=0.25,margin="0,0",fontsize=28] ; et2100 [margin="0,0", label= < <FONT POINT-SIZE="72"> <b> et2100 </b> </FONT> <br/> <FONT POINT-SIZE="55"> Engr. Prog. </FONT> <FONT POINT-SIZE="50"> <br /> </FONT> <FONT POINT-SIZE="48" face="Impact"> <FONT COLOR="darkblue"><b> F/S </b></FONT>   </FONT> >];
+ cs_placement -> et2100 [ label = "CS-PL<3", fontsize=30, fontcolor=green3, penwidth=5, color=green3, style=bold]
+
+
+
+
+    node [shape = box, penwidth=2, style = filled, fontcolor=black, fillcolor=lightgoldenrod2,width=0.25,margin="0,0",fontsize=28] ; ma1200 [margin="0,0", label= < <FONT POINT-SIZE="72"> <b> ma1200 </b> </FONT> <br/> <FONT POINT-SIZE="55"> Algebra </FONT> <FONT POINT-SIZE="50"> <br /> </FONT> <FONT POINT-SIZE="48" face="Impact"> <FONT COLOR="darkblue"><b> F/S </b></FONT>   </FONT> >];
+ math_placement -> ma1200 [ label = "Math-PL1", fontsize=30, fontcolor=blue, penwidth=5, color=blue, style=bold]
+
+
+    node [shape = box, penwidth=2, style = filled, fontcolor=black, fillcolor=lightgoldenrod2,width=0.25,margin="0,0",fontsize=28] ; ma1300 [margin="0,0", label= < <FONT POINT-SIZE="72"> <b> ma1300 </b> </FONT> <br/> <FONT POINT-SIZE="55"> Pre Calc </FONT> <FONT POINT-SIZE="50"> <br /> </FONT> <FONT POINT-SIZE="48" face="Impact"> <FONT COLOR="darkblue"><b> F/S </b></FONT>   </FONT> >];
+
+ node [shape=circle, style = "filled", penwidth=1, fontcolor=black, fillcolor=yellow] ; ma1300_or [label=" or "];
+ ma1300_or -> ma1300 [penwidth=6]
+ ma1200 -> ma1300_or [ label = " ≥C", fontsize=60, fontcolor=red, penwidth=5, color=red, style=bold]
+ math_placement -> ma1300_or [ label = "Math-PL2", fontsize=30, fontcolor=blue, penwidth=5, color=blue, style=bold]
+
+
+
+    node [shape=polygon, sides=10, penwidth=10, style = "filled", fontcolor=black, fillcolor=skyblue,width=0.25,margin="0,0",fontsize=28] ; ma2301 [margin="0,0", label= < <FONT POINT-SIZE="72"> <b> ma2301 </b> </FONT> <br/> <FONT POINT-SIZE="55"> Calc I </FONT> <FONT POINT-SIZE="50"> <br /> </FONT> <FONT POINT-SIZE="48" face="Impact"> <FONT COLOR="darkblue"><b> F/S </b></FONT>   </FONT> >];
+
+ node [shape=circle, style = "filled", penwidth=1, fontcolor=black, fillcolor=yellow] ; ma2301_or [label=" or "];
+ ma2301_or -> ma2301 [penwidth=6]
+ ma1300 -> ma2301_or [ label = " ≥C", fontsize=60, fontcolor=red, penwidth=5, color=red, style=bold]
+ math_placement -> ma2301_or [ label = "Math-PL3", fontsize=30, fontcolor=blue, penwidth=5, color=blue, style=bold]
+
+
+ node [shape=polygon, sides=10, penwidth=10, style = "filled", fontcolor=black, fillcolor=green3,width=0.25,margin="0,0",fontsize=28] ; cs2400 [margin="0,0", label= < <FONT POINT-SIZE="72"> <b> cs2400 </b> </FONT> <br/> <FONT POINT-SIZE="55"> CS1 </FONT> <FONT POINT-SIZE="50"> <br /> </FONT> <FONT POINT-SIZE="48" face="Impact"> <FONT COLOR="darkblue"><b> F/S </b></FONT>   </FONT> >];
+
+
+ node [shape=circle, style = "filled", penwidth=1, fontcolor=black, fillcolor=yellow] ; cs2400_or [label=" or "];
+ cs2400_or -> cs2400 [penwidth=6]
+ cs1400 -> cs2400_or [penwidth=6]
+ cs2300 -> cs2400_or [penwidth=6]
+ et2100 -> cs2400_or [penwidth=6]
+ cs_placement -> cs2400_or [ label = "CS-PL3", fontsize=30, fontcolor=green3, penwidth=5, color=green3, style=bold]
+ node [shape=circle, style = "filled", penwidth=1, fontcolor=black, fillcolor=yellow] ; cs2400_mor [label=" or "];
+ ma1200 -> cs2400_mor [penwidth=6]
+ cs2400_mor -> cs2400 [penwidth=6]
+ math_placement -> cs2400_mor [ label = ">= MATH-PL2", fontsize=30, fontcolor=blue, penwidth=5, color=blue, style=bold]
+
+ node [shape=polygon, sides=10, penwidth=10, style = "filled", fontcolor=black, fillcolor=green3,width=0.25,margin="0,0",fontsize=28] ; cs2401 [margin="0,0", label= < <FONT POINT-SIZE="72"> <b> cs2401 </b> </FONT> <br/> <FONT POINT-SIZE="55"> CS2 </FONT> <FONT POINT-SIZE="50"> <br /> </FONT> <FONT POINT-SIZE="48" face="Impact"> <FONT COLOR="darkblue"><b> F/S </b></FONT>   </FONT> >];
+
+ node [shape=circle, style = "filled", penwidth=1, fontcolor=black, fillcolor=yellow] ; cs2401_or [label=" or "];
+ cs2400 -> cs2401 [penwidth=6]
+ cs2401_or -> cs2401 [penwidth=6]
+ ma1300 -> cs2401_or [penwidth=6]
+ math_placement -> cs2401_or [ label = "MATH-PL3", fontsize=30, fontcolor=blue, penwidth=5, color=blue, style=bold]
+
+}

@@ -47,7 +47,13 @@ node [type,width=0.25,margin="0,0",fontsize=28] ; testname [margin="0,0", label=
 
 #define NODE_OR(nodename)  node [shape=circle, style = "filled", penwidth=1, fontcolor=black, fillcolor=yellow] ; nodename [label=" or "]; 
 
-// Note, the "when" line below has 2 non-printing space characters ("en space", copied from Word)
+// for things like "Senior Standing" as a prerequisite
+#define STANDING(nodelabel,text)  node [shape=box, style = "filled", penwidth=1, fontcolor=black, fillcolor=pink] ; nodelabel [label=text fontsize="50"]; 
+#define PREREQ_SENIOR(thisnode,newnode) STANDING(newnode,"senior \n standing") newnode -> thisnode  [color=red] { rank=same thisnode newnode}
+#define PREREQ_JUNIOR(thisnode,newnode) STANDING(newnode,"junior \n standing") newnode -> thisnode  color=red] { rank=same thisnode newnode}
+
+
+//  Note, the "when" line below has 2 non-printing space characters ("en space", copied from Word)
 // otherwise, graphviz miscalculated "centering" whence fonts change and this moves the "semester" a little more to the left. Sigh...
 #define CLASS(classnumber,type,when,shortname,longname)  \
 node [type,width=0.25,margin="0,0",fontsize=28] ; classnumber [margin="0,0", label=\

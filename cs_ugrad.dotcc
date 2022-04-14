@@ -30,10 +30,9 @@ digraph cs_undergrad {
 	// title for the whole page
 	labelloc="t"
 	fontsize=90
-    label="CS Prerequites - Final Draft 3 - April 14, 2022"
+    label="CS Prerequites - Final Draft 4 - April 14b, 2022"
 
 
-	
 
     // CLASS(ma1200_MPL2,REMEDIALMATH,FALLSPRING,Algebra,Algebra)
 
@@ -46,6 +45,10 @@ digraph cs_undergrad {
 
 	CLASS(ma2302,MATH,FALLSPRING,Calc II,Calculus II)
 	PREREQ_C(ma2302,ma2301)
+
+	CLASS(ma3200or3210,MATH,FALLSPRING,Linear Algebra,Linear Algebra)
+	PREREQ(ma3200or3210,ma2301)
+	PREREQ(ma3200or3210,ma2302)
 
 	CLASS(cs2400,REQUIREDCS,FALLSPRING,CS1, Introduction to Computer Science I)
 	// PREREQ(cs2400,ma1200_MPL2)
@@ -109,8 +112,11 @@ digraph cs_undergrad {
 	PREREQ(cs4420,ee3954)
 	PREREQ(cs4420,cs3610)
 
+
 	CLASS(cs4560,REQUIREDCS,FALL, Senior Design I, Software Design and Development I)
 	PREREQ(cs4560,cs3560)
+	PREREQ(cs4560,cs3610)  // note that 3560 and 3610 are corequisites
+ 	PREREQ_SENIOR(cs4560,senior1)
 
 	CLASS(cs4561,REQUIREDCS,SPRING, Senior Design II, Software Design and Development II)
 	PREREQ(cs4561,cs4560)
@@ -144,11 +150,15 @@ digraph cs_undergrad {
 	// OR PREREQ(cs4170, PBIO 4160)
 	
 	CLASS(cs4180,TECHELECTCS, FALLSPRING, BioInf Stats, Statistical Foundation for Bioinformatics)
-	PREREQ(cs4180,cs4000)
+	PREREQ(cs4180,cs4170)
+	PREREQ(cs4180,ee3713)
+	PREREQ(cs4180,cs4160)
+	// I've only listed cs4160 as the prereq, because PBIO4160 is cross listed as cs4160
 	// Requisites: CS 4170 and EE 3713 and (CS 4160 or PBIO 4160)
 	
 	CLASS(cs4250,TECHELECTCS, FALL, Graphics, Interactive Computer Graphics)
 	PREREQ(cs4250,cs3610) 
+	PREREQ(cs4250,ma3200or3210) 
 	// Requisites: CS 3610 and (MATH 3200 or 3210)
 
 	CLASS(cs4440,TECHELECTCS, TBA, Data Comm, Data Communications)
@@ -167,6 +177,7 @@ digraph cs_undergrad {
 
 	CLASS(cs4830,TECHELECTCS, FALLSPRING, Mach Learn, Machine Learning)
 	PREREQ(cs4830,cs3610)
+	PREREQ(cs4830,ma3200or3210)
 	// Requisites: CS 3610 and C or better in (MATH 3200 or 3210)
 
 	CLASS(cs4770,TECHELECTCS, FALL, Security, Introduction to Computer Software Security for Eng)
@@ -181,31 +192,36 @@ digraph cs_undergrad {
 	CLASS(ee4683,TECHELECTEE, FALLSPRING, Comp Arch, Computer Architecture)
 	PREREQ(ee4683,ee3613)
 	
+
+	{ rank=same cs2400 ee1024 ma2301 }
+
 // make a quick legend
 // leave some free space to the left of the legend
 	subgraph free_space {	
-		EXTRA [ label = "S1", style = invis ]; FREESPACE1 [width=15,style = invis]; 
+		EXTRA [ label = "S1", style = invis ]; FREESPACE1 [width=0,style = invis]; 
   	};
 	subgraph cluster_Legend {
     	style = rounded;
 		label="Legend"
 		fontsize="60"
 	
-		CLASS(eetech,	TECHELECTEE, , 	EE Tech Elect, Electrical Engineering Technical Elective)
+		CLASS(math, 	MATH, , 		Math Required, Math Required)
+    	CLASS(intro,	REMEDIALMATH, ,	Introductory,Introductory)CLASS(eetech,	TECHELECTEE, , 	EE Tech Elect, Electrical Engineering Technical Elective)
 		CLASS(cstech,	TECHELECTCS, , 	CS Tech Elect, Computer Science Technical Elective)
 		CLASS(eereq, 	REQUIREDEE, , 	EE Required, Electrical Engineering Required)
 		CLASS(csreq, 	REQUIREDCS, , 	CS Required, Computer Science Required)
-		CLASS(math, 	MATH, , 		Math Required, Math Required)
-    	CLASS(intro,	REMEDIALMATH, ,	Introductory,Introductory)
+		
 
 		// these fake dependencies constrain the order of where the legend goes
-		csreq  -> eereq  -> math   [style=invis]
-		cstech -> eetech -> intro   [style=invis]
+		//csreq  -> eereq  -> math   [style=invis]
+		//cstech -> eetech -> intro   [style=invis]
+		//cs4561 -> eetech [style=invis]
   	};
 // leave some free space to the right of the legend
 	subgraph free_space {	
-		EXTRA [ label = "S2", style = invis ]; FREESPACE1 [width=15,style = invis]; 
+		EXTRA [ label = "S2", style = invis ]; FREESPACE2 [width=15,style = invis]; 
   	};
+	
 	
 	
 }
