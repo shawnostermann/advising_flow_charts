@@ -107,12 +107,12 @@ digraph cs_undergrad {
 	PREREQ(ee3713,ma2302)
 
 	CLASS(cs2653,REQUIREDCS,FALLSPRING, Comp Ethics, Professional and Ethical Aspects of Computing)
-	// change for Fall 22/23 - prereq in cs2400 CONCURRENT
+	// change for Fall 22/23 - CS 2400 or Concurrent
 	COREQ(cs2653,cs2400)
 
 	CLASS(cs3200,REQUIREDCS,FALL, Prog Lang, Organization of Programming Languages)
-	PREREQ(cs3200,cs3000)
-	PREREQ(cs3200,cs2653)
+	// change for fall 22/23, Changed to "CS 3610 or Concurrent"
+	COREQ(cs3200,cs3610)
 
 	CLASS(cs4000,REQUIREDCS,SPRING,Dist.  Par., Introduction to Distributed Parallel and Web-Centric Computing)
 	PREREQ(cs4000,cs3610)
