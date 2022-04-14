@@ -169,7 +169,7 @@ digraph cs_undergrad {
 	PREREQ(cs4830,cs3610)
 	// Requisites: CS 3610 and C or better in (MATH 3200 or 3210)
 
-	CLASS(cs4770,TECHELECTCS, FALLSPRING, Security, Introduction to Computer Software Security for Eng)
+	CLASS(cs4770,TECHELECTCS, FALL, Security, Introduction to Computer Software Security for Eng)
 	// new for Fall 22/23
 	PREREQ(cs4770,cs3610)
 	PREREQ(cs4770,cs3560)

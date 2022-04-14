@@ -160,7 +160,7 @@ digraph cs_undergrad {
  cs3610 -> cs4830 [penwidth=6]
 
 
- node [shape = ellipse, penwidth=2, greenyellow = blueviolet, style = filled, fillcolor=greenyellow,width=0.25,margin="0,0",fontsize=28] ; cs4770 [margin="0,0", label= < <FONT POINT-SIZE="72"> <b> cs4770 </b> </FONT> <br/> <FONT POINT-SIZE="55"> Security </FONT> <FONT POINT-SIZE="50"> <br /> </FONT> <FONT POINT-SIZE="48" face="Impact"> <FONT COLOR="darkblue"><b> F/S </b></FONT>   </FONT> >];
+ node [shape = ellipse, penwidth=2, greenyellow = blueviolet, style = filled, fillcolor=greenyellow,width=0.25,margin="0,0",fontsize=28] ; cs4770 [margin="0,0", label= < <FONT POINT-SIZE="72"> <b> cs4770 </b> </FONT> <br/> <FONT POINT-SIZE="55"> Security </FONT> <FONT POINT-SIZE="50"> <br /> </FONT> <FONT POINT-SIZE="48" face="Impact"> <FONT COLOR="goldenrod4"><b> Fall </b></FONT>   </FONT> >];
 
  cs3610 -> cs4770 [penwidth=6]
  cs3560 -> cs4770 [penwidth=6]
