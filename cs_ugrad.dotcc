@@ -11,7 +11,8 @@ digraph cs_undergrad {
 	// rankdir=LR;
 	
 	// Maximum width and height of drawing, in inches.
-	size="10,7"
+	size="11,8.5"
+	margin="0.25,0.25"   // whole paper borders
 	
 	// Width and height of output pages, in inches.
 	// If only a single value is given, this is used for both the width and height.
@@ -30,7 +31,7 @@ digraph cs_undergrad {
 	// title for the whole page
 	labelloc="t"
 	fontsize=90
-    label="CS Prerequites - Final Draft 4 - April 14b, 2022"
+    label="CS Prerequites - Final Draft 5 - April 18, 2022"
 
 
 
@@ -47,8 +48,11 @@ digraph cs_undergrad {
 	PREREQ_C(ma2302,ma2301)
 
 	CLASS(ma3200or3210,MATH,FALLSPRING,Linear Algebra,Linear Algebra)
-	PREREQ(ma3200or3210,ma2301)
-	PREREQ(ma3200or3210,ma2302)
+	// 3200: C or better in (MATH 163A or 263A or 1350 or 2301 or 2302) and WARNING No credit for both this course and the following (always deduct credit for first course taken): MATH 3210
+	// 3210 hasn't been offered in 2 years!!
+	// 3210: MATH 2302 and (3050 or CS 3000) and WARNING: No credit for both this course and MATH 3200 (first course taken deducted)
+	PREREQ_C(ma3200or3210,ma2301)
+	PREREQ_C(ma3200or3210,ma2302)
 
 	CLASS(cs2400,REQUIREDCS,FALLSPRING,CS1, Introduction to Computer Science I)
 	// PREREQ(cs2400,ma1200_MPL2)

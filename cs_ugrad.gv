@@ -16,7 +16,8 @@ digraph cs_undergrad {
 
 
 
- size="10,7"
+ size="11,8.5"
+ margin="0.25,0.25"
 
 
 
@@ -35,7 +36,7 @@ digraph cs_undergrad {
 
  labelloc="t"
  fontsize=90
-    label="CS Prerequites - Final Draft 4 - April 14b, 2022"
+    label="CS Prerequites - Final Draft 5 - April 18, 2022"
 
 
 
@@ -52,8 +53,11 @@ digraph cs_undergrad {
  ma2301 -> ma2302 [ label = " ≥C", fontsize=60, fontcolor=red, penwidth=5, color=red, style=bold]
 
  node [shape=polygon, sides=10, penwidth=10, style = "filled", fontcolor=black, fillcolor=skyblue,width=0.25,margin="0,0",fontsize=28] ; ma3200or3210 [margin="0,0", label= < <FONT POINT-SIZE="72"> <b> ma3200or3210 </b> </FONT> <br/> <FONT POINT-SIZE="55"> Linear Algebra </FONT> <FONT POINT-SIZE="50"> <br /> </FONT> <FONT POINT-SIZE="48" face="Impact"> <FONT COLOR="darkblue"><b> F/S </b></FONT>   </FONT> >];
- ma2301 -> ma3200or3210 [penwidth=6]
- ma2302 -> ma3200or3210 [penwidth=6]
+
+
+
+ ma2301 -> ma3200or3210 [ label = " ≥C", fontsize=60, fontcolor=red, penwidth=5, color=red, style=bold]
+ ma2302 -> ma3200or3210 [ label = " ≥C", fontsize=60, fontcolor=red, penwidth=5, color=red, style=bold]
 
  node [shape=polygon, sides=10, penwidth=10, style = "filled", fontcolor=black, fillcolor=green3,width=0.25,margin="0,0",fontsize=28] ; cs2400 [margin="0,0", label= < <FONT POINT-SIZE="72"> <b> cs2400 </b> </FONT> <br/> <FONT POINT-SIZE="55"> CS1 </FONT> <FONT POINT-SIZE="50"> <br /> </FONT> <FONT POINT-SIZE="48" face="Impact"> <FONT COLOR="darkblue"><b> F/S </b></FONT>   </FONT> >];
 
@@ -132,7 +136,7 @@ digraph cs_undergrad {
 
  node [shape = ellipse, penwidth=2, greenyellow = blueviolet, style = filled, fillcolor=greenyellow,width=0.25,margin="0,0",fontsize=28] ; cs4060 [margin="0,0", label= < <FONT POINT-SIZE="72"> <b> cs4060 </b> </FONT> <br/> <FONT POINT-SIZE="55"> Theory </FONT> <FONT POINT-SIZE="50"> <br /> </FONT> <FONT POINT-SIZE="48" face="Impact"> <FONT COLOR="red"><b> Spring </b></FONT>   </FONT> >];
  cs3000 -> cs4060 [penwidth=6]
-# 145 "cs_ugrad.dotcc"
+# 149 "cs_ugrad.dotcc"
  node [shape = ellipse, penwidth=2, greenyellow = blueviolet, style = filled, fillcolor=greenyellow,width=0.25,margin="0,0",fontsize=28] ; cs4160 [margin="0,0", label= < <FONT POINT-SIZE="72"> <b> cs4160 </b> </FONT> <br/> <FONT POINT-SIZE="55"> BioInf Tools </FONT> <FONT POINT-SIZE="50"> <br /> </FONT> <FONT POINT-SIZE="48" face="Impact"> <FONT COLOR="darkblue"><b> F/S </b></FONT>   </FONT> >];
  cs3610 -> cs4160 [penwidth=6]
 
