@@ -147,10 +147,10 @@ digraph cs_undergrad {
 	PREREQ(cs4420,cs3610)
 
 
-	CLASS(cs4560,REQUIREDCS,FALL, Senior Design I, Software Design and Development I)
+	CLASS(cs4560,REQUIREDCS,FALL (seniors only), Senior Design I, Software Design and Development I)
 	PREREQ(cs4560,cs3560)
 	PREREQ(cs4560,cs3610)  // note that 3560 and 3610 are corequisites
- 	PREREQ_SENIOR(cs4560,senior1)
+ 	// PREREQ_SENIOR(cs4560,senior1)
 
 	CLASS(cs4561,REQUIREDCS,SPRING, Senior Design II, Software Design and Development II)
 	PREREQ(cs4561,cs4560)

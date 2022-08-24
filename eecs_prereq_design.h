@@ -11,7 +11,7 @@
 
 // the look of elective classes
 #define ELECTIVE_TEMPLATE(color) shape = rectangle, sides=10, penwidth=4, color = blueviolet, style = filled, fillcolor=color
-#define TECHELECTCS ELECTIVE_TEMPLATE(palegreen1) 
+#define TECHELECTCS ELECTIVE_TEMPLATE(palegreen) 
 #define TECHELECTEE ELECTIVE_TEMPLATE(lightgoldenrod1)
 
 // the look of remedial (Intro) classes
