@@ -31,7 +31,36 @@ digraph cs_undergrad {
 	// title for the whole page
 	labelloc="t"
 	fontsize=90
-    label="CS Prerequites - Final Draft 5 - April 18, 2022"
+    label="CS Prerequites - Fall 22/23 - August 23, 2022"
+
+
+// make a quick legend
+// leave some free space to the left of the legend
+	subgraph free_space {	
+		EXTRA [ label = "S1", style = invis ]; FREESPACE1 [width=0,style = invis]; 
+  	};
+	subgraph cluster_Legend {
+    	style = rounded;
+		label="Legend"
+		fontsize="60"
+	
+		CLASS(math, 	MATH, , 		Math Required, Math Required)
+    	CLASS(intro,	REMEDIALMATH, ,	Introductory,Introductory)CLASS(eetech,	TECHELECTEE, , 	EE Tech Elect, Electrical Engineering Technical Elective)
+		CLASS(cstech,	TECHELECTCS, , 	CS Tech Elect, Computer Science Technical Elective)
+		CLASS(eereq, 	REQUIREDEE, , 	EE Required, Electrical Engineering Required)
+		CLASS(csreq, 	REQUIREDCS, , 	CS Required, Computer Science Required)
+		
+
+		// these fake dependencies constrain the order of where the legend goes
+		//csreq  -> eereq  -> math   [style=invis]
+		//cstech -> eetech -> intro   [style=invis]
+		//cs4561 -> eetech [style=invis]
+  	};
+// leave some free space to the right of the legend
+	subgraph free_space {	
+		EXTRA [ label = "S2", style = invis ]; FREESPACE2 [width=5,style = invis]; 
+  	};
+	
 
 
 
@@ -111,7 +140,8 @@ digraph cs_undergrad {
 	PREREQ(cs4100,cs3200)
 	PREREQ(cs4100,cs3610)
 
-	CLASS(cs4420,REQUIREDCS,FALLSPRING,Op Sys, Operating Systems)
+	CLASS(cs4420,REQUIREDCS,FALLSPRING ** ,Op Sys, Operating Systems)
+	// note that 22/23 is the last Spring Offering
 	PREREQ(cs4420,ee3613)
 	PREREQ(cs4420,ee3954)
 	PREREQ(cs4420,cs3610)
@@ -199,33 +229,7 @@ digraph cs_undergrad {
 
 	{ rank=same cs2400 ee1024 ma2301 }
 
-// make a quick legend
-// leave some free space to the left of the legend
-	subgraph free_space {	
-		EXTRA [ label = "S1", style = invis ]; FREESPACE1 [width=0,style = invis]; 
-  	};
-	subgraph cluster_Legend {
-    	style = rounded;
-		label="Legend"
-		fontsize="60"
-	
-		CLASS(math, 	MATH, , 		Math Required, Math Required)
-    	CLASS(intro,	REMEDIALMATH, ,	Introductory,Introductory)CLASS(eetech,	TECHELECTEE, , 	EE Tech Elect, Electrical Engineering Technical Elective)
-		CLASS(cstech,	TECHELECTCS, , 	CS Tech Elect, Computer Science Technical Elective)
-		CLASS(eereq, 	REQUIREDEE, , 	EE Required, Electrical Engineering Required)
-		CLASS(csreq, 	REQUIREDCS, , 	CS Required, Computer Science Required)
-		
 
-		// these fake dependencies constrain the order of where the legend goes
-		//csreq  -> eereq  -> math   [style=invis]
-		//cstech -> eetech -> intro   [style=invis]
-		//cs4561 -> eetech [style=invis]
-  	};
-// leave some free space to the right of the legend
-	subgraph free_space {	
-		EXTRA [ label = "S2", style = invis ]; FREESPACE2 [width=15,style = invis]; 
-  	};
-	
 	
 	
 }

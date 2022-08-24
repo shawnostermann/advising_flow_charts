@@ -36,159 +36,8 @@ digraph cs_undergrad {
 
  labelloc="t"
  fontsize=90
-    label="CS Prerequites - Final Draft 5 - April 18, 2022"
+    label="CS Prerequites - Fall 22/23 - August 23, 2022"
 
-
-
-
-
-    node [shape = box, penwidth=2, style = filled, fontcolor=black, fillcolor=lightgoldenrod2,width=0.25,margin="0,0",fontsize=28] ; cs_intro [margin="0,0", label= < <FONT POINT-SIZE="72"> <b> cs_intro </b> </FONT> <br/> <FONT POINT-SIZE="55"> CS PL or Intro CS </FONT> <FONT POINT-SIZE="50"> <br /> </FONT> <FONT POINT-SIZE="48" face="Impact"> <FONT COLOR="darkblue"><b> F/S </b></FONT>   </FONT> >];
-
-    node [shape = box, penwidth=2, style = filled, fontcolor=black, fillcolor=lightgoldenrod2,width=0.25,margin="0,0",fontsize=28] ; math_intro [margin="0,0", label= < <FONT POINT-SIZE="72"> <b> math_intro </b> </FONT> <br/> <FONT POINT-SIZE="55"> Math PL or Intro Math </FONT> <FONT POINT-SIZE="50"> <br /> </FONT> <FONT POINT-SIZE="48" face="Impact"> <FONT COLOR="darkblue"><b> F/S </b></FONT>   </FONT> >];
-
-    node [shape=polygon, sides=10, penwidth=10, style = "filled", fontcolor=black, fillcolor=skyblue,width=0.25,margin="0,0",fontsize=28] ; ma2301 [margin="0,0", label= < <FONT POINT-SIZE="72"> <b> ma2301 </b> </FONT> <br/> <FONT POINT-SIZE="55"> Calc I </FONT> <FONT POINT-SIZE="50"> <br /> </FONT> <FONT POINT-SIZE="48" face="Impact"> <FONT COLOR="darkblue"><b> F/S </b></FONT>   </FONT> >];
- math_intro -> ma2301 [penwidth=6]
-
- node [shape=polygon, sides=10, penwidth=10, style = "filled", fontcolor=black, fillcolor=skyblue,width=0.25,margin="0,0",fontsize=28] ; ma2302 [margin="0,0", label= < <FONT POINT-SIZE="72"> <b> ma2302 </b> </FONT> <br/> <FONT POINT-SIZE="55"> Calc II </FONT> <FONT POINT-SIZE="50"> <br /> </FONT> <FONT POINT-SIZE="48" face="Impact"> <FONT COLOR="darkblue"><b> F/S </b></FONT>   </FONT> >];
- ma2301 -> ma2302 [ label = " ≥C", fontsize=60, fontcolor=red, penwidth=5, color=red, style=bold]
-
- node [shape=polygon, sides=10, penwidth=10, style = "filled", fontcolor=black, fillcolor=skyblue,width=0.25,margin="0,0",fontsize=28] ; ma3200or3210 [margin="0,0", label= < <FONT POINT-SIZE="72"> <b> ma3200or3210 </b> </FONT> <br/> <FONT POINT-SIZE="55"> Linear Algebra </FONT> <FONT POINT-SIZE="50"> <br /> </FONT> <FONT POINT-SIZE="48" face="Impact"> <FONT COLOR="darkblue"><b> F/S </b></FONT>   </FONT> >];
-
-
-
- ma2301 -> ma3200or3210 [ label = " ≥C", fontsize=60, fontcolor=red, penwidth=5, color=red, style=bold]
- ma2302 -> ma3200or3210 [ label = " ≥C", fontsize=60, fontcolor=red, penwidth=5, color=red, style=bold]
-
- node [shape=polygon, sides=10, penwidth=10, style = "filled", fontcolor=black, fillcolor=green3,width=0.25,margin="0,0",fontsize=28] ; cs2400 [margin="0,0", label= < <FONT POINT-SIZE="72"> <b> cs2400 </b> </FONT> <br/> <FONT POINT-SIZE="55"> CS1 </FONT> <FONT POINT-SIZE="50"> <br /> </FONT> <FONT POINT-SIZE="48" face="Impact"> <FONT COLOR="darkblue"><b> F/S </b></FONT>   </FONT> >];
-
- cs_intro -> cs2400 [penwidth=6]
- math_intro -> cs2400 [penwidth=6]
-
- node [shape=polygon, sides=10, penwidth=10, style = "filled", fontcolor=black, fillcolor=green3,width=0.25,margin="0,0",fontsize=28] ; cs2401 [margin="0,0", label= < <FONT POINT-SIZE="72"> <b> cs2401 </b> </FONT> <br/> <FONT POINT-SIZE="55"> CS2 </FONT> <FONT POINT-SIZE="50"> <br /> </FONT> <FONT POINT-SIZE="48" face="Impact"> <FONT COLOR="darkblue"><b> F/S </b></FONT>   </FONT> >];
- cs2400 -> cs2401 [penwidth=6]
- math_intro -> cs2401 [penwidth=6]
-
- node [shape=polygon, sides=10, penwidth=10, style = "filled", fontcolor=black, fillcolor=green3,width=0.25,margin="0,0",fontsize=28] ; cs3000 [margin="0,0", label= < <FONT POINT-SIZE="72"> <b> cs3000 </b> </FONT> <br/> <FONT POINT-SIZE="55"> Disc Struct </FONT> <FONT POINT-SIZE="50"> <br /> </FONT> <FONT POINT-SIZE="48" face="Impact"> <FONT COLOR="darkblue"><b> F/S </b></FONT>   </FONT> >];
- cs2401 -> cs3000 [penwidth=6]
-
- node [shape=polygon, sides=10, penwidth=10, style = "filled", fontcolor=black, fillcolor=green3,width=0.25,margin="0,0",fontsize=28] ; cs3610 [margin="0,0", label= < <FONT POINT-SIZE="72"> <b> cs3610 </b> </FONT> <br/> <FONT POINT-SIZE="55"> Data Struct </FONT> <FONT POINT-SIZE="50"> <br /> </FONT> <FONT POINT-SIZE="48" face="Impact"> <FONT COLOR="darkblue"><b> F/S </b></FONT>   </FONT> >];
-
- cs2401 -> cs3610 [ label = " ≥C", fontsize=60, fontcolor=red, penwidth=5, color=red, style=bold]
- cs3000 -> cs3610 [penwidth=6]
-
- node [shape=polygon, sides=10, penwidth=10, style = "filled", fontcolor=black, fillcolor=green3,width=0.25,margin="0,0",fontsize=28] ; cs3560 [margin="0,0", label= < <FONT POINT-SIZE="72"> <b> cs3560 </b> </FONT> <br/> <FONT POINT-SIZE="55"> Sw Tools </FONT> <FONT POINT-SIZE="50"> <br /> </FONT> <FONT POINT-SIZE="48" face="Impact"> <FONT COLOR="darkblue"><b> F/S </b></FONT>   </FONT> >];
- cs3610 -> cs3560 [ label = "Coreq", fontsize=60, penwidth=10, style=dashed]
-
-
-
-
-
- node [shape=polygon, sides=10, penwidth=10, style = "filled", fontcolor=black, fillcolor=orange3,width=0.25,margin="0,0",fontsize=28] ; ee1024 [margin="0,0", label= < <FONT POINT-SIZE="72"> <b> ee1024 </b> </FONT> <br/> <FONT POINT-SIZE="55"> Intro CpE </FONT> <FONT POINT-SIZE="50"> <br /> </FONT> <FONT POINT-SIZE="48" face="Impact"> <FONT COLOR="darkblue"><b> F/S </b></FONT>   </FONT> >];
- math_intro -> ee1024 [penwidth=6]
-
-    node [shape=polygon, sides=10, penwidth=10, style = "filled", fontcolor=black, fillcolor=orange3,width=0.25,margin="0,0",fontsize=28] ; ee3613 [margin="0,0", label= < <FONT POINT-SIZE="72"> <b> ee3613 </b> </FONT> <br/> <FONT POINT-SIZE="55"> Comp Org </FONT> <FONT POINT-SIZE="50"> <br /> </FONT> <FONT POINT-SIZE="48" face="Impact"> <FONT COLOR="darkblue"><b> F/S </b></FONT>   </FONT> >];
- ee1024 -> ee3613 [penwidth=6]
- cs2400 -> ee3613 [penwidth=6]
-
- node [shape=polygon, sides=10, penwidth=10, style = "filled", fontcolor=black, fillcolor=orange3,width=0.25,margin="0,0",fontsize=28] ; ee3954 [margin="0,0", label= < <FONT POINT-SIZE="72"> <b> ee3954 </b> </FONT> <br/> <FONT POINT-SIZE="55"> Micro </FONT> <FONT POINT-SIZE="50"> <br /> </FONT> <FONT POINT-SIZE="48" face="Impact"> <FONT COLOR="darkblue"><b> F/S </b></FONT>   </FONT> >];
- ee1024 -> ee3954 [penwidth=6]
- cs2400 -> ee3954 [penwidth=6]
-
-    node [shape=polygon, sides=10, penwidth=10, style = "filled", fontcolor=black, fillcolor=skyblue,width=0.25,margin="0,0",fontsize=28] ; ee3713 [margin="0,0", label= < <FONT POINT-SIZE="72"> <b> ee3713 </b> </FONT> <br/> <FONT POINT-SIZE="55"> EE Stats </FONT> <FONT POINT-SIZE="50"> <br /> </FONT> <FONT POINT-SIZE="48" face="Impact"> <FONT COLOR="darkblue"><b> F/S </b></FONT>   </FONT> >];
- ma2302 -> ee3713 [penwidth=6]
-
- node [shape=polygon, sides=10, penwidth=10, style = "filled", fontcolor=black, fillcolor=green3,width=0.25,margin="0,0",fontsize=28] ; cs2653 [margin="0,0", label= < <FONT POINT-SIZE="72"> <b> cs2653 </b> </FONT> <br/> <FONT POINT-SIZE="55"> Comp Ethics </FONT> <FONT POINT-SIZE="50"> <br /> </FONT> <FONT POINT-SIZE="48" face="Impact"> <FONT COLOR="darkblue"><b> F/S </b></FONT>   </FONT> >];
-
- cs2400 -> cs2653 [ label = "Coreq", fontsize=60, penwidth=10, style=dashed]
-
- node [shape=polygon, sides=10, penwidth=10, style = "filled", fontcolor=black, fillcolor=green3,width=0.25,margin="0,0",fontsize=28] ; cs3200 [margin="0,0", label= < <FONT POINT-SIZE="72"> <b> cs3200 </b> </FONT> <br/> <FONT POINT-SIZE="55"> Prog Lang </FONT> <FONT POINT-SIZE="50"> <br /> </FONT> <FONT POINT-SIZE="48" face="Impact"> <FONT COLOR="goldenrod4"><b> Fall </b></FONT>   </FONT> >];
-
- cs3610 -> cs3200 [ label = "Coreq", fontsize=60, penwidth=10, style=dashed]
-
- node [shape=polygon, sides=10, penwidth=10, style = "filled", fontcolor=black, fillcolor=green3,width=0.25,margin="0,0",fontsize=28] ; cs4000 [margin="0,0", label= < <FONT POINT-SIZE="72"> <b> cs4000 </b> </FONT> <br/> <FONT POINT-SIZE="55"> Dist. Par. </FONT> <FONT POINT-SIZE="50"> <br /> </FONT> <FONT POINT-SIZE="48" face="Impact"> <FONT COLOR="red"><b> Spring </b></FONT>   </FONT> >];
- cs3610 -> cs4000 [penwidth=6]
- cs3560 -> cs4000 [penwidth=6]
-
- node [shape=polygon, sides=10, penwidth=10, style = "filled", fontcolor=black, fillcolor=green3,width=0.25,margin="0,0",fontsize=28] ; cs4040 [margin="0,0", label= < <FONT POINT-SIZE="72"> <b> cs4040 </b> </FONT> <br/> <FONT POINT-SIZE="55"> Algorithms </FONT> <FONT POINT-SIZE="50"> <br /> </FONT> <FONT POINT-SIZE="48" face="Impact"> <FONT COLOR="goldenrod4"><b> Fall </b></FONT>   </FONT> >];
- cs3610 -> cs4040 [penwidth=6]
-
- node [shape=polygon, sides=10, penwidth=10, style = "filled", fontcolor=black, fillcolor=green3,width=0.25,margin="0,0",fontsize=28] ; cs4100 [margin="0,0", label= < <FONT POINT-SIZE="72"> <b> cs4100 </b> </FONT> <br/> <FONT POINT-SIZE="55"> Compilers </FONT> <FONT POINT-SIZE="50"> <br /> </FONT> <FONT POINT-SIZE="48" face="Impact"> <FONT COLOR="red"><b> Spring </b></FONT>   </FONT> >];
- cs3200 -> cs4100 [penwidth=6]
- cs3610 -> cs4100 [penwidth=6]
-
- node [shape=polygon, sides=10, penwidth=10, style = "filled", fontcolor=black, fillcolor=green3,width=0.25,margin="0,0",fontsize=28] ; cs4420 [margin="0,0", label= < <FONT POINT-SIZE="72"> <b> cs4420 </b> </FONT> <br/> <FONT POINT-SIZE="55"> Op Sys </FONT> <FONT POINT-SIZE="50"> <br /> </FONT> <FONT POINT-SIZE="48" face="Impact"> <FONT COLOR="darkblue"><b> F/S </b></FONT>   </FONT> >];
- ee3613 -> cs4420 [penwidth=6]
- ee3954 -> cs4420 [penwidth=6]
- cs3610 -> cs4420 [penwidth=6]
-
-
- node [shape=polygon, sides=10, penwidth=10, style = "filled", fontcolor=black, fillcolor=green3,width=0.25,margin="0,0",fontsize=28] ; cs4560 [margin="0,0", label= < <FONT POINT-SIZE="72"> <b> cs4560 </b> </FONT> <br/> <FONT POINT-SIZE="55"> Senior Design I </FONT> <FONT POINT-SIZE="50"> <br /> </FONT> <FONT POINT-SIZE="48" face="Impact"> <FONT COLOR="goldenrod4"><b> Fall </b></FONT>   </FONT> >];
- cs3560 -> cs4560 [penwidth=6]
- cs3610 -> cs4560 [penwidth=6]
-  node [shape=box, style = "filled", penwidth=1, fontcolor=black, fillcolor=pink] ; senior1 [label="senior \n standing" fontsize="50"]; senior1 -> cs4560 [color=red] { rank=same cs4560 senior1}
-
- node [shape=polygon, sides=10, penwidth=10, style = "filled", fontcolor=black, fillcolor=green3,width=0.25,margin="0,0",fontsize=28] ; cs4561 [margin="0,0", label= < <FONT POINT-SIZE="72"> <b> cs4561 </b> </FONT> <br/> <FONT POINT-SIZE="55"> Senior Design II </FONT> <FONT POINT-SIZE="50"> <br /> </FONT> <FONT POINT-SIZE="48" face="Impact"> <FONT COLOR="red"><b> Spring </b></FONT>   </FONT> >];
- cs4560 -> cs4561 [penwidth=6]
-
-
-
-
-
- node [shape = ellipse, penwidth=2, greenyellow = blueviolet, style = filled, fillcolor=greenyellow,width=0.25,margin="0,0",fontsize=28] ; cs4060 [margin="0,0", label= < <FONT POINT-SIZE="72"> <b> cs4060 </b> </FONT> <br/> <FONT POINT-SIZE="55"> Theory </FONT> <FONT POINT-SIZE="50"> <br /> </FONT> <FONT POINT-SIZE="48" face="Impact"> <FONT COLOR="red"><b> Spring </b></FONT>   </FONT> >];
- cs3000 -> cs4060 [penwidth=6]
-# 149 "cs_ugrad.dotcc"
- node [shape = ellipse, penwidth=2, greenyellow = blueviolet, style = filled, fillcolor=greenyellow,width=0.25,margin="0,0",fontsize=28] ; cs4160 [margin="0,0", label= < <FONT POINT-SIZE="72"> <b> cs4160 </b> </FONT> <br/> <FONT POINT-SIZE="55"> BioInf Tools </FONT> <FONT POINT-SIZE="50"> <br /> </FONT> <FONT POINT-SIZE="48" face="Impact"> <FONT COLOR="darkblue"><b> F/S </b></FONT>   </FONT> >];
- cs3610 -> cs4160 [penwidth=6]
-
- node [shape = ellipse, penwidth=2, greenyellow = blueviolet, style = filled, fillcolor=greenyellow,width=0.25,margin="0,0",fontsize=28] ; cs4170 [margin="0,0", label= < <FONT POINT-SIZE="72"> <b> cs4170 </b> </FONT> <br/> <FONT POINT-SIZE="55"> Data Mining </FONT> <FONT POINT-SIZE="50"> <br /> </FONT> <FONT POINT-SIZE="48" face="Impact"> <FONT COLOR="goldenrod4"><b> Fall </b></FONT>   </FONT> >];
- cs3610 -> cs4170 [penwidth=6]
-
-
- node [shape = ellipse, penwidth=2, greenyellow = blueviolet, style = filled, fillcolor=greenyellow,width=0.25,margin="0,0",fontsize=28] ; cs4180 [margin="0,0", label= < <FONT POINT-SIZE="72"> <b> cs4180 </b> </FONT> <br/> <FONT POINT-SIZE="55"> BioInf Stats </FONT> <FONT POINT-SIZE="50"> <br /> </FONT> <FONT POINT-SIZE="48" face="Impact"> <FONT COLOR="darkblue"><b> F/S </b></FONT>   </FONT> >];
- cs4170 -> cs4180 [penwidth=6]
- ee3713 -> cs4180 [penwidth=6]
- cs4160 -> cs4180 [penwidth=6]
-
-
-
- node [shape = ellipse, penwidth=2, greenyellow = blueviolet, style = filled, fillcolor=greenyellow,width=0.25,margin="0,0",fontsize=28] ; cs4250 [margin="0,0", label= < <FONT POINT-SIZE="72"> <b> cs4250 </b> </FONT> <br/> <FONT POINT-SIZE="55"> Graphics </FONT> <FONT POINT-SIZE="50"> <br /> </FONT> <FONT POINT-SIZE="48" face="Impact"> <FONT COLOR="goldenrod4"><b> Fall </b></FONT>   </FONT> >];
- cs3610 -> cs4250 [penwidth=6]
- ma3200or3210 -> cs4250 [penwidth=6]
-
-
- node [shape = ellipse, penwidth=2, greenyellow = blueviolet, style = filled, fillcolor=greenyellow,width=0.25,margin="0,0",fontsize=28] ; cs4440 [margin="0,0", label= < <FONT POINT-SIZE="72"> <b> cs4440 </b> </FONT> <br/> <FONT POINT-SIZE="55"> Data Comm </FONT> <FONT POINT-SIZE="50"> <br /> </FONT> <FONT POINT-SIZE="48" face="Impact"> <FONT COLOR="white"><b> TBA </b></FONT>   </FONT> >];
- cs4420 -> cs4440 [penwidth=6]
-
- node [shape = ellipse, penwidth=2, greenyellow = blueviolet, style = filled, fillcolor=greenyellow,width=0.25,margin="0,0",fontsize=28] ; cs4620 [margin="0,0", label= < <FONT POINT-SIZE="72"> <b> cs4620 </b> </FONT> <br/> <FONT POINT-SIZE="55"> Database </FONT> <FONT POINT-SIZE="50"> <br /> </FONT> <FONT POINT-SIZE="48" face="Impact"> <FONT COLOR="goldenrod4"><b> Fall </b></FONT>   </FONT> >];
- cs3610 -> cs4620 [penwidth=6]
-
- node [shape = ellipse, penwidth=2, greenyellow = blueviolet, style = filled, fillcolor=greenyellow,width=0.25,margin="0,0",fontsize=28] ; cs4750 [margin="0,0", label= < <FONT POINT-SIZE="72"> <b> cs4750 </b> </FONT> <br/> <FONT POINT-SIZE="55"> Internet Engr. </FONT> <FONT POINT-SIZE="50"> <br /> </FONT> <FONT POINT-SIZE="48" face="Impact"> <FONT COLOR="goldenrod4"><b> Fall </b></FONT>   </FONT> >];
- cs3610 -> cs4750 [penwidth=6]
-
- node [shape = ellipse, penwidth=2, greenyellow = blueviolet, style = filled, fillcolor=greenyellow,width=0.25,margin="0,0",fontsize=28] ; cs4800 [margin="0,0", label= < <FONT POINT-SIZE="72"> <b> cs4800 </b> </FONT> <br/> <FONT POINT-SIZE="55"> AI </FONT> <FONT POINT-SIZE="50"> <br /> </FONT> <FONT POINT-SIZE="48" face="Impact"> <FONT COLOR="darkblue"><b> F/S </b></FONT>   </FONT> >];
-
- cs3000 -> cs4800 [penwidth=6]
- cs2401 -> cs4800 [penwidth=6]
-
- node [shape = ellipse, penwidth=2, greenyellow = blueviolet, style = filled, fillcolor=greenyellow,width=0.25,margin="0,0",fontsize=28] ; cs4830 [margin="0,0", label= < <FONT POINT-SIZE="72"> <b> cs4830 </b> </FONT> <br/> <FONT POINT-SIZE="55"> Mach Learn </FONT> <FONT POINT-SIZE="50"> <br /> </FONT> <FONT POINT-SIZE="48" face="Impact"> <FONT COLOR="darkblue"><b> F/S </b></FONT>   </FONT> >];
- cs3610 -> cs4830 [penwidth=6]
- ma3200or3210 -> cs4830 [penwidth=6]
-
-
- node [shape = ellipse, penwidth=2, greenyellow = blueviolet, style = filled, fillcolor=greenyellow,width=0.25,margin="0,0",fontsize=28] ; cs4770 [margin="0,0", label= < <FONT POINT-SIZE="72"> <b> cs4770 </b> </FONT> <br/> <FONT POINT-SIZE="55"> Security </FONT> <FONT POINT-SIZE="50"> <br /> </FONT> <FONT POINT-SIZE="48" face="Impact"> <FONT COLOR="goldenrod4"><b> Fall </b></FONT>   </FONT> >];
-
- cs3610 -> cs4770 [penwidth=6]
- cs3560 -> cs4770 [penwidth=6]
-
- node [shape = ellipse, penwidth=2, orange1 = blueviolet, style = filled, fillcolor=orange1,width=0.25,margin="0,0",fontsize=28] ; ee4673 [margin="0,0", label= < <FONT POINT-SIZE="72"> <b> ee4673 </b> </FONT> <br/> <FONT POINT-SIZE="55"> Embed Sys </FONT> <FONT POINT-SIZE="50"> <br /> </FONT> <FONT POINT-SIZE="48" face="Impact"> <FONT COLOR="darkblue"><b> F/S </b></FONT>   </FONT> >];
- ee3954 -> ee4673 [penwidth=6]
-
-
- node [shape = ellipse, penwidth=2, orange1 = blueviolet, style = filled, fillcolor=orange1,width=0.25,margin="0,0",fontsize=28] ; ee4683 [margin="0,0", label= < <FONT POINT-SIZE="72"> <b> ee4683 </b> </FONT> <br/> <FONT POINT-SIZE="55"> Comp Arch </FONT> <FONT POINT-SIZE="50"> <br /> </FONT> <FONT POINT-SIZE="48" face="Impact"> <FONT COLOR="darkblue"><b> F/S </b></FONT>   </FONT> >];
- ee3613 -> ee4683 [penwidth=6]
-
-
- { rank=same cs2400 ee1024 ma2301 }
 
 
 
@@ -200,11 +49,11 @@ digraph cs_undergrad {
   label="Legend"
   fontsize="60"
 
-  node [shape=polygon, sides=10, penwidth=10, style = "filled", fontcolor=black, fillcolor=skyblue,width=0.25,margin="0,0",fontsize=28] ; math [margin="0,0", label= < <FONT POINT-SIZE="72"> <b> math </b> </FONT> <br/> <FONT POINT-SIZE="55"> Math Required </FONT> <FONT POINT-SIZE="50"> <br /> </FONT> <FONT POINT-SIZE="48" face="Impact">   </FONT> >];
-     node [shape = box, penwidth=2, style = filled, fontcolor=black, fillcolor=lightgoldenrod2,width=0.25,margin="0,0",fontsize=28] ; intro [margin="0,0", label= < <FONT POINT-SIZE="72"> <b> intro </b> </FONT> <br/> <FONT POINT-SIZE="55"> Introductory </FONT> <FONT POINT-SIZE="50"> <br /> </FONT> <FONT POINT-SIZE="48" face="Impact">   </FONT> >];node [shape = ellipse, penwidth=2, orange1 = blueviolet, style = filled, fillcolor=orange1,width=0.25,margin="0,0",fontsize=28] ; eetech [margin="0,0", label= < <FONT POINT-SIZE="72"> <b> eetech </b> </FONT> <br/> <FONT POINT-SIZE="55"> EE Tech Elect </FONT> <FONT POINT-SIZE="50"> <br /> </FONT> <FONT POINT-SIZE="48" face="Impact">   </FONT> >];
-  node [shape = ellipse, penwidth=2, greenyellow = blueviolet, style = filled, fillcolor=greenyellow,width=0.25,margin="0,0",fontsize=28] ; cstech [margin="0,0", label= < <FONT POINT-SIZE="72"> <b> cstech </b> </FONT> <br/> <FONT POINT-SIZE="55"> CS Tech Elect </FONT> <FONT POINT-SIZE="50"> <br /> </FONT> <FONT POINT-SIZE="48" face="Impact">   </FONT> >];
-  node [shape=polygon, sides=10, penwidth=10, style = "filled", fontcolor=black, fillcolor=orange3,width=0.25,margin="0,0",fontsize=28] ; eereq [margin="0,0", label= < <FONT POINT-SIZE="72"> <b> eereq </b> </FONT> <br/> <FONT POINT-SIZE="55"> EE Required </FONT> <FONT POINT-SIZE="50"> <br /> </FONT> <FONT POINT-SIZE="48" face="Impact">   </FONT> >];
-  node [shape=polygon, sides=10, penwidth=10, style = "filled", fontcolor=black, fillcolor=green3,width=0.25,margin="0,0",fontsize=28] ; csreq [margin="0,0", label= < <FONT POINT-SIZE="72"> <b> csreq </b> </FONT> <br/> <FONT POINT-SIZE="55"> CS Required </FONT> <FONT POINT-SIZE="50"> <br /> </FONT> <FONT POINT-SIZE="48" face="Impact">   </FONT> >];
+  node [shape=oval, sides=4, penwidth=4, style = "filled", fontcolor=black, fillcolor=skyblue,width=0.25,margin="0,0",fontsize=28] ; math [margin="0,0", label= < <FONT POINT-SIZE="72"> <b> math </b> </FONT> <br/> <FONT POINT-SIZE="55"> Math Required </FONT> <FONT POINT-SIZE="50"> <br /> </FONT> <FONT POINT-SIZE="48" face="Impact">   </FONT> >, ];
+     node [shape = box, penwidth=2, style = filled, fontcolor=black, fillcolor=lightpink,width=0.25,margin="0,0",fontsize=28] ; intro [margin="0,0", label= < <FONT POINT-SIZE="72"> <b> intro </b> </FONT> <br/> <FONT POINT-SIZE="55"> Introductory </FONT> <FONT POINT-SIZE="50"> <br /> </FONT> <FONT POINT-SIZE="48" face="Impact">   </FONT> >, ];node [shape = rectangle, sides=10, penwidth=4, lightgoldenrod1 = blueviolet, style = filled, fillcolor=lightgoldenrod1,width=0.25,margin="0,0",fontsize=28] ; eetech [margin="0,0", label= < <FONT POINT-SIZE="72"> <b> eetech </b> </FONT> <br/> <FONT POINT-SIZE="55"> EE Tech Elect </FONT> <FONT POINT-SIZE="50"> <br /> </FONT> <FONT POINT-SIZE="48" face="Impact">   </FONT> >, ];
+  node [shape = rectangle, sides=10, penwidth=4, palegreen1 = blueviolet, style = filled, fillcolor=palegreen1,width=0.25,margin="0,0",fontsize=28] ; cstech [margin="0,0", label= < <FONT POINT-SIZE="72"> <b> cstech </b> </FONT> <br/> <FONT POINT-SIZE="55"> CS Tech Elect </FONT> <FONT POINT-SIZE="50"> <br /> </FONT> <FONT POINT-SIZE="48" face="Impact">   </FONT> >, ];
+  node [shape=oval, sides=4, penwidth=4, style = "filled", fontcolor=black, fillcolor=goldenrod,width=0.25,margin="0,0",fontsize=28] ; eereq [margin="0,0", label= < <FONT POINT-SIZE="72"> <b> eereq </b> </FONT> <br/> <FONT POINT-SIZE="55"> EE Required </FONT> <FONT POINT-SIZE="50"> <br /> </FONT> <FONT POINT-SIZE="48" face="Impact">   </FONT> >, ];
+  node [shape=oval, sides=4, penwidth=4, style = "filled", fontcolor=black, fillcolor=green2,width=0.25,margin="0,0",fontsize=28] ; csreq [margin="0,0", label= < <FONT POINT-SIZE="72"> <b> csreq </b> </FONT> <br/> <FONT POINT-SIZE="55"> CS Required </FONT> <FONT POINT-SIZE="50"> <br /> </FONT> <FONT POINT-SIZE="48" face="Impact">   </FONT> >, ];
 
 
 
@@ -214,8 +63,163 @@ digraph cs_undergrad {
    };
 
  subgraph free_space {
-  EXTRA [ label = "S2", style = invis ]; FREESPACE2 [width=15,style = invis];
+  EXTRA [ label = "S2", style = invis ]; FREESPACE2 [width=5,style = invis];
    };
+
+
+
+
+
+
+    node [shape = box, penwidth=2, style = filled, fontcolor=black, fillcolor=lightpink,width=0.25,margin="0,0",fontsize=28] ; cs_intro [margin="0,0", label= < <FONT POINT-SIZE="72"> <b> cs_intro </b> </FONT> <br/> <FONT POINT-SIZE="55"> CS PL or Intro CS </FONT> <FONT POINT-SIZE="50"> <br /> </FONT> <FONT POINT-SIZE="48" face="Impact"> <FONT COLOR="darkblue"><b> F/S </b></FONT>   </FONT> >, ];
+
+    node [shape = box, penwidth=2, style = filled, fontcolor=black, fillcolor=lightpink,width=0.25,margin="0,0",fontsize=28] ; math_intro [margin="0,0", label= < <FONT POINT-SIZE="72"> <b> math_intro </b> </FONT> <br/> <FONT POINT-SIZE="55"> Math PL or Intro Math </FONT> <FONT POINT-SIZE="50"> <br /> </FONT> <FONT POINT-SIZE="48" face="Impact"> <FONT COLOR="darkblue"><b> F/S </b></FONT>   </FONT> >, ];
+
+    node [shape=oval, sides=4, penwidth=4, style = "filled", fontcolor=black, fillcolor=skyblue,width=0.25,margin="0,0",fontsize=28] ; ma2301 [margin="0,0", label= < <FONT POINT-SIZE="72"> <b> ma2301 </b> </FONT> <br/> <FONT POINT-SIZE="55"> Calc I </FONT> <FONT POINT-SIZE="50"> <br /> </FONT> <FONT POINT-SIZE="48" face="Impact"> <FONT COLOR="darkblue"><b> F/S </b></FONT>   </FONT> >, ];
+ math_intro -> ma2301 [penwidth=6]
+
+ node [shape=oval, sides=4, penwidth=4, style = "filled", fontcolor=black, fillcolor=skyblue,width=0.25,margin="0,0",fontsize=28] ; ma2302 [margin="0,0", label= < <FONT POINT-SIZE="72"> <b> ma2302 </b> </FONT> <br/> <FONT POINT-SIZE="55"> Calc II </FONT> <FONT POINT-SIZE="50"> <br /> </FONT> <FONT POINT-SIZE="48" face="Impact"> <FONT COLOR="darkblue"><b> F/S </b></FONT>   </FONT> >, ];
+ ma2301 -> ma2302 [ label = " ≥C", fontsize=60, fontcolor=red, penwidth=5, color=red, style=bold]
+
+ node [shape=oval, sides=4, penwidth=4, style = "filled", fontcolor=black, fillcolor=skyblue,width=0.25,margin="0,0",fontsize=28] ; ma3200or3210 [margin="0,0", label= < <FONT POINT-SIZE="72"> <b> ma3200or3210 </b> </FONT> <br/> <FONT POINT-SIZE="55"> Linear Algebra </FONT> <FONT POINT-SIZE="50"> <br /> </FONT> <FONT POINT-SIZE="48" face="Impact"> <FONT COLOR="darkblue"><b> F/S </b></FONT>   </FONT> >, ];
+
+
+
+ ma2301 -> ma3200or3210 [ label = " ≥C", fontsize=60, fontcolor=red, penwidth=5, color=red, style=bold]
+ ma2302 -> ma3200or3210 [ label = " ≥C", fontsize=60, fontcolor=red, penwidth=5, color=red, style=bold]
+
+ node [shape=oval, sides=4, penwidth=4, style = "filled", fontcolor=black, fillcolor=green2,width=0.25,margin="0,0",fontsize=28] ; cs2400 [margin="0,0", label= < <FONT POINT-SIZE="72"> <b> cs2400 </b> </FONT> <br/> <FONT POINT-SIZE="55"> CS1 </FONT> <FONT POINT-SIZE="50"> <br /> </FONT> <FONT POINT-SIZE="48" face="Impact"> <FONT COLOR="darkblue"><b> F/S </b></FONT>   </FONT> >, ];
+
+ cs_intro -> cs2400 [penwidth=6]
+ math_intro -> cs2400 [penwidth=6]
+
+ node [shape=oval, sides=4, penwidth=4, style = "filled", fontcolor=black, fillcolor=green2,width=0.25,margin="0,0",fontsize=28] ; cs2401 [margin="0,0", label= < <FONT POINT-SIZE="72"> <b> cs2401 </b> </FONT> <br/> <FONT POINT-SIZE="55"> CS2 </FONT> <FONT POINT-SIZE="50"> <br /> </FONT> <FONT POINT-SIZE="48" face="Impact"> <FONT COLOR="darkblue"><b> F/S </b></FONT>   </FONT> >, ];
+ cs2400 -> cs2401 [penwidth=6]
+ math_intro -> cs2401 [penwidth=6]
+
+ node [shape=oval, sides=4, penwidth=4, style = "filled", fontcolor=black, fillcolor=green2,width=0.25,margin="0,0",fontsize=28] ; cs3000 [margin="0,0", label= < <FONT POINT-SIZE="72"> <b> cs3000 </b> </FONT> <br/> <FONT POINT-SIZE="55"> Disc Struct </FONT> <FONT POINT-SIZE="50"> <br /> </FONT> <FONT POINT-SIZE="48" face="Impact"> <FONT COLOR="darkblue"><b> F/S </b></FONT>   </FONT> >, ];
+ cs2401 -> cs3000 [penwidth=6]
+
+ node [shape=oval, sides=4, penwidth=4, style = "filled", fontcolor=black, fillcolor=green2,width=0.25,margin="0,0",fontsize=28] ; cs3610 [margin="0,0", label= < <FONT POINT-SIZE="72"> <b> cs3610 </b> </FONT> <br/> <FONT POINT-SIZE="55"> Data Struct </FONT> <FONT POINT-SIZE="50"> <br /> </FONT> <FONT POINT-SIZE="48" face="Impact"> <FONT COLOR="darkblue"><b> F/S </b></FONT>   </FONT> >, ];
+
+ cs2401 -> cs3610 [ label = " ≥C", fontsize=60, fontcolor=red, penwidth=5, color=red, style=bold]
+ cs3000 -> cs3610 [penwidth=6]
+
+ node [shape=oval, sides=4, penwidth=4, style = "filled", fontcolor=black, fillcolor=green2,width=0.25,margin="0,0",fontsize=28] ; cs3560 [margin="0,0", label= < <FONT POINT-SIZE="72"> <b> cs3560 </b> </FONT> <br/> <FONT POINT-SIZE="55"> Sw Tools </FONT> <FONT POINT-SIZE="50"> <br /> </FONT> <FONT POINT-SIZE="48" face="Impact"> <FONT COLOR="darkblue"><b> F/S </b></FONT>   </FONT> >, ];
+ cs3610 -> cs3560 [ label = "Coreq", fontcolor=blue, color=red, style=bold fontsize=60, penwidth=10, style=dashed] { rank=same cs3560 cs3610 }
+
+
+
+
+
+ node [shape=oval, sides=4, penwidth=4, style = "filled", fontcolor=black, fillcolor=goldenrod,width=0.25,margin="0,0",fontsize=28] ; ee1024 [margin="0,0", label= < <FONT POINT-SIZE="72"> <b> ee1024 </b> </FONT> <br/> <FONT POINT-SIZE="55"> Intro CpE </FONT> <FONT POINT-SIZE="50"> <br /> </FONT> <FONT POINT-SIZE="48" face="Impact"> <FONT COLOR="darkblue"><b> F/S </b></FONT>   </FONT> >, ];
+ math_intro -> ee1024 [penwidth=6]
+
+    node [shape=oval, sides=4, penwidth=4, style = "filled", fontcolor=black, fillcolor=goldenrod,width=0.25,margin="0,0",fontsize=28] ; ee3613 [margin="0,0", label= < <FONT POINT-SIZE="72"> <b> ee3613 </b> </FONT> <br/> <FONT POINT-SIZE="55"> Comp Org </FONT> <FONT POINT-SIZE="50"> <br /> </FONT> <FONT POINT-SIZE="48" face="Impact"> <FONT COLOR="darkblue"><b> F/S </b></FONT>   </FONT> >, ];
+ ee1024 -> ee3613 [penwidth=6]
+ cs2400 -> ee3613 [penwidth=6]
+
+ node [shape=oval, sides=4, penwidth=4, style = "filled", fontcolor=black, fillcolor=goldenrod,width=0.25,margin="0,0",fontsize=28] ; ee3954 [margin="0,0", label= < <FONT POINT-SIZE="72"> <b> ee3954 </b> </FONT> <br/> <FONT POINT-SIZE="55"> Micro </FONT> <FONT POINT-SIZE="50"> <br /> </FONT> <FONT POINT-SIZE="48" face="Impact"> <FONT COLOR="darkblue"><b> F/S </b></FONT>   </FONT> >, ];
+ ee1024 -> ee3954 [penwidth=6]
+ cs2400 -> ee3954 [penwidth=6]
+
+    node [shape=oval, sides=4, penwidth=4, style = "filled", fontcolor=black, fillcolor=skyblue,width=0.25,margin="0,0",fontsize=28] ; ee3713 [margin="0,0", label= < <FONT POINT-SIZE="72"> <b> ee3713 </b> </FONT> <br/> <FONT POINT-SIZE="55"> EE Stats </FONT> <FONT POINT-SIZE="50"> <br /> </FONT> <FONT POINT-SIZE="48" face="Impact"> <FONT COLOR="darkblue"><b> F/S </b></FONT>   </FONT> >, ];
+ ma2302 -> ee3713 [penwidth=6]
+
+ node [shape=oval, sides=4, penwidth=4, style = "filled", fontcolor=black, fillcolor=green2,width=0.25,margin="0,0",fontsize=28] ; cs2653 [margin="0,0", label= < <FONT POINT-SIZE="72"> <b> cs2653 </b> </FONT> <br/> <FONT POINT-SIZE="55"> Comp Ethics </FONT> <FONT POINT-SIZE="50"> <br /> </FONT> <FONT POINT-SIZE="48" face="Impact"> <FONT COLOR="darkblue"><b> F/S </b></FONT>   </FONT> >, ];
+
+ cs2400 -> cs2653 [ label = "Coreq", fontcolor=blue, color=red, style=bold fontsize=60, penwidth=10, style=dashed] { rank=same cs2653 cs2400 }
+
+ node [shape=oval, sides=4, penwidth=4, style = "filled", fontcolor=black, fillcolor=green2,width=0.25,margin="0,0",fontsize=28] ; cs3200 [margin="0,0", label= < <FONT POINT-SIZE="72"> <b> cs3200 </b> </FONT> <br/> <FONT POINT-SIZE="55"> Prog Lang </FONT> <FONT POINT-SIZE="50"> <br /> </FONT> <FONT POINT-SIZE="48" face="Impact"> <FONT COLOR="goldenrod4"><b> Fall </b></FONT>   </FONT> >, ];
+
+ cs3610 -> cs3200 [ label = "Coreq", fontcolor=blue, color=red, style=bold fontsize=60, penwidth=10, style=dashed] { rank=same cs3200 cs3610 }
+
+ node [shape=oval, sides=4, penwidth=4, style = "filled", fontcolor=black, fillcolor=green2,width=0.25,margin="0,0",fontsize=28] ; cs4000 [margin="0,0", label= < <FONT POINT-SIZE="72"> <b> cs4000 </b> </FONT> <br/> <FONT POINT-SIZE="55"> Dist. Par. </FONT> <FONT POINT-SIZE="50"> <br /> </FONT> <FONT POINT-SIZE="48" face="Impact"> <FONT COLOR="red"><b> Spring </b></FONT>   </FONT> >, ];
+ cs3610 -> cs4000 [penwidth=6]
+ cs3560 -> cs4000 [penwidth=6]
+
+ node [shape=oval, sides=4, penwidth=4, style = "filled", fontcolor=black, fillcolor=green2,width=0.25,margin="0,0",fontsize=28] ; cs4040 [margin="0,0", label= < <FONT POINT-SIZE="72"> <b> cs4040 </b> </FONT> <br/> <FONT POINT-SIZE="55"> Algorithms </FONT> <FONT POINT-SIZE="50"> <br /> </FONT> <FONT POINT-SIZE="48" face="Impact"> <FONT COLOR="goldenrod4"><b> Fall </b></FONT>   </FONT> >, ];
+ cs3610 -> cs4040 [penwidth=6]
+
+ node [shape=oval, sides=4, penwidth=4, style = "filled", fontcolor=black, fillcolor=green2,width=0.25,margin="0,0",fontsize=28] ; cs4100 [margin="0,0", label= < <FONT POINT-SIZE="72"> <b> cs4100 </b> </FONT> <br/> <FONT POINT-SIZE="55"> Compilers </FONT> <FONT POINT-SIZE="50"> <br /> </FONT> <FONT POINT-SIZE="48" face="Impact"> <FONT COLOR="red"><b> Spring </b></FONT>   </FONT> >, ];
+ cs3200 -> cs4100 [penwidth=6]
+ cs3610 -> cs4100 [penwidth=6]
+
+ node [shape=oval, sides=4, penwidth=4, style = "filled", fontcolor=black, fillcolor=green2,width=0.25,margin="0,0",fontsize=28] ; cs4420 [margin="0,0", label= < <FONT POINT-SIZE="72"> <b> cs4420 </b> </FONT> <br/> <FONT POINT-SIZE="55"> Op Sys </FONT> <FONT POINT-SIZE="50"> <br /> </FONT> <FONT POINT-SIZE="48" face="Impact"> <FONT COLOR="darkblue"><b> F/S </b></FONT> **   </FONT> >, ];
+
+ ee3613 -> cs4420 [penwidth=6]
+ ee3954 -> cs4420 [penwidth=6]
+ cs3610 -> cs4420 [penwidth=6]
+
+
+ node [shape=oval, sides=4, penwidth=4, style = "filled", fontcolor=black, fillcolor=green2,width=0.25,margin="0,0",fontsize=28] ; cs4560 [margin="0,0", label= < <FONT POINT-SIZE="72"> <b> cs4560 </b> </FONT> <br/> <FONT POINT-SIZE="55"> Senior Design I </FONT> <FONT POINT-SIZE="50"> <br /> </FONT> <FONT POINT-SIZE="48" face="Impact"> <FONT COLOR="goldenrod4"><b> Fall </b></FONT>   </FONT> >, ];
+ cs3560 -> cs4560 [penwidth=6]
+ cs3610 -> cs4560 [penwidth=6]
+  node [shape=box, style = "filled", penwidth=1, fontcolor=black, fillcolor=pink] ; senior1 [label="senior \n standing" fontsize="50"]; senior1 -> cs4560 [color=red] { rank=same cs4560 senior1}
+
+ node [shape=oval, sides=4, penwidth=4, style = "filled", fontcolor=black, fillcolor=green2,width=0.25,margin="0,0",fontsize=28] ; cs4561 [margin="0,0", label= < <FONT POINT-SIZE="72"> <b> cs4561 </b> </FONT> <br/> <FONT POINT-SIZE="55"> Senior Design II </FONT> <FONT POINT-SIZE="50"> <br /> </FONT> <FONT POINT-SIZE="48" face="Impact"> <FONT COLOR="red"><b> Spring </b></FONT>   </FONT> >, ];
+ cs4560 -> cs4561 [penwidth=6]
+
+
+
+
+
+ node [shape = rectangle, sides=10, penwidth=4, palegreen1 = blueviolet, style = filled, fillcolor=palegreen1,width=0.25,margin="0,0",fontsize=28] ; cs4060 [margin="0,0", label= < <FONT POINT-SIZE="72"> <b> cs4060 </b> </FONT> <br/> <FONT POINT-SIZE="55"> Theory </FONT> <FONT POINT-SIZE="50"> <br /> </FONT> <FONT POINT-SIZE="48" face="Impact"> <FONT COLOR="red"><b> Spring </b></FONT>   </FONT> >, ];
+ cs3000 -> cs4060 [penwidth=6]
+# 179 "cs_ugrad.dotcc"
+ node [shape = rectangle, sides=10, penwidth=4, palegreen1 = blueviolet, style = filled, fillcolor=palegreen1,width=0.25,margin="0,0",fontsize=28] ; cs4160 [margin="0,0", label= < <FONT POINT-SIZE="72"> <b> cs4160 </b> </FONT> <br/> <FONT POINT-SIZE="55"> BioInf Tools </FONT> <FONT POINT-SIZE="50"> <br /> </FONT> <FONT POINT-SIZE="48" face="Impact"> <FONT COLOR="darkblue"><b> F/S </b></FONT>   </FONT> >, ];
+ cs3610 -> cs4160 [penwidth=6]
+
+ node [shape = rectangle, sides=10, penwidth=4, palegreen1 = blueviolet, style = filled, fillcolor=palegreen1,width=0.25,margin="0,0",fontsize=28] ; cs4170 [margin="0,0", label= < <FONT POINT-SIZE="72"> <b> cs4170 </b> </FONT> <br/> <FONT POINT-SIZE="55"> Data Mining </FONT> <FONT POINT-SIZE="50"> <br /> </FONT> <FONT POINT-SIZE="48" face="Impact"> <FONT COLOR="goldenrod4"><b> Fall </b></FONT>   </FONT> >, ];
+ cs3610 -> cs4170 [penwidth=6]
+
+
+ node [shape = rectangle, sides=10, penwidth=4, palegreen1 = blueviolet, style = filled, fillcolor=palegreen1,width=0.25,margin="0,0",fontsize=28] ; cs4180 [margin="0,0", label= < <FONT POINT-SIZE="72"> <b> cs4180 </b> </FONT> <br/> <FONT POINT-SIZE="55"> BioInf Stats </FONT> <FONT POINT-SIZE="50"> <br /> </FONT> <FONT POINT-SIZE="48" face="Impact"> <FONT COLOR="darkblue"><b> F/S </b></FONT>   </FONT> >, ];
+ cs4170 -> cs4180 [penwidth=6]
+ ee3713 -> cs4180 [penwidth=6]
+ cs4160 -> cs4180 [penwidth=6]
+
+
+
+ node [shape = rectangle, sides=10, penwidth=4, palegreen1 = blueviolet, style = filled, fillcolor=palegreen1,width=0.25,margin="0,0",fontsize=28] ; cs4250 [margin="0,0", label= < <FONT POINT-SIZE="72"> <b> cs4250 </b> </FONT> <br/> <FONT POINT-SIZE="55"> Graphics </FONT> <FONT POINT-SIZE="50"> <br /> </FONT> <FONT POINT-SIZE="48" face="Impact"> <FONT COLOR="goldenrod4"><b> Fall </b></FONT>   </FONT> >, ];
+ cs3610 -> cs4250 [penwidth=6]
+ ma3200or3210 -> cs4250 [penwidth=6]
+
+
+ node [shape = rectangle, sides=10, penwidth=4, palegreen1 = blueviolet, style = filled, fillcolor=palegreen1,width=0.25,margin="0,0",fontsize=28] ; cs4440 [margin="0,0", label= < <FONT POINT-SIZE="72"> <b> cs4440 </b> </FONT> <br/> <FONT POINT-SIZE="55"> Data Comm </FONT> <FONT POINT-SIZE="50"> <br /> </FONT> <FONT POINT-SIZE="48" face="Impact"> <FONT COLOR="white"><b> TBA </b></FONT>   </FONT> >, ];
+ cs4420 -> cs4440 [penwidth=6]
+
+ node [shape = rectangle, sides=10, penwidth=4, palegreen1 = blueviolet, style = filled, fillcolor=palegreen1,width=0.25,margin="0,0",fontsize=28] ; cs4620 [margin="0,0", label= < <FONT POINT-SIZE="72"> <b> cs4620 </b> </FONT> <br/> <FONT POINT-SIZE="55"> Database </FONT> <FONT POINT-SIZE="50"> <br /> </FONT> <FONT POINT-SIZE="48" face="Impact"> <FONT COLOR="goldenrod4"><b> Fall </b></FONT>   </FONT> >, ];
+ cs3610 -> cs4620 [penwidth=6]
+
+ node [shape = rectangle, sides=10, penwidth=4, palegreen1 = blueviolet, style = filled, fillcolor=palegreen1,width=0.25,margin="0,0",fontsize=28] ; cs4750 [margin="0,0", label= < <FONT POINT-SIZE="72"> <b> cs4750 </b> </FONT> <br/> <FONT POINT-SIZE="55"> Internet Engr. </FONT> <FONT POINT-SIZE="50"> <br /> </FONT> <FONT POINT-SIZE="48" face="Impact"> <FONT COLOR="goldenrod4"><b> Fall </b></FONT>   </FONT> >, ];
+ cs3610 -> cs4750 [penwidth=6]
+
+ node [shape = rectangle, sides=10, penwidth=4, palegreen1 = blueviolet, style = filled, fillcolor=palegreen1,width=0.25,margin="0,0",fontsize=28] ; cs4800 [margin="0,0", label= < <FONT POINT-SIZE="72"> <b> cs4800 </b> </FONT> <br/> <FONT POINT-SIZE="55"> AI </FONT> <FONT POINT-SIZE="50"> <br /> </FONT> <FONT POINT-SIZE="48" face="Impact"> <FONT COLOR="darkblue"><b> F/S </b></FONT>   </FONT> >, ];
+
+ cs3000 -> cs4800 [penwidth=6]
+ cs2401 -> cs4800 [penwidth=6]
+
+ node [shape = rectangle, sides=10, penwidth=4, palegreen1 = blueviolet, style = filled, fillcolor=palegreen1,width=0.25,margin="0,0",fontsize=28] ; cs4830 [margin="0,0", label= < <FONT POINT-SIZE="72"> <b> cs4830 </b> </FONT> <br/> <FONT POINT-SIZE="55"> Mach Learn </FONT> <FONT POINT-SIZE="50"> <br /> </FONT> <FONT POINT-SIZE="48" face="Impact"> <FONT COLOR="darkblue"><b> F/S </b></FONT>   </FONT> >, ];
+ cs3610 -> cs4830 [penwidth=6]
+ ma3200or3210 -> cs4830 [penwidth=6]
+
+
+ node [shape = rectangle, sides=10, penwidth=4, palegreen1 = blueviolet, style = filled, fillcolor=palegreen1,width=0.25,margin="0,0",fontsize=28] ; cs4770 [margin="0,0", label= < <FONT POINT-SIZE="72"> <b> cs4770 </b> </FONT> <br/> <FONT POINT-SIZE="55"> Security </FONT> <FONT POINT-SIZE="50"> <br /> </FONT> <FONT POINT-SIZE="48" face="Impact"> <FONT COLOR="goldenrod4"><b> Fall </b></FONT>   </FONT> >, ];
+
+ cs3610 -> cs4770 [penwidth=6]
+ cs3560 -> cs4770 [penwidth=6]
+
+ node [shape = rectangle, sides=10, penwidth=4, lightgoldenrod1 = blueviolet, style = filled, fillcolor=lightgoldenrod1,width=0.25,margin="0,0",fontsize=28] ; ee4673 [margin="0,0", label= < <FONT POINT-SIZE="72"> <b> ee4673 </b> </FONT> <br/> <FONT POINT-SIZE="55"> Embed Sys </FONT> <FONT POINT-SIZE="50"> <br /> </FONT> <FONT POINT-SIZE="48" face="Impact"> <FONT COLOR="darkblue"><b> F/S </b></FONT>   </FONT> >, ];
+ ee3954 -> ee4673 [penwidth=6]
+
+
+ node [shape = rectangle, sides=10, penwidth=4, lightgoldenrod1 = blueviolet, style = filled, fillcolor=lightgoldenrod1,width=0.25,margin="0,0",fontsize=28] ; ee4683 [margin="0,0", label= < <FONT POINT-SIZE="72"> <b> ee4683 </b> </FONT> <br/> <FONT POINT-SIZE="55"> Comp Arch </FONT> <FONT POINT-SIZE="50"> <br /> </FONT> <FONT POINT-SIZE="48" face="Impact"> <FONT COLOR="darkblue"><b> F/S </b></FONT>   </FONT> >, ];
+ ee3613 -> ee4683 [penwidth=6]
+
+
+ { rank=same cs2400 ee1024 ma2301 }
+
 
 
 

@@ -3,25 +3,25 @@
 // Version 0.9 - Shawn Ostermann - May 24, 2022
 
 // the look of required classes
-#define REQUIRED_TEMPLATE(color) shape=polygon, sides=10, penwidth=10, style = "filled", fontcolor=black, fillcolor=color
-#define REQUIREDCS   REQUIRED_TEMPLATE(green3)
-#define REQUIREDEE   REQUIRED_TEMPLATE(orange3)
+#define REQUIRED_TEMPLATE(color) shape=oval, sides=4, penwidth=4, style = "filled", fontcolor=black, fillcolor=color
+#define REQUIREDCS   REQUIRED_TEMPLATE(green2)
+#define REQUIREDEE   REQUIRED_TEMPLATE(goldenrod)
 #define MATH 	     REQUIRED_TEMPLATE(skyblue)
 #define SCIENCE      REQUIRED_TEMPLATE(red1)
 
 // the look of elective classes
-#define ELECTIVE_TEMPLATE(color) shape = ellipse, penwidth=2, color = blueviolet, style = filled, fillcolor=color
-#define TECHELECTCS ELECTIVE_TEMPLATE(greenyellow) 
-#define TECHELECTEE ELECTIVE_TEMPLATE(orange1)
+#define ELECTIVE_TEMPLATE(color) shape = rectangle, sides=10, penwidth=4, color = blueviolet, style = filled, fillcolor=color
+#define TECHELECTCS ELECTIVE_TEMPLATE(palegreen1) 
+#define TECHELECTEE ELECTIVE_TEMPLATE(lightgoldenrod1)
 
 // the look of remedial (Intro) classes
 #define REMEDIAL_TEMPLATE(color) shape = box, penwidth=2, style = filled, fontcolor=black, fillcolor=color
-#define REMEDIALMATH REMEDIAL_TEMPLATE(lightgoldenrod2)
-#define REMEDIALCS   REMEDIAL_TEMPLATE(lightgoldenrod2)
+#define REMEDIALMATH REMEDIAL_TEMPLATE(lightpink)
+#define REMEDIALCS   REMEDIAL_TEMPLATE(lightpink)
 
 // this controls what the prerequisite arrows look like
-#define PREREQ(thisclass,prevclass)  prevclass -> thisclass [penwidth=6]
-#define COREQ(thisclass,prevclass)   prevclass -> thisclass [ label = "Coreq", fontsize=60, penwidth=10, style=dashed]
+#define PREREQ(thisclass,prevclass) prevclass -> thisclass [penwidth=6]
+#define COREQ(thisclass,prevclass)  prevclass -> thisclass [ label = "Coreq", fontcolor=blue, color=red, style=bold fontsize=60, penwidth=10, style=dashed] { rank=same thisclass prevclass }
 #define PREREQ_LABEL(thisclass,prevclass,condition)   prevclass -> thisclass [ label = condition, fontsize=60, fontcolor=red, penwidth=5, color=red, style=bold]
 #define PREREQ_PL(thisclass,prevclass,condition,mycolor)   prevclass -> thisclass [ label = condition, fontsize=30, fontcolor=mycolor, penwidth=5, color=mycolor, style=bold]
 #define PREREQ_MPL(thisclass,prevclass,condition)   PREREQ_PL(thisclass,prevclass,condition,blue)
@@ -52,7 +52,6 @@ node [type,width=0.25,margin="0,0",fontsize=28] ; testname [margin="0,0", label=
 #define PREREQ_SENIOR(thisnode,newnode) STANDING(newnode,"senior \n standing") newnode -> thisnode  [color=red] { rank=same thisnode newnode}
 #define PREREQ_JUNIOR(thisnode,newnode) STANDING(newnode,"junior \n standing") newnode -> thisnode  color=red] { rank=same thisnode newnode}
 
-
 //  Note, the "when" line below has 2 non-printing space characters ("en space", copied from Word)
 // otherwise, graphviz miscalculated "centering" whence fonts change and this moves the "semester" a little more to the left. Sigh...
 #define CLASS(classnumber,type,when,shortname,longname)  \
@@ -61,4 +60,5 @@ node [type,width=0.25,margin="0,0",fontsize=28] ; classnumber [margin="0,0", lab
 	  	<FONT POINT-SIZE="72"> <b> classnumber </b> </FONT> <br/> \
 	  	<FONT POINT-SIZE="55"> shortname </FONT> <FONT POINT-SIZE="50"> <br /> </FONT>\
 	  	<FONT POINT-SIZE="48" face="Impact"> when   </FONT> \
-	   >];
+	   >, \
+	   ];
