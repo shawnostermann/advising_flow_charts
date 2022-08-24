@@ -106,7 +106,7 @@ digraph cs_undergrad {
  cs3000 -> cs3610 [penwidth=6]
 
  node [shape=oval, sides=4, penwidth=4, style = "filled", fontcolor=black, fillcolor=green2,width=0.25,margin="0,0",fontsize=28] ; cs3560 [margin="0,0", label= < <FONT POINT-SIZE="72"> <b> cs3560 </b> </FONT> <br/> <FONT POINT-SIZE="55"> Sw Tools </FONT> <FONT POINT-SIZE="50"> <br /> </FONT> <FONT POINT-SIZE="48" face="Impact"> <FONT COLOR="darkblue"><b> F/S </b></FONT>   </FONT> >, ];
- cs3610 -> cs3560 [ label = "Coreq", fontcolor=blue, color=red, style=bold fontsize=60, penwidth=10, style=dashed] { rank=same cs3560 cs3610 }
+ cs3610 -> cs3560 [ label = "Coreq", fontcolor=blue, color=blue, style=bold fontsize=60, penwidth=10, style=dashed] { rank=same cs3560 cs3610 }
 
 
 
@@ -128,11 +128,11 @@ digraph cs_undergrad {
 
  node [shape=oval, sides=4, penwidth=4, style = "filled", fontcolor=black, fillcolor=green2,width=0.25,margin="0,0",fontsize=28] ; cs2653 [margin="0,0", label= < <FONT POINT-SIZE="72"> <b> cs2653 </b> </FONT> <br/> <FONT POINT-SIZE="55"> Comp Ethics </FONT> <FONT POINT-SIZE="50"> <br /> </FONT> <FONT POINT-SIZE="48" face="Impact"> <FONT COLOR="darkblue"><b> F/S </b></FONT>   </FONT> >, ];
 
- cs2400 -> cs2653 [ label = "Coreq", fontcolor=blue, color=red, style=bold fontsize=60, penwidth=10, style=dashed] { rank=same cs2653 cs2400 }
+ cs2400 -> cs2653 [ label = "Coreq", fontcolor=blue, color=blue, style=bold fontsize=60, penwidth=10, style=dashed] { rank=same cs2653 cs2400 }
 
  node [shape=oval, sides=4, penwidth=4, style = "filled", fontcolor=black, fillcolor=green2,width=0.25,margin="0,0",fontsize=28] ; cs3200 [margin="0,0", label= < <FONT POINT-SIZE="72"> <b> cs3200 </b> </FONT> <br/> <FONT POINT-SIZE="55"> Prog Lang </FONT> <FONT POINT-SIZE="50"> <br /> </FONT> <FONT POINT-SIZE="48" face="Impact"> <FONT COLOR="goldenrod4"><b> Fall </b></FONT>   </FONT> >, ];
 
- cs3610 -> cs3200 [ label = "Coreq", fontcolor=blue, color=red, style=bold fontsize=60, penwidth=10, style=dashed] { rank=same cs3200 cs3610 }
+ cs3610 -> cs3200 [ label = "Coreq", fontcolor=blue, color=blue, style=bold fontsize=60, penwidth=10, style=dashed] { rank=same cs3200 cs3610 }
 
  node [shape=oval, sides=4, penwidth=4, style = "filled", fontcolor=black, fillcolor=green2,width=0.25,margin="0,0",fontsize=28] ; cs4000 [margin="0,0", label= < <FONT POINT-SIZE="72"> <b> cs4000 </b> </FONT> <br/> <FONT POINT-SIZE="55"> Dist. Par. </FONT> <FONT POINT-SIZE="50"> <br /> </FONT> <FONT POINT-SIZE="48" face="Impact"> <FONT COLOR="red"><b> Spring </b></FONT>   </FONT> >, ];
  cs3610 -> cs4000 [penwidth=6]
@@ -145,7 +145,7 @@ digraph cs_undergrad {
  cs3200 -> cs4100 [penwidth=6]
  cs3610 -> cs4100 [penwidth=6]
 
- node [shape=oval, sides=4, penwidth=4, style = "filled", fontcolor=black, fillcolor=green2,width=0.25,margin="0,0",fontsize=28] ; cs4420 [margin="0,0", label= < <FONT POINT-SIZE="72"> <b> cs4420 </b> </FONT> <br/> <FONT POINT-SIZE="55"> Op Sys </FONT> <FONT POINT-SIZE="50"> <br /> </FONT> <FONT POINT-SIZE="48" face="Impact"> <FONT COLOR="darkblue"><b> F/S </b></FONT> **   </FONT> >, ];
+ node [shape=oval, sides=4, penwidth=4, style = "filled", fontcolor=black, fillcolor=green2,width=0.25,margin="0,0",fontsize=28] ; cs4420 [margin="0,0", label= < <FONT POINT-SIZE="72"> <b> cs4420 </b> </FONT> <br/> <FONT POINT-SIZE="55"> Op Sys </FONT> <FONT POINT-SIZE="50"> <br /> </FONT> <FONT POINT-SIZE="48" face="Impact"> <FONT COLOR="darkblue"><b> F/S </b></FONT> (S 22/23 only)   </FONT> >, ];
 
  ee3613 -> cs4420 [penwidth=6]
  ee3954 -> cs4420 [penwidth=6]

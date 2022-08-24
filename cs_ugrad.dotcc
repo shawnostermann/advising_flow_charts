@@ -140,7 +140,7 @@ digraph cs_undergrad {
 	PREREQ(cs4100,cs3200)
 	PREREQ(cs4100,cs3610)
 
-	CLASS(cs4420,REQUIREDCS,FALLSPRING ** ,Op Sys, Operating Systems)
+	CLASS(cs4420,REQUIREDCS,FALLSPRING (S 22/23 only) ,Op Sys, Operating Systems)
 	// note that 22/23 is the last Spring Offering
 	PREREQ(cs4420,ee3613)
 	PREREQ(cs4420,ee3954)
