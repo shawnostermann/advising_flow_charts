@@ -21,7 +21,7 @@
 
 // this controls what the prerequisite arrows look like
 #define PREREQ(thisclass,prevclass) prevclass -> thisclass [penwidth=6]
-#define COREQ(thisclass,prevclass)  prevclass -> thisclass [ label = "Coreq", fontcolor=blue, color=blue, style=bold fontsize=60, penwidth=10, style=dashed] { rank=same thisclass prevclass }
+#define COREQ(thisclass,prevclass)  prevclass -> thisclass [ dir=both, label = "Coreq", fontcolor=blue, color=blue, style=bold fontsize=60, penwidth=10, style=dashed] { rank=same thisclass prevclass }
 #define PREREQ_LABEL(thisclass,prevclass,condition)   prevclass -> thisclass [ label = condition, fontsize=60, fontcolor=red, penwidth=5, color=red, style=bold]
 #define PREREQ_PL(thisclass,prevclass,condition,mycolor)   prevclass -> thisclass [ label = condition, fontsize=30, fontcolor=mycolor, penwidth=5, color=mycolor, style=bold]
 #define PREREQ_MPL(thisclass,prevclass,condition)   PREREQ_PL(thisclass,prevclass,condition,blue)
