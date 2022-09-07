@@ -78,7 +78,7 @@ digraph cs_undergrad {
 
 	CLASS(ma3200or3210,MATH,FALLSPRING,Linear Algebra,Linear Algebra)
 	// 3200: C or better in (MATH 163A or 263A or 1350 or 2301 or 2302) and WARNING No credit for both this course and the following (always deduct credit for first course taken): MATH 3210
-	// 3210 hasn't been offered in 2 years!!
+	// 3210 hasnt been offered in 2 years!!
 	// 3210: MATH 2302 and (3050 or CS 3000) and WARNING: No credit for both this course and MATH 3200 (first course taken deducted)
 	PREREQ_C(ma3200or3210,ma2301)
 	PREREQ_C(ma3200or3210,ma2302)
@@ -90,22 +90,22 @@ digraph cs_undergrad {
 
 	CLASS(cs2401,REQUIREDCS,FALLSPRING,CS2, Introduction to Computer Science II)
 	PREREQ(cs2401,cs2400)
-	PREREQ(cs2401,math_intro)
+	PREREQ(cs2401,ma2301)
 
 	CLASS(cs3000,REQUIREDCS,FALLSPRING,Disc Struct, Discrete Structures)
-	PREREQ(cs3000,cs2401)
+	PREREQ(cs3000,cs2400)
 
 	CLASS(cs3610,REQUIREDCS,FALLSPRING,Data Struct, Data Structures)
 	// (CS 3000 or MATH 3050) and C or better in CS 2401
-	PREREQ_C(cs3610,cs2401)
+	PREREQ_C(cs3610,cs2400)
 	PREREQ(cs3610,cs3000)
 
 	CLASS(cs3560,REQUIREDCS,FALLSPRING,Sw Tools, Software Tools)
 	COREQ(cs3560,cs3610)
 
 
-	// left out side it's not in the prereq chain
-    // CLASS(et1000,REQUIREDEE, FALLSPRING,The History of Engineering and Technology in Society)
+	// left out since its not in the prereq chain
+    // CLASS PAREN et1000,REQUIREDEE, FALLSPRING,The History of Engineering and Technology in Society PAREN
 
 	CLASS(ee1024,REQUIREDEE, FALLSPRING, Intro CpE, Introduction to Computer Engineering)
 	PREREQ(ee1024,math_intro)
@@ -187,7 +187,7 @@ digraph cs_undergrad {
 	PREREQ(cs4180,cs4170)
 	PREREQ(cs4180,ee3713)
 	PREREQ(cs4180,cs4160)
-	// I've only listed cs4160 as the prereq, because PBIO4160 is cross listed as cs4160
+	// Ive only listed cs4160 as the prereq, because PBIO4160 is cross listed as cs4160
 	// Requisites: CS 4170 and EE 3713 and (CS 4160 or PBIO 4160)
 	
 	CLASS(cs4250,TECHELECTCS, FALL, Graphics, Interactive Computer Graphics)
