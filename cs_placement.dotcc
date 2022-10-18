@@ -38,8 +38,7 @@ digraph cs_placement {
 
 
 	// remedial CS course options
-	CLASS(cs1400,REMEDIALCS,FALLSPRING,Intro Python,Fundamentals of Computing
-	)	
+	CLASS(cs1400,REMEDIALCS,FALL,Intro Python,Fundamentals of Computing)	
 	PREREQ_CSPL(cs1400,cs_placement,"CS-PL<3")
 	CLASS(cs2300,REMEDIALCS,FALLSPRING,Java,Computer Programming in JAVA)
 	PREREQ_CSPL(cs2300,cs_placement,"CS-PL<3")

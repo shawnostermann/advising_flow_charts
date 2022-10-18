@@ -113,9 +113,8 @@ digraph cs_placement {
 
 
 	// remedial CS course options
-	node [shape = box, penwidth=2, style = filled, fontcolor=black, fillcolor=lightpink,width=0.25,margin="0,0",fontsize=28] ; cs1400 [margin="0,0", label= < <FONT POINT-SIZE="72"> <b> cs1400 </b> </FONT> <br/> <FONT POINT-SIZE="55"> Intro Python </FONT> <FONT POINT-SIZE="50"> <br /> </FONT> <FONT POINT-SIZE="48" face="Impact"> <FONT COLOR="darkblue"><b> F/S </b></FONT>   </FONT> >, ];	
-	
- cs_placement -> cs1400 [ label = "CS-PL<3", fontsize=30, fontcolor=green3, penwidth=5, color=green3, style=bold]
+	node [shape = box, penwidth=2, style = filled, fontcolor=black, fillcolor=lightpink,width=0.25,margin="0,0",fontsize=28] ; cs1400 [margin="0,0", label= < <FONT POINT-SIZE="72"> <b> cs1400 </b> </FONT> <br/> <FONT POINT-SIZE="55"> Intro Python </FONT> <FONT POINT-SIZE="50"> <br /> </FONT> <FONT POINT-SIZE="48" face="Impact"> <FONT COLOR="goldenrod4"><b> Fall </b></FONT>   </FONT> >, ];	
+	cs_placement -> cs1400 [ label = "CS-PL<3", fontsize=30, fontcolor=green3, penwidth=5, color=green3, style=bold]
 	node [shape = box, penwidth=2, style = filled, fontcolor=black, fillcolor=lightpink,width=0.25,margin="0,0",fontsize=28] ; cs2300 [margin="0,0", label= < <FONT POINT-SIZE="72"> <b> cs2300 </b> </FONT> <br/> <FONT POINT-SIZE="55"> Java </FONT> <FONT POINT-SIZE="50"> <br /> </FONT> <FONT POINT-SIZE="48" face="Impact"> <FONT COLOR="darkblue"><b> F/S </b></FONT>   </FONT> >, ];
 	cs_placement -> cs2300 [ label = "CS-PL<3", fontsize=30, fontcolor=green3, penwidth=5, color=green3, style=bold]
 	node [shape = box, penwidth=2, style = filled, fontcolor=black, fillcolor=lightpink,width=0.25,margin="0,0",fontsize=28] ; et2100 [margin="0,0", label= < <FONT POINT-SIZE="72"> <b> et2100 </b> </FONT> <br/> <FONT POINT-SIZE="55"> Engr. Prog. </FONT> <FONT POINT-SIZE="50"> <br /> </FONT> <FONT POINT-SIZE="48" face="Impact"> <FONT COLOR="darkblue"><b> F/S </b></FONT>   </FONT> >, ];	
