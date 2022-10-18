@@ -20,7 +20,7 @@ digraph cs_undergrad {
 	// page="8,10"
 
 	// There are a TON of arrows between ranks 5 and 6, so this allows more space when it needs it
-	ranksep="2.0"   // default is 0.5
+	ranksep="4.0"   // default is 0.5
 
 	// to make better bitmap versions - but use PDF!!!
 	graph [ dpi = 600 ]; 	
@@ -31,7 +31,7 @@ digraph cs_undergrad {
 	// title for the whole page
 	labelloc="t"
 	fontsize=90
-    label="CS Prerequites - Fall 22/23 - August 23, 2022"
+    label="CS Prerequites - Spring 22/23 - October 18, 2022"
 
 
 // make a quick legend
@@ -42,8 +42,10 @@ digraph cs_undergrad {
 	subgraph cluster_Legend {
     	style = rounded;
 		label="Legend"
-		fontsize="60"
-	
+		fontsize="90"
+		margin=50		// more space in the margin around the nodes
+		penwidth=10   	// thicker line around the legend
+
 		CLASS(math, 	MATH, , 		Math Required, Math Required)
     	CLASS(intro,	REMEDIALMATH, ,	Introductory,Introductory)CLASS(eetech,	TECHELECTEE, , 	EE Tech Elect, Electrical Engineering Technical Elective)
 		CLASS(cstech,	TECHELECTCS, , 	CS Tech Elect, Computer Science Technical Elective)
@@ -52,13 +54,13 @@ digraph cs_undergrad {
 		
 
 		// these fake dependencies constrain the order of where the legend goes
-		//csreq  -> eereq  -> math   [style=invis]
-		//cstech -> eetech -> intro   [style=invis]
-		//cs4561 -> eetech [style=invis]
+		csreq  -> eereq  -> math   [style=invis]
+		cstech -> eetech -> intro   [style=invis]
+		// cs4561 -> eetech [style=invis]
   	};
 // leave some free space to the right of the legend
 	subgraph free_space {	
-		EXTRA [ label = "S2", style = invis ]; FREESPACE2 [width=5,style = invis]; 
+		EXTRA [ label = "S2", style = invis ]; FREESPACE2 [width=20,style = invis]; 
   	};
 	
 
@@ -140,19 +142,19 @@ digraph cs_undergrad {
 	PREREQ(cs4100,cs3200)
 	PREREQ(cs4100,cs3610)
 
-	CLASS(cs4420,REQUIREDCS,FALLSPRING (S 22/23 only) ,Op Sys, Operating Systems)
+	CLASS4(cs4420,REQUIREDCS,FALLSPRING  ,Op Sys, Operating Systems,(S 22/23 only))
 	// note that 22/23 is the last Spring Offering
 	PREREQ(cs4420,ee3613)
 	PREREQ(cs4420,ee3954)
 	PREREQ(cs4420,cs3610)
 
 
-	CLASS(cs4560,REQUIREDCS,FALL (seniors only), Senior Design I, Software Design and Development I)
+	CLASS4(cs4560,REQUIREDCS,FALL, Sen. Design I, Software Design and Development I, (seniors only))
 	PREREQ(cs4560,cs3560)
 	PREREQ(cs4560,cs3610)  // note that 3560 and 3610 are corequisites
  	// PREREQ_SENIOR(cs4560,senior1)
 
-	CLASS(cs4561,REQUIREDCS,SPRING, Senior Design II, Software Design and Development II)
+	CLASS(cs4561,REQUIREDCS,SPRING, Sen. Design II, Software Design and Development II)
 	PREREQ(cs4561,cs4560)
 
 
@@ -201,7 +203,7 @@ digraph cs_undergrad {
 	CLASS(cs4620,TECHELECTCS, FALL, Database, Database Systems)
 	PREREQ(cs4620,cs3610)
 	
-	CLASS(cs4750,TECHELECTCS, FALL, Internet Engr., Internet Engineering)
+	CLASS(cs4750,TECHELECTCS, FALL, Inet. Engr., Internet Engineering)
 	PREREQ(cs4750,cs3610)
 	
 	CLASS(cs4800,TECHELECTCS, FALLSPRING, AI, Artificial Intelligence)

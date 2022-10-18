@@ -3,16 +3,16 @@
 // Version 0.9 - Shawn Ostermann - May 24, 2022
 
 // the look of required classes
-#define REQUIRED_TEMPLATE(color) shape=oval, sides=4, penwidth=4, style = "filled", fontcolor=black, fillcolor=color
-#define REQUIREDCS   REQUIRED_TEMPLATE(green2)
-#define REQUIREDEE   REQUIRED_TEMPLATE(goldenrod)
-#define MATH 	     REQUIRED_TEMPLATE(skyblue)
-#define SCIENCE      REQUIRED_TEMPLATE(red1)
+#define REQUIRED_TEMPLATE(bgcolor,fcolor) shape=oval, sides=4, penwidth=4, style = "filled", fontcolor=fcolor, fillcolor=bgcolor
+#define REQUIREDCS   REQUIRED_TEMPLATE(green2,		white)
+#define REQUIREDEE   REQUIRED_TEMPLATE(goldenrod,	black)
+#define MATH 	     REQUIRED_TEMPLATE(skyblue,		black)
+#define SCIENCE      REQUIRED_TEMPLATE(red1,		black)
 
 // the look of elective classes
-#define ELECTIVE_TEMPLATE(color) shape = rectangle, sides=10, penwidth=4, color = blueviolet, style = filled, fillcolor=color
-#define TECHELECTCS ELECTIVE_TEMPLATE(palegreen) 
-#define TECHELECTEE ELECTIVE_TEMPLATE(lightgoldenrod1)
+#define ELECTIVE_TEMPLATE(bgcolor,fcolor) shape = rectangle, sides=10, penwidth=4, fillcolor = bgcolor, style = filled, fontcolor=fcolor
+#define TECHELECTCS ELECTIVE_TEMPLATE(palegreen,		black) 
+#define TECHELECTEE ELECTIVE_TEMPLATE(lightgoldenrod1,	black)
 
 // the look of remedial (Intro) classes
 #define REMEDIAL_TEMPLATE(color) shape = box, penwidth=2, style = filled, fontcolor=black, fillcolor=color
@@ -59,6 +59,16 @@ node [type,width=0.25,margin="0,0",fontsize=28] ; classnumber [margin="0,0", lab
 	  < \
 	  	<FONT POINT-SIZE="72"> <b> classnumber </b> </FONT> <br/> \
 	  	<FONT POINT-SIZE="55"> shortname </FONT> <FONT POINT-SIZE="50"> <br /> </FONT>\
+	  	<FONT POINT-SIZE="48" face="Impact"> when   </FONT> \
+	   >, \
+	   ];
+// classes with a caveat (4 lines)
+#define CLASS4(classnumber,type,when,shortname,longname,caveat)  \
+node [type,width=0.25,margin="0,0",fontsize=28] ; classnumber [margin="0,0", label=\
+	  < \
+	  	<FONT POINT-SIZE="72"> <b> classnumber </b> </FONT> <br/> \
+	  	<FONT POINT-SIZE="55"> shortname </FONT> <FONT POINT-SIZE="50"> <br /> </FONT>\
+	  	<FONT POINT-SIZE="55"> caveat </FONT> <FONT POINT-SIZE="50"> <br /> </FONT>\
 	  	<FONT POINT-SIZE="48" face="Impact"> when   </FONT> \
 	   >, \
 	   ];
