@@ -32,7 +32,7 @@ png: ${PNGFILES}
 %.ps: %.gv
 	dot -Tps  -o $*.ps $*.gv
 
-commit:
+commit: pdf png
 	git add ${HEADERS} ${DOTCCSOURCES} ${DOTSOURCES} ${PDFFILES} Makefile
 	git commit -m latest
 	git push
