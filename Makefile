@@ -39,3 +39,4 @@ commit:
 
 clean:
 	rm -f ${PNGFILES} ${PDFFILES}
+	
