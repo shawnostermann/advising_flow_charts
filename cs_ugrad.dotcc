@@ -88,13 +88,24 @@ digraph cs_undergrad {
 	PREREQ_C(ma3200or3210,ma2302)
 
 	CLASS(cs2400,REQUIREDCS,FALLSPRING,CS1, Introduction to Computer Science I)
-	// PREREQ(cs2400,ma1200_MPL2)
+	// REQUISITE: (MATH 1200 or Math Placement level 2 or higher) and (CS 1400 or 2300 or ET 2100 or Computer Science Placement level 3)
 	PREREQ(cs2400,cs_intro)
 	PREREQ(cs2400,math_intro)
 
 	CLASS(cs2401,REQUIREDCS,FALLSPRING,CS2, Introduction to Computer Science II)
+	// CS 2400 and (MATH 1300 or 2301 or Math Placement Level 3)
+	NODE_OR(cs2401_or)
 	PREREQ(cs2401,cs2400)
-	PREREQ(cs2401,ma2301)
+	PREREQ(cs2401,cs2401_or)
+	PREREQ(cs2401_or,ma1300)
+	PREREQ(cs2401_or,ma2301)
+	PREREQ_MPL(cs2401_or,math_placement,"MATH-PL3")
+	// REQUISITE: CS 2400 and (MATH 1300 or 2301 or Math Placement Level 3)
+	//
+	// NOT FINISHED!!!
+	//
+	//
+
 
 	CLASS(cs3000,REQUIREDCS,FALLSPRING,Disc Struct, Discrete Structures)
 	PREREQ(cs3000,cs2400)
@@ -113,20 +124,24 @@ digraph cs_undergrad {
 
 	CLASS(ee1024,REQUIREDEE, FALLSPRING, Intro CpE, Introduction to Computer Engineering)
 	PREREQ(ee1024,math_intro)
+	// MATH 1200 or math placement level 2 or higher
 
     CLASS(ee3613,REQUIREDEE, FALLSPRING,Comp Org, Computer Organization)	
 	PREREQ(ee3613,ee1024)
 	PREREQ(ee3613,cs2400)
+	// REQUISITE: CS 2400 and EE 1024
 
 	CLASS(ee3954,REQUIREDEE, FALLSPRING, Micro, Microprocessors and Microcontrollers)
 	PREREQ(ee3954,ee1024)
 	PREREQ(ee3954,cs2400)
+	// REQUISITE: (CS 210 or 240A or 2400) and (EE 1024 or 102)
 
-    CLASS(ee3713,MATH,FALLSPRING,EE Stats, Applied Probability and Statistics for Electrical Engineers)
+    CLASS(ee3713,REQUIREDEE,FALLSPRING,EE Stats, Applied Probability and Statistics for Electrical Engineers)
 	PREREQ(ee3713,ma2302)
+	// REQUISITE: MATH 2302
 
 	CLASS(cs2653,REQUIREDCS,FALLSPRING, Comp Ethics, Professional and Ethical Aspects of Computing)
-	// change for Fall 22/23 - CS 2400 or Concurrent
+	// REQUISITE: CS 2400 or Concurrent
 	COREQ(cs2653,cs2400)
 
 	CLASS(cs3200,REQUIREDCS,FALL, Prog Lang, Organization of Programming Languages)
@@ -225,15 +240,14 @@ digraph cs_undergrad {
 
 	CLASS(ee4673,TECHELECTEE, FALLSPRING, Embed Sys, Embedded Systems)
 	PREREQ(ee4673,ee3954)	
-	// Requisites: EE 3954EE 395A or 3954
+	// REQUISITE: EE 3954EE 395A or 3954
 
 	CLASS(ee4683,TECHELECTEE, FALLSPRING, Comp Arch, Computer Architecture)
 	PREREQ(ee4683,ee3613)
+	// REQUISITE: EE 3613
 	
 
 	{ rank=same cs2400 ee1024 ma2301 }
 
-
-	
 	
 }

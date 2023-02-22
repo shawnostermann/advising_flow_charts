@@ -98,8 +98,19 @@ digraph cs_undergrad {
  math_intro -> cs2400 [penwidth=6]
 
  node [shape=oval, sides=4, penwidth=4, style = "filled", fontcolor=white, fillcolor=green2,width=0.25,margin="0,0",fontsize=28] ; cs2401 [margin="0,0", label= < <FONT POINT-SIZE="72"> <b> cs2401 </b> </FONT> <br/> <FONT POINT-SIZE="55"> CS2 </FONT> <FONT POINT-SIZE="50"> <br /> </FONT> <FONT POINT-SIZE="48" face="Impact"> <FONT COLOR="darkblue"><b> F/S </b></FONT>   </FONT> >, ];
+
+ node [shape=circle, style = "filled", penwidth=1, fontcolor=black, fillcolor=yellow] ; cs2401_or [label=" or "];
  cs2400 -> cs2401 [penwidth=6]
- ma2301 -> cs2401 [penwidth=6]
+ cs2401_or -> cs2401 [penwidth=6]
+ ma1300 -> cs2401_or [penwidth=6]
+ ma2301 -> cs2401_or [penwidth=6]
+ math_placement -> cs2401_or [ label = "MATH-PL3", fontsize=30, fontcolor=blue, penwidth=5, color=blue, style=bold]
+
+
+
+
+
+
 
  node [shape=oval, sides=4, penwidth=4, style = "filled", fontcolor=white, fillcolor=green2,width=0.25,margin="0,0",fontsize=28] ; cs3000 [margin="0,0", label= < <FONT POINT-SIZE="72"> <b> cs3000 </b> </FONT> <br/> <FONT POINT-SIZE="55"> Disc Struct </FONT> <FONT POINT-SIZE="50"> <br /> </FONT> <FONT POINT-SIZE="48" face="Impact"> <FONT COLOR="darkblue"><b> F/S </b></FONT>   </FONT> >, ];
  cs2400 -> cs3000 [penwidth=6]
@@ -119,16 +130,20 @@ digraph cs_undergrad {
  node [shape=oval, sides=4, penwidth=4, style = "filled", fontcolor=black, fillcolor=goldenrod,width=0.25,margin="0,0",fontsize=28] ; ee1024 [margin="0,0", label= < <FONT POINT-SIZE="72"> <b> ee1024 </b> </FONT> <br/> <FONT POINT-SIZE="55"> Intro CpE </FONT> <FONT POINT-SIZE="50"> <br /> </FONT> <FONT POINT-SIZE="48" face="Impact"> <FONT COLOR="darkblue"><b> F/S </b></FONT>   </FONT> >, ];
  math_intro -> ee1024 [penwidth=6]
 
+
     node [shape=oval, sides=4, penwidth=4, style = "filled", fontcolor=black, fillcolor=goldenrod,width=0.25,margin="0,0",fontsize=28] ; ee3613 [margin="0,0", label= < <FONT POINT-SIZE="72"> <b> ee3613 </b> </FONT> <br/> <FONT POINT-SIZE="55"> Comp Org </FONT> <FONT POINT-SIZE="50"> <br /> </FONT> <FONT POINT-SIZE="48" face="Impact"> <FONT COLOR="darkblue"><b> F/S </b></FONT>   </FONT> >, ];
  ee1024 -> ee3613 [penwidth=6]
  cs2400 -> ee3613 [penwidth=6]
+
 
  node [shape=oval, sides=4, penwidth=4, style = "filled", fontcolor=black, fillcolor=goldenrod,width=0.25,margin="0,0",fontsize=28] ; ee3954 [margin="0,0", label= < <FONT POINT-SIZE="72"> <b> ee3954 </b> </FONT> <br/> <FONT POINT-SIZE="55"> Micro </FONT> <FONT POINT-SIZE="50"> <br /> </FONT> <FONT POINT-SIZE="48" face="Impact"> <FONT COLOR="darkblue"><b> F/S </b></FONT>   </FONT> >, ];
  ee1024 -> ee3954 [penwidth=6]
  cs2400 -> ee3954 [penwidth=6]
 
-    node [shape=oval, sides=4, penwidth=4, style = "filled", fontcolor=black, fillcolor=skyblue,width=0.25,margin="0,0",fontsize=28] ; ee3713 [margin="0,0", label= < <FONT POINT-SIZE="72"> <b> ee3713 </b> </FONT> <br/> <FONT POINT-SIZE="55"> EE Stats </FONT> <FONT POINT-SIZE="50"> <br /> </FONT> <FONT POINT-SIZE="48" face="Impact"> <FONT COLOR="darkblue"><b> F/S </b></FONT>   </FONT> >, ];
+
+    node [shape=oval, sides=4, penwidth=4, style = "filled", fontcolor=black, fillcolor=goldenrod,width=0.25,margin="0,0",fontsize=28] ; ee3713 [margin="0,0", label= < <FONT POINT-SIZE="72"> <b> ee3713 </b> </FONT> <br/> <FONT POINT-SIZE="55"> EE Stats </FONT> <FONT POINT-SIZE="50"> <br /> </FONT> <FONT POINT-SIZE="48" face="Impact"> <FONT COLOR="darkblue"><b> F/S </b></FONT>   </FONT> >, ];
  ma2302 -> ee3713 [penwidth=6]
+
 
  node [shape=oval, sides=4, penwidth=4, style = "filled", fontcolor=white, fillcolor=green2,width=0.25,margin="0,0",fontsize=28] ; cs2653 [margin="0,0", label= < <FONT POINT-SIZE="72"> <b> cs2653 </b> </FONT> <br/> <FONT POINT-SIZE="55"> Comp Ethics </FONT> <FONT POINT-SIZE="50"> <br /> </FONT> <FONT POINT-SIZE="48" face="Impact"> <FONT COLOR="darkblue"><b> F/S </b></FONT>   </FONT> >, ];
 
@@ -170,7 +185,7 @@ digraph cs_undergrad {
 
  node [shape = rectangle, sides=10, penwidth=4, fillcolor = palegreen, style = filled, fontcolor=black,width=0.25,margin="0,0",fontsize=28] ; cs4060 [margin="0,0", label= < <FONT POINT-SIZE="72"> <b> cs4060 </b> </FONT> <br/> <FONT POINT-SIZE="55"> Theory </FONT> <FONT POINT-SIZE="50"> <br /> </FONT> <FONT POINT-SIZE="48" face="Impact"> <FONT COLOR="red"><b> Spring </b></FONT>   </FONT> >, ];
  cs3000 -> cs4060 [penwidth=6]
-# 183 "cs_ugrad.dotcc"
+# 198 "cs_ugrad.dotcc"
  node [shape = rectangle, sides=10, penwidth=4, fillcolor = palegreen, style = filled, fontcolor=black,width=0.25,margin="0,0",fontsize=28] ; cs4160 [margin="0,0", label= < <FONT POINT-SIZE="72"> <b> cs4160 </b> </FONT> <br/> <FONT POINT-SIZE="55"> BioInf Tools </FONT> <FONT POINT-SIZE="50"> <br /> </FONT> <FONT POINT-SIZE="48" face="Impact"> <FONT COLOR="darkblue"><b> F/S </b></FONT>   </FONT> >, ];
  cs3610 -> cs4160 [penwidth=6]
 
@@ -222,9 +237,8 @@ digraph cs_undergrad {
  ee3613 -> ee4683 [penwidth=6]
 
 
+
  { rank=same cs2400 ee1024 ma2301 }
-
-
 
 
 }
