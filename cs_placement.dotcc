@@ -30,7 +30,7 @@ digraph cs_placement {
 	// title for the whole page
 	labelloc="t"
 	fontsize=90
-    label="CS Placement Exams - Fall 22/23 - August 23, 2022"
+    label="CS Placement Exams - Spring 22/23 - Feb 22, 2023"
 
 	// placement tests
 	PLACEMENT_TEST(cs_placement,CS Placement Test,REQUIREDCS)
@@ -39,25 +39,27 @@ digraph cs_placement {
 
 	// remedial CS course options
 	CLASS(cs1400,REMEDIALCS,FALL,Intro Python,Fundamentals of Computing)	
-	PREREQ_CSPL(cs1400,cs_placement,"CS-PL<3")
+	PREREQ_CSPL(cs1400,cs_placement,"CS-PL1")
+	// (MATH 1200 or concurrent or math placement level 2 or higher) and (CS placement level 1)
 	CLASS(cs2300,REMEDIALCS,FALLSPRING,Java,Computer Programming in JAVA)
-	PREREQ_CSPL(cs2300,cs_placement,"CS-PL<3")
+	PREREQ_MPL(cs2300,math_placement,"MATH-PL2")
+	// MATH 163A or 1200 or 1350 or math placement level 2 or higher
 	CLASS(et2100,REMEDIALCS,FALLSPRING,Engr. Prog.,Engineering Programming)	
-	PREREQ_CSPL(et2100,cs_placement,"CS-PL<3")
-
+	PREREQ_MPL(et2100,math_placement,"MATH-PL2")
+	// MATH 1200 or 1300 or 2301 or (Math placement level 2 or higher)
 
 
 	// remedial Math course options
     CLASS(ma1200,REMEDIALMATH,FALLSPRING,Algebra,Algebra)
 	PREREQ_MPL(ma1200,math_placement,"Math-PL1")
-
+	// (C or better in MATH D005 or 102 or D004) or (Math Place DV & co-req MATH 1200L) or (Math Place Level 1 or higher) 
 
     CLASS(ma1300,REMEDIALMATH,FALLSPRING,Pre Calc,Pre-Calculus)
-	// (C or better in MATH 1200 or MATH 1321) or math placement level 2 or higher WARNING: No credit for both this course and MATH 1322 (first course taken deducted)
 	NODE_OR(ma1300_or)
 	PREREQ(ma1300,ma1300_or)
 	PREREQ_C(ma1300_or,ma1200)
 	PREREQ_MPL(ma1300_or,math_placement,"Math-PL2")
+	// (C or better in MATH 1200 or MATH 1321) or math placement level 2 or higher 
 
 
 	// required courses
@@ -70,8 +72,7 @@ digraph cs_placement {
 
 
 	CLASS(cs2400,REQUIREDCS,FALLSPRING,CS1, Introduction to Computer Science I)
-	// (MATH 1200 or Math Placement level 2 or higher) and 
-	// (CS 1400 or 2300 or ET 2100 or Computer Science Placement level 3)
+	// (MATH 1200 or Math Placement level 2 or higher) and (CS 1400 or 2300 or ET 2100 or Computer Science Placement level 3)
 	NODE_OR(cs2400_or)
 	PREREQ(cs2400,cs2400_or)
 	PREREQ(cs2400_or,cs1400)
@@ -81,7 +82,7 @@ digraph cs_placement {
 	NODE_OR(cs2400_mor)
 	PREREQ(cs2400_mor,ma1200)
 	PREREQ(cs2400,cs2400_mor)
-	PREREQ_MPL(cs2400_mor,math_placement,">= MATH-PL2")
+	PREREQ_MPL(cs2400_mor,math_placement,"MATH-PL2")
 
 	CLASS(cs2401,REQUIREDCS,FALLSPRING,CS2, Introduction to Computer Science II)
 	// CS 2400 and (MATH 1300 or 2301 or Math Placement Level 3)
@@ -89,6 +90,7 @@ digraph cs_placement {
 	PREREQ(cs2401,cs2400)
 	PREREQ(cs2401,cs2401_or)
 	PREREQ(cs2401_or,ma1300)
+	PREREQ(cs2401_or,ma2301)
 	PREREQ_MPL(cs2401_or,math_placement,"MATH-PL3")
 
 }
