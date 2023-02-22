@@ -74,14 +74,16 @@ digraph cs_undergrad {
 
     CLASS(ma2301,MATH,FALLSPRING,Calc I,Calculus I)
 	PREREQ(ma2301,math_intro)
+	// (B or better in MATH 1350) or (C or better in 1300 or 1322) or (Math placement level 3)
 
 	CLASS(ma2302,MATH,FALLSPRING,Calc II,Calculus II)
 	PREREQ_C(ma2302,ma2301)
+	// REQUISITE: C or better in MATH 2301 or 263B
 
 	CLASS(ma3200or3210,MATH,FALLSPRING,Linear Algebra,Linear Algebra)
-	// 3200: C or better in (MATH 163A or 263A or 1350 or 2301 or 2302) and WARNING No credit for both this course and the following (always deduct credit for first course taken): MATH 3210
-	// 3210 hasnt been offered in 2 years!!
-	// 3210: MATH 2302 and (3050 or CS 3000) and WARNING: No credit for both this course and MATH 3200 (first course taken deducted)
+	// 3200: C or better in (MATH 163A or 263A or 1350 or 2301 or 2302) 
+	// 3210 hasnt been offered in 2 years!!  (ignoring cs3000 prereq - too messy)
+	// 3210: MATH 2302 and (3050 or CS 3000)
 	PREREQ_C(ma3200or3210,ma2301)
 	PREREQ_C(ma3200or3210,ma2302)
 
