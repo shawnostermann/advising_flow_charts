@@ -195,13 +195,13 @@ digraph cs_undergrad {
 	CLASS(cs4201,TECHELECTCS, TBA, Soft Verif, Software Verification)
 	PREREQ(cs4201,cs3200)
 
+#endif	
+
 	CLASS(cs4250,TECHELECTCS, TBA, Graphics, Interactive Computer Graphics)
 	// Not offered since Fall 2021
 	// REQUISITE: CS 3610 and (MATH 3200 or 3210)
 	PREREQ(cs4250,cs3610) 
 	PREREQ(cs4250,ma3200or3210) 
-
-#endif	
 
 	CLASS(cs4160,TECHELECTCS, FALLSPRING, BioInf Tools, Problem Solving with Bioinformatics Tools)
 	// REQUISITE: CS 3610
