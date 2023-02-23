@@ -163,7 +163,7 @@ digraph cs_undergrad {
  cs3200 -> cs4100 [penwidth=6]
  cs3610 -> cs4100 [penwidth=6]
 
- node [shape=oval, sides=4, penwidth=4, style = "filled", fontcolor=white, fillcolor=green2,width=0.25,margin="0,0",fontsize=28] ; cs4420 [margin="0,0", label= < <FONT POINT-SIZE="72"> <b> cs4420 </b> </FONT> <br/> <FONT POINT-SIZE="55"> Op Sys </FONT> <FONT POINT-SIZE="50"> <br /> </FONT> <FONT POINT-SIZE="48" face="Impact"> <FONT COLOR="red"><b> Spring </b></FONT>   </FONT> >, ];
+ node [shape=oval, sides=4, penwidth=4, style = "filled", fontcolor=white, fillcolor=green2,width=0.25,margin="0,0",fontsize=28] ; cs4420 [margin="0,0", label= < <FONT POINT-SIZE="72"> <b> cs4420 </b> </FONT> <br/> <FONT POINT-SIZE="55"> Op Sys </FONT> <FONT POINT-SIZE="50"> <br /> </FONT> <FONT POINT-SIZE="48" face="Impact"> <FONT COLOR="goldenrod4"><b> Fall </b></FONT>   </FONT> >, ];
 
  cs3610 -> cs4420 [penwidth=6]
  ee3613 -> cs4420 [penwidth=6]
@@ -185,7 +185,13 @@ digraph cs_undergrad {
  node [shape = rectangle, sides=10, penwidth=4, fillcolor = palegreen, style = filled, fontcolor=black,width=0.25,margin="0,0",fontsize=28] ; cs4060 [margin="0,0", label= < <FONT POINT-SIZE="72"> <b> cs4060 </b> </FONT> <br/> <FONT POINT-SIZE="55"> Theory </FONT> <FONT POINT-SIZE="50"> <br /> </FONT> <FONT POINT-SIZE="48" face="Impact"> <FONT COLOR="red"><b> Spring </b></FONT>   </FONT> >, ];
 
  cs3000 -> cs4060 [penwidth=6]
-# 206 "cs_ugrad.dotcc"
+# 200 "cs_ugrad.dotcc"
+ node [shape = rectangle, sides=10, penwidth=4, fillcolor = palegreen, style = filled, fontcolor=black,width=0.25,margin="0,0",fontsize=28] ; cs4250 [margin="0,0", label= < <FONT POINT-SIZE="72"> <b> cs4250 </b> </FONT> <br/> <FONT POINT-SIZE="55"> Graphics </FONT> <FONT POINT-SIZE="50"> <br /> </FONT> <FONT POINT-SIZE="48" face="Impact"> <FONT COLOR="white"><b> TBA </b></FONT>   </FONT> >, ];
+
+
+ cs3610 -> cs4250 [penwidth=6]
+ ma3200or3210 -> cs4250 [penwidth=6]
+
  node [shape = rectangle, sides=10, penwidth=4, fillcolor = palegreen, style = filled, fontcolor=black,width=0.25,margin="0,0",fontsize=28] ; cs4160 [margin="0,0", label= < <FONT POINT-SIZE="72"> <b> cs4160 </b> </FONT> <br/> <FONT POINT-SIZE="55"> BioInf Tools </FONT> <FONT POINT-SIZE="50"> <br /> </FONT> <FONT POINT-SIZE="48" face="Impact"> <FONT COLOR="darkblue"><b> F/S </b></FONT>   </FONT> >, ];
 
  cs3610 -> cs4160 [penwidth=6]
