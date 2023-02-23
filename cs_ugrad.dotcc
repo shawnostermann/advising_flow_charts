@@ -164,7 +164,6 @@ digraph cs_undergrad {
 	PREREQ(cs4420,ee3613)
 	PREREQ(cs4420,ee3954)
 
-
 	CLASS4(cs4560,REQUIREDCS,FALL, Sen. Design I, Software Design and Development I, (seniors only))
 	// REQUISITE: (CS 3560 and 3610) and Sr only
 	PREREQ(cs4560,cs3560)
@@ -248,7 +247,7 @@ digraph cs_undergrad {
 	PREREQ(cs4770,cs3610)
 	PREREQ(cs4770,cs3560)
 	
-	CLASS(cs4350,TECHELECTCS, Spring, Game Eng Design, Fundamentals of Game Engine Design)
+	CLASS(cs4350,TECHELECTCS, Spring, Game Eng Des, Fundamentals of Game Engine Design)
 	// REQUISITE: CS 3610
 	PREREQ(cs4350,cs3610)
 
@@ -260,7 +259,7 @@ digraph cs_undergrad {
 	// REQUISITE: EE 3613
 	PREREQ(ee4683,ee3613)
 	
-	CLASS(ee4773,TECHELECTEE, SPRING, Found HW Security, Foundations of Hardware Security)
+	CLASS(ee4773,TECHELECTEE, SPRING, Found HW Sec, Foundations of Hardware Security)
 	// REQUISITE: EE 3954
 	PREREQ(ee4773,ee3954)
 	
