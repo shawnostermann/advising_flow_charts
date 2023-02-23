@@ -158,7 +158,7 @@ digraph cs_undergrad {
 	PREREQ(cs4100,cs3200)
 	PREREQ(cs4100,cs3610)
 
-	CLASS(cs4420,REQUIREDCS,SPRING ,Op Sys, Operating Systems)
+	CLASS(cs4420,REQUIREDCS,FALL ,Op Sys, Operating Systems)
 	// REQUISITE: CS 3610 and EE 3613 and 3954 or CS 361 and EE 395A
 	PREREQ(cs4420,cs3610)
 	PREREQ(cs4420,ee3613)
