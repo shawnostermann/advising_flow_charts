@@ -41,26 +41,30 @@ digraph cs_undergrad {
   	};
 	subgraph cluster_Legend {
     	style = rounded;
-		label="Legend"
-		fontsize="90"
+		label=""
+		fontsize="0"
 		margin=50		// more space in the margin around the nodes
 		penwidth=10   	// thicker line around the legend
 
+    	CLASS(intro,	REMEDIALMATH, ,	Introductory,Introductory)
 		CLASS(math, 	MATH, , 		Math Required, Math Required)
-    	CLASS(intro,	REMEDIALMATH, ,	Introductory,Introductory)CLASS(eetech,	TECHELECTEE, , 	EE Tech Elect, Electrical Engineering Technical Elective)
-		CLASS(cstech,	TECHELECTCS, , 	CS Tech Elect, Computer Science Technical Elective)
+		CLASS(eetech,	TECHELECTEE, , 	EE Tech Elect, Electrical Engineering Technical Elective)
 		CLASS(eereq, 	REQUIREDEE, , 	EE Required, Electrical Engineering Required)
+		CLASS(cstech,	TECHELECTCS, , 	CS Tech Elect, Computer Science Technical Elective)
 		CLASS(csreq, 	REQUIREDCS, , 	CS Required, Computer Science Required)
 		
 
 		// these fake dependencies constrain the order of where the legend goes
-		csreq  -> eereq  -> math   [style=invis]
-		cstech -> eetech -> intro   [style=invis]
+		// csreq  -> eereq  -> math   [style=invis]  // for verticle 3x2
+		// cstech -> eetech -> intro   [style=invis]   // for horizontal 2x3
 		// cs4561 -> eetech [style=invis]
+		// csreq  -> eereq   [style=invis]  
+		// cstech -> eetech   [style=invis]   
+		// intro  -> math   [style=invis]  
   	};
 // leave some free space to the right of the legend
 	subgraph free_space {	
-		EXTRA [ label = "S2", style = invis ]; FREESPACE2 [width=20,style = invis]; 
+		EXTRA [ label = "S2", style = invis ]; FREESPACE2 [width=5,style = invis]; 
   	};
 	
 
