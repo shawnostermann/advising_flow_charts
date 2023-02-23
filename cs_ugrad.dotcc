@@ -93,29 +93,25 @@ digraph cs_undergrad {
 	PREREQ(cs2400,math_intro)
 
 	CLASS(cs2401,REQUIREDCS,FALLSPRING,CS2, Introduction to Computer Science II)
-	// CS 2400 and (MATH 1300 or 2301 or Math Placement Level 3)
-	NODE_OR(cs2401_or)
-	PREREQ(cs2401,cs2400)
-	PREREQ(cs2401,cs2401_or)
-	PREREQ(cs2401_or,ma1300)
-	PREREQ(cs2401_or,ma2301)
-	PREREQ_MPL(cs2401_or,math_placement,"MATH-PL3")
 	// REQUISITE: CS 2400 and (MATH 1300 or 2301 or Math Placement Level 3)
-	//
-	// NOT FINISHED!!!
-	//
-	//
+	PREREQ(cs2401,cs2400)
+	NODE_OR(cs2401_or)
+	PREREQ(cs2401,cs2401_or)
+	PREREQ(cs2401_or,math_intro)
+	PREREQ(cs2401_or,ma2301)
 
 
 	CLASS(cs3000,REQUIREDCS,FALLSPRING,Disc Struct, Discrete Structures)
+	// REQUISITE: CS 2400
 	PREREQ(cs3000,cs2400)
 
 	CLASS(cs3610,REQUIREDCS,FALLSPRING,Data Struct, Data Structures)
-	// (CS 3000 or MATH 3050) and C or better in CS 2401
-	PREREQ_C(cs3610,cs2400)
+	// REQUISITE: (CS 3000 or MATH 3050) and C or better in CS 2401
+	PREREQ_C(cs3610,cs2401)
 	PREREQ(cs3610,cs3000)
 
 	CLASS(cs3560,REQUIREDCS,FALLSPRING,Sw Tools, Software Tools)
+	// REQUISITE: CS 3610 or concurrent
 	COREQ(cs3560,cs3610)
 
 
@@ -127,58 +123,63 @@ digraph cs_undergrad {
 	// MATH 1200 or math placement level 2 or higher
 
     CLASS(ee3613,REQUIREDEE, FALLSPRING,Comp Org, Computer Organization)	
+	// REQUISITE: CS 2400 and EE 1024
 	PREREQ(ee3613,ee1024)
 	PREREQ(ee3613,cs2400)
-	// REQUISITE: CS 2400 and EE 1024
 
 	CLASS(ee3954,REQUIREDEE, FALLSPRING, Micro, Microprocessors and Microcontrollers)
+	// REQUISITE: (CS 210 or 240A or 2400) and (EE 1024 or 102)
 	PREREQ(ee3954,ee1024)
 	PREREQ(ee3954,cs2400)
-	// REQUISITE: (CS 210 or 240A or 2400) and (EE 1024 or 102)
 
     CLASS(ee3713,REQUIREDEE,FALLSPRING,EE Stats, Applied Probability and Statistics for Electrical Engineers)
-	PREREQ(ee3713,ma2302)
 	// REQUISITE: MATH 2302
+	PREREQ(ee3713,ma2302)
 
 	CLASS(cs2653,REQUIREDCS,FALLSPRING, Comp Ethics, Professional and Ethical Aspects of Computing)
 	// REQUISITE: CS 2400 or Concurrent
 	COREQ(cs2653,cs2400)
 
 	CLASS(cs3200,REQUIREDCS,FALL, Prog Lang, Organization of Programming Languages)
-	// change for fall 22/23, Changed to "CS 3610 or Concurrent"
+	// REQUISITE: CS 3610 or concurrent
 	COREQ(cs3200,cs3610)
 
 	CLASS(cs4000,REQUIREDCS,SPRING,Dist.  Par., Introduction to Distributed Parallel and Web-Centric Computing)
-	PREREQ(cs4000,cs3610)
+	// REQUISITE: CS 3560 and 3610
 	PREREQ(cs4000,cs3560)
+	PREREQ(cs4000,cs3610)
 
 	CLASS(cs4040,REQUIREDCS,FALL, Algorithms, Design and Analysis of Algorithms)
+	// REQUISITE: CS 3610
 	PREREQ(cs4040,cs3610)
 
 	CLASS(cs4100,REQUIREDCS,SPRING, Compilers, Introduction to Formal Languages and Compiler)
+	// REQUISITE: CS 3200 and 3610
 	PREREQ(cs4100,cs3200)
 	PREREQ(cs4100,cs3610)
 
-	CLASS4(cs4420,REQUIREDCS,FALLSPRING  ,Op Sys, Operating Systems,(S 22/23 only))
-	// note that 22/23 is the last Spring Offering
+	CLASS(cs4420,REQUIREDCS,SPRING ,Op Sys, Operating Systems)
+	// REQUISITE: CS 3610 and EE 3613 and 3954 or CS 361 and EE 395A
+	PREREQ(cs4420,cs3610)
 	PREREQ(cs4420,ee3613)
 	PREREQ(cs4420,ee3954)
-	PREREQ(cs4420,cs3610)
 
 
 	CLASS4(cs4560,REQUIREDCS,FALL, Sen. Design I, Software Design and Development I, (seniors only))
+	// REQUISITE: (CS 3560 and 3610) and Sr only
 	PREREQ(cs4560,cs3560)
 	PREREQ(cs4560,cs3610)  // note that 3560 and 3610 are corequisites
- 	// PREREQ_SENIOR(cs4560,senior1)
 
 	CLASS(cs4561,REQUIREDCS,SPRING, Sen. Design II, Software Design and Development II)
+	// REQUISITE: CS 4560	
 	PREREQ(cs4561,cs4560)
 
 
-	// =================
-	// Tech Electives
-	// =================
+// =====================================================================================
+// Tech Electives
+// =====================================================================================
 	CLASS(cs4060,TECHELECTCS, SPRING, Theory, Computation Theory)
+	// REQUISITE: CS 3000
 	PREREQ(cs4060,cs3000)
 
 #ifdef NOTOFFERED	
@@ -189,65 +190,132 @@ digraph cs_undergrad {
 
 	// not offered since 2017
 	CLASS(cs4580,TECHELECTCS, TBA, Op Sys II, Operating Systems II)
+	// REQUISITE: CS 4420
 	PREREQ(cs4580,cs4420)
 	
 	CLASS(cs4201,TECHELECTCS, TBA, Soft Verif, Software Verification)
 	PREREQ(cs4201,cs3200)
+
+	CLASS(cs4250,TECHELECTCS, TBA, Graphics, Interactive Computer Graphics)
+	// Not offered since Fall 2021
+	// REQUISITE: CS 3610 and (MATH 3200 or 3210)
+	PREREQ(cs4250,cs3610) 
+	PREREQ(cs4250,ma3200or3210) 
+
 #endif	
 
 	CLASS(cs4160,TECHELECTCS, FALLSPRING, BioInf Tools, Problem Solving with Bioinformatics Tools)
+	// REQUISITE: CS 3610
 	PREREQ(cs4160,cs3610)
 
 	CLASS(cs4170,TECHELECTCS, FALL, Data Mining, Data Mining With Applications in the Life Sciences)
+	// REQUISITE: CS 3610 or PBIO 4160
 	PREREQ(cs4170,cs3610)
 	// OR PREREQ(cs4170, PBIO 4160)
 	
 	CLASS(cs4180,TECHELECTCS, FALLSPRING, BioInf Stats, Statistical Foundation for Bioinformatics)
+	// REQUISITE: CS 4170 and EE 3713 and (CS 4160 or PBIO 4160)
 	PREREQ(cs4180,cs4170)
 	PREREQ(cs4180,ee3713)
 	PREREQ(cs4180,cs4160)
 	// Ive only listed cs4160 as the prereq, because PBIO4160 is cross listed as cs4160
-	// Requisites: CS 4170 and EE 3713 and (CS 4160 or PBIO 4160)
 	
-	CLASS(cs4250,TECHELECTCS, FALL, Graphics, Interactive Computer Graphics)
-	PREREQ(cs4250,cs3610) 
-	PREREQ(cs4250,ma3200or3210) 
-	// Requisites: CS 3610 and (MATH 3200 or 3210)
-
+	
 	CLASS(cs4440,TECHELECTCS, TBA, Data Comm, Data Communications)
+	// REQUISITE: cs4420
 	PREREQ(cs4440,cs4420)
 	
 	CLASS(cs4620,TECHELECTCS, FALL, Database, Database Systems)
+	// REQUISITE: CS 3610
 	PREREQ(cs4620,cs3610)
 	
 	CLASS(cs4750,TECHELECTCS, FALL, Inet. Engr., Internet Engineering)
+	// REQUISITE: CS 3610
 	PREREQ(cs4750,cs3610)
 	
-	CLASS(cs4800,TECHELECTCS, FALLSPRING, AI, Artificial Intelligence)
-	// Requisites: (CS 3000 or MATH 3050) and CS 2401
+	CLASS(cs4800,TECHELECTCS, TBA, AI, Artificial Intelligence)
+	// REQUISITE: (CS 3000 or MATH 3050) and CS 2401
 	PREREQ(cs4800,cs3000)
 	PREREQ(cs4800,cs2401)
 
-	CLASS(cs4830,TECHELECTCS, FALLSPRING, Mach Learn, Machine Learning)
+	CLASS(cs4830,TECHELECTCS, TBA, Mach Learn, Machine Learning)
+	// Requisites: CS 3610 and C or better in (MATH 3200 or 3210)
 	PREREQ(cs4830,cs3610)
 	PREREQ(cs4830,ma3200or3210)
-	// Requisites: CS 3610 and C or better in (MATH 3200 or 3210)
 
 	CLASS(cs4770,TECHELECTCS, FALL, Security, Introduction to Computer Software Security for Eng)
 	// new for Fall 22/23
 	PREREQ(cs4770,cs3610)
 	PREREQ(cs4770,cs3560)
+	
+	CLASS(cs4350,TECHELECTCS, Spring, Game Eng Design, Fundamentals of Game Engine Design)
+	// REQUISITE: CS 3610
+	PREREQ(cs4350,cs3610)
 
 	CLASS(ee4673,TECHELECTEE, FALLSPRING, Embed Sys, Embedded Systems)
-	PREREQ(ee4673,ee3954)	
 	// REQUISITE: EE 3954EE 395A or 3954
+	PREREQ(ee4673,ee3954)	
 
 	CLASS(ee4683,TECHELECTEE, FALLSPRING, Comp Arch, Computer Architecture)
-	PREREQ(ee4683,ee3613)
 	// REQUISITE: EE 3613
+	PREREQ(ee4683,ee3613)
 	
-
-	{ rank=same cs2400 ee1024 ma2301 }
-
+	CLASS(ee4773,TECHELECTEE, SPRING, Found HW Security, Foundations of Hardware Security)
+	// REQUISITE: EE 3954
+	PREREQ(ee4773,ee3954)
 	
+	{ rank=same cs2400 ee1024 ma2301 cs2401_or}
+
+// From 2022/2023 Undergraduate Catalog:
+// Computer Science Requirement
+
+// Complete the following courses:
+
+//     CS 2400 - Introduction to Computer Science I Credit Hours: 4
+//     CS 2401 - Introduction to Computer Science II Credit Hours: 4
+//     CS 2653 - Professional and Ethical Aspects of Computing Credit Hours: 3
+//     CS 3200 - Organization of Programming Languages Credit Hours: 3
+//     CS 3560 - Software Engineering Tools and Practices Credit Hours: 3
+//     CS 3610 - Data Structures Credit Hours: 4
+//     CS 4000 - Introduction to Distributed, Parallel, and Web-Centric Computing Credit Hours: 3
+//     CS 4040 - Design and Analysis of Algorithms Credit Hours: 3
+//     CS 4100 - Introduction to Formal Languages and Compilers Credit Hours: 3
+//     CS 4420 - Operating Systems Credit Hours: 3
+//     CS 4560 - Software Design and Development I Credit Hours: 3
+//     CS 4561 - Software Design and Development II Credit Hours: 3
+//     EE 1024 - Introduction to Computer Engineering Credit Hours: 4
+//     EE 3613 - Computer Organization Credit Hours: 3
+//     EE 3954 - Microprocessors and Microcontrollers Credit Hours: 4
+// 
+//     ET 1000 - The History of Engineering and Technology in Society Credit Hours: 3
+//     		or
+//     ET 2905 - Technology in World History Credit Hours: 3
+//     		or
+//     HIST 2905 - Technology in World History Credit Hours: 3
+	
+// 	Computer Science Technical Electives
+// Complete at least 9 hours from the following courses. 
+// Other computer science related courses may be used with departmental approval.
+//
+//     CS 4060 - Computation Theory Credit Hours: 3
+//     CS 4120 - Parallel Computing I Credit Hours: 3
+//     CS 4160 - Problem Solving with Bioinformatics Tools Credit Hours: 3
+//     CS 4170 - Data Mining With Applications in the Life Sciences Credit Hours: 3
+//     CS 4180 - Statistical Foundation for Bioinformatics Credit Hours: 3
+//     CS 4201 - Software Verification Credit Hours: 3
+//     CS 4250 - Interactive Computer Graphics Credit Hours: 3
+//     CS 4440 - Data Communications Credit Hours: 3
+//     CS 4580 - Operating Systems II Credit Hours: 3
+//     CS 4620 - Database Systems Credit Hours: 3
+//     CS 4750 - Internet Engineering Credit Hours: 4
+//     CS 4800 - Artificial Intelligence Credit Hours: 3
+//     CS 4830 - Machine Learning Credit Hours: 3
+//     EE 4673 - Embedded Systems Credit Hours: 3
+//     EE 4683 - Computer Architecture Credit Hours: 3
+
+// Not yet on DARS, but approved
+// ECE 4773 - Security
+// CS 4770 - Security
+// CS 4350 - Gaming
+
 }
