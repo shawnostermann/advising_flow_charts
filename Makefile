@@ -42,8 +42,12 @@ bw: ${DOTBWSOURCES} ${PDFBWFILES}
 		sed 's/COLOR="white"/COLOR="black"/g' | \
 		sed 's/color=red/color=black/g'> $*_bw.gv 
 
+# send them to my home directory on the EECS computers
+prime: all
+	scp -rp Makefile ${PDFFILES} ${PDFBWFILES} ${HEADERS} ${DOTCCSOURCES} README.md pu3:cs_prerequisite_bubblecharts
+
 	
-commit: pdf png
+commit: pdf png prime
 	git add ${HEADERS} ${DOTCCSOURCES} ${DOTSOURCES} ${PDFFILES} Makefile
 	git commit -m latest
 	git push
