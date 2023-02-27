@@ -8,11 +8,12 @@
 
 DOTCCSOURCES=${wildcard *.dotcc}
 DOTSOURCES=${DOTCCSOURCES:.dotcc=.gv}
+DOTBWSOURCES=${DOTSOURCES:.gv=_bw.gv}
 PNGFILES=${DOTSOURCES:.gv=.png}
 PDFFILES=${DOTSOURCES:.gv=.pdf}
 HEADERS=${wildcard *.h}
 
-default: pdf
+default: pdf png bw
 
 pdf: ${PDFFILES}
 png: ${PNGFILES}
@@ -31,6 +32,15 @@ png: ${PNGFILES}
 	dot -Teps  -o $*.eps $*.gv
 %.ps: %.gv
 	dot -Tps  -o $*.ps $*.gv
+%.gv: %.dotcc ${HEADERS}
+	cpp $*.dotcc > $*.gv 
+%_bw.gv: %.gv ${HEADERS}
+	cp $*.gv $*_bw.gv 
+#
+# make bw (black and white) copies for printing
+#
+bw: ${DOTBWSOURCES}
+	
 
 commit: pdf png
 	git add ${HEADERS} ${DOTCCSOURCES} ${DOTSOURCES} ${PDFFILES} Makefile
@@ -38,5 +48,5 @@ commit: pdf png
 	git push
 
 clean:
-	rm -f ${PNGFILES} ${PDFFILES}
+	rm -f ${PNGFILES} ${PDFFILES} ${DOTSOURCES} ${DOTBWSOURCES}
 	

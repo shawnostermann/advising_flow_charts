@@ -31,7 +31,7 @@ digraph cs_undergrad {
 	// title for the whole page
 	labelloc="t"
 	fontsize=90
-    label="CS Prerequites - Spring 22/23 - Feb 22, 2023"
+    label="CS Prerequites - Spring 22/23 - Feb 24, 2023"
 
 
 // make a quick legend
@@ -207,7 +207,7 @@ digraph cs_undergrad {
 	PREREQ(cs4250,cs3610) 
 	PREREQ(cs4250,ma3200or3210) 
 
-	CLASS(cs4160,TECHELECTCS, FALLSPRING, BioInf Tools, Problem Solving with Bioinformatics Tools)
+	CLASS(cs4160,TECHELECTCS, SPRING, BioInf Tools, Problem Solving with Bioinformatics Tools)
 	// REQUISITE: CS 3610
 	PREREQ(cs4160,cs3610)
 
@@ -216,7 +216,8 @@ digraph cs_undergrad {
 	PREREQ(cs4170,cs3610)
 	// OR PREREQ(cs4170, PBIO 4160)
 	
-	CLASS(cs4180,TECHELECTCS, FALLSPRING, BioInf Stats, Statistical Foundation for Bioinformatics)
+	CLASS(cs4180,TECHELECTCS, TBA, BioInf Stats, Statistical Foundation for Bioinformatics)
+	// last taught Jan 2020 by Drews
 	// REQUISITE: CS 4170 and EE 3713 and (CS 4160 or PBIO 4160)
 	PREREQ(cs4180,cs4170)
 	PREREQ(cs4180,ee3713)
@@ -255,11 +256,11 @@ digraph cs_undergrad {
 	// REQUISITE: CS 3610
 	PREREQ(cs4350,cs3610)
 
-	CLASS(ee4673,TECHELECTEE, FALLSPRING, Embed Sys, Embedded Systems)
+	CLASS(ee4673,TECHELECTEE, FALL, Embed Sys, Embedded Systems)
 	// REQUISITE: EE 3954EE 395A or 3954
 	PREREQ(ee4673,ee3954)	
 
-	CLASS(ee4683,TECHELECTEE, FALLSPRING, Comp Arch, Computer Architecture)
+	CLASS(ee4683,TECHELECTEE, SPRING, Comp Arch, Computer Architecture)
 	// REQUISITE: EE 3613
 	PREREQ(ee4683,ee3613)
 	
