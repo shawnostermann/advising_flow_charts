@@ -31,7 +31,7 @@ digraph cs_undergrad {
 	// title for the whole page
 	labelloc="t"
 	fontsize=90
-    label="CS Prerequites - Spring 22/23 - Feb 24, 2023"
+    label="CS Prerequites - Spring 22/23 - Feb 27, 2023"
 
 
 // make a quick legend

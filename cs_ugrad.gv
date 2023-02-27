@@ -36,7 +36,7 @@ digraph cs_undergrad {
 
  labelloc="t"
  fontsize=90
-    label="CS Prerequites - Spring 22/23 - Feb 24, 2023"
+    label="CS Prerequites - Spring 22/23 - Feb 27, 2023"
 
 
 
@@ -78,15 +78,15 @@ digraph cs_undergrad {
 
 
  node [shape=oval, sides=4, penwidth=4, style = "filled", fontcolor=black, fillcolor=skyblue,width=0.25,margin="0,0",fontsize=28] ; ma2302 [margin="0,0", label= < <FONT POINT-SIZE="72"> <b> ma2302 </b> </FONT> <br/> <FONT POINT-SIZE="55"> Calc II </FONT> <FONT POINT-SIZE="50"> <br /> </FONT> <FONT POINT-SIZE="48" face="Impact"> <FONT COLOR="darkblue"><b> F/S </b></FONT>   </FONT> >, ];
- ma2301 -> ma2302 [ label = " ≥C", fontsize=60, fontcolor=red, penwidth=5, color=red, style=bold]
+ ma2301 -> ma2302 [ label = " ≥C", fontsize=60, style=bold, fontcolor=red, penwidth=5, color=red]
 
 
  node [shape=oval, sides=4, penwidth=4, style = "filled", fontcolor=black, fillcolor=skyblue,width=0.25,margin="0,0",fontsize=28] ; ma3200or3210 [margin="0,0", label= < <FONT POINT-SIZE="72"> <b> ma3200or3210 </b> </FONT> <br/> <FONT POINT-SIZE="55"> Linear Algebra </FONT> <FONT POINT-SIZE="50"> <br /> </FONT> <FONT POINT-SIZE="48" face="Impact"> <FONT COLOR="darkblue"><b> F/S </b></FONT>   </FONT> >, ];
 
 
 
- ma2301 -> ma3200or3210 [ label = " ≥C", fontsize=60, fontcolor=red, penwidth=5, color=red, style=bold]
- ma2302 -> ma3200or3210 [ label = " ≥C", fontsize=60, fontcolor=red, penwidth=5, color=red, style=bold]
+ ma2301 -> ma3200or3210 [ label = " ≥C", fontsize=60, style=bold, fontcolor=red, penwidth=5, color=red]
+ ma2302 -> ma3200or3210 [ label = " ≥C", fontsize=60, style=bold, fontcolor=red, penwidth=5, color=red]
 
  node [shape=oval, sides=4, penwidth=4, style = "filled", fontcolor=white, fillcolor=green2,width=0.25,margin="0,0",fontsize=28] ; cs2400 [margin="0,0", label= < <FONT POINT-SIZE="72"> <b> cs2400 </b> </FONT> <br/> <FONT POINT-SIZE="55"> CS1 </FONT> <FONT POINT-SIZE="50"> <br /> </FONT> <FONT POINT-SIZE="48" face="Impact"> <FONT COLOR="darkblue"><b> F/S </b></FONT>   </FONT> >, ];
 
@@ -108,7 +108,7 @@ digraph cs_undergrad {
 
  node [shape=oval, sides=4, penwidth=4, style = "filled", fontcolor=white, fillcolor=green2,width=0.25,margin="0,0",fontsize=28] ; cs3610 [margin="0,0", label= < <FONT POINT-SIZE="72"> <b> cs3610 </b> </FONT> <br/> <FONT POINT-SIZE="55"> Data Struct </FONT> <FONT POINT-SIZE="50"> <br /> </FONT> <FONT POINT-SIZE="48" face="Impact"> <FONT COLOR="darkblue"><b> F/S </b></FONT>   </FONT> >, ];
 
- cs2401 -> cs3610 [ label = " ≥C", fontsize=60, fontcolor=red, penwidth=5, color=red, style=bold]
+ cs2401 -> cs3610 [ label = " ≥C", fontsize=60, style=bold, fontcolor=red, penwidth=5, color=red]
  cs3000 -> cs3610 [penwidth=6]
 
  node [shape=oval, sides=4, penwidth=4, style = "filled", fontcolor=white, fillcolor=green2,width=0.25,margin="0,0",fontsize=28] ; cs3560 [margin="0,0", label= < <FONT POINT-SIZE="72"> <b> cs3560 </b> </FONT> <br/> <FONT POINT-SIZE="55"> Sw Tools </FONT> <FONT POINT-SIZE="50"> <br /> </FONT> <FONT POINT-SIZE="48" face="Impact"> <FONT COLOR="darkblue"><b> F/S </b></FONT>   </FONT> >, ];

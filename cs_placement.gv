@@ -35,7 +35,7 @@ digraph cs_placement {
 
  labelloc="t"
  fontsize=90
-    label="CS Placement Exams - Spring 22/23 - Feb 22, 2023"
+    label="CS Placement Exams - Spring 22/23 - Feb 27, 2023"
 
 
  node [shape=oval, sides=4, penwidth=4, style = "filled", fontcolor=white, fillcolor=green2,width=0.25,margin="0,0",fontsize=28] ; cs_placement [margin="0,0", label= < <FONT POINT-SIZE="72"> <b> cs_placement </b> </FONT> <br/> <FONT POINT-SIZE="55"> CS Placement Test </FONT> >];
@@ -62,7 +62,7 @@ digraph cs_placement {
     node [shape = box, penwidth=2, style = filled, fontcolor=black, fillcolor=lightpink,width=0.25,margin="0,0",fontsize=28] ; ma1300 [margin="0,0", label= < <FONT POINT-SIZE="72"> <b> ma1300 </b> </FONT> <br/> <FONT POINT-SIZE="55"> Pre Calc </FONT> <FONT POINT-SIZE="50"> <br /> </FONT> <FONT POINT-SIZE="48" face="Impact"> <FONT COLOR="darkblue"><b> F/S </b></FONT>   </FONT> >, ];
  node [shape=circle, style = "filled", penwidth=1, fontcolor=black, fillcolor=yellow] ; ma1300_or [label=" or "];
  ma1300_or -> ma1300 [penwidth=6]
- ma1200 -> ma1300_or [ label = " ≥C", fontsize=60, fontcolor=red, penwidth=5, color=red, style=bold]
+ ma1200 -> ma1300_or [ label = " ≥C", fontsize=60, style=bold, fontcolor=red, penwidth=5, color=red]
  math_placement -> ma1300_or [ label = "Math-PL2", fontsize=30, fontcolor=blue, penwidth=5, color=blue, style=bold]
 
 
@@ -72,7 +72,7 @@ digraph cs_placement {
 
  node [shape=circle, style = "filled", penwidth=1, fontcolor=black, fillcolor=yellow] ; ma2301_or [label=" or "];
  ma2301_or -> ma2301 [penwidth=6]
- ma1300 -> ma2301_or [ label = " ≥C", fontsize=60, fontcolor=red, penwidth=5, color=red, style=bold]
+ ma1300 -> ma2301_or [ label = " ≥C", fontsize=60, style=bold, fontcolor=red, penwidth=5, color=red]
  math_placement -> ma2301_or [ label = "Math-PL3", fontsize=30, fontcolor=blue, penwidth=5, color=blue, style=bold]
 
 
