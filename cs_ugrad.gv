@@ -233,7 +233,7 @@ digraph cs_undergrad {
  cs3610 -> cs4770 [penwidth=6]
  cs3560 -> cs4770 [penwidth=6]
 
- node [shape = rectangle, sides=10, penwidth=4, fillcolor = palegreen, style = filled, fontcolor=black,width=0.25,margin="0,0",fontsize=28] ; cs4350 [margin="0,0", label= < <FONT POINT-SIZE="72"> <b> cs4350 </b> </FONT> <br/> <FONT POINT-SIZE="55"> Game Eng Des </FONT> <FONT POINT-SIZE="50"> <br /> </FONT> <FONT POINT-SIZE="48" face="Impact"> Spring   </FONT> >, ];
+ node [shape = rectangle, sides=10, penwidth=4, fillcolor = palegreen, style = filled, fontcolor=black,width=0.25,margin="0,0",fontsize=28] ; cs4350 [margin="0,0", label= < <FONT POINT-SIZE="72"> <b> cs4350 </b> </FONT> <br/> <FONT POINT-SIZE="55"> Game Eng Des </FONT> <FONT POINT-SIZE="50"> <br /> </FONT> <FONT POINT-SIZE="48" face="Impact"> <FONT COLOR="red"><b> Spring </b></FONT>   </FONT> >, ];
 
  cs3610 -> cs4350 [penwidth=6]
 
