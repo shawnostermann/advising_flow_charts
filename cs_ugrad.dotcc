@@ -252,7 +252,7 @@ digraph cs_undergrad {
 	PREREQ(cs4770,cs3610)
 	PREREQ(cs4770,cs3560)
 	
-	CLASS(cs4350,TECHELECTCS, Spring, Game Eng Des, Fundamentals of Game Engine Design)
+	CLASS(cs4350,TECHELECTCS, SPRING, Game Eng Des, Fundamentals of Game Engine Design)
 	// REQUISITE: CS 3610
 	PREREQ(cs4350,cs3610)
 
