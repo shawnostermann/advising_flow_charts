@@ -14,7 +14,8 @@ PDFFILES=${DOTSOURCES:.gv=.pdf}
 PDFBWFILES=${DOTSOURCES:.gv=_bw.pdf}
 HEADERS=${wildcard *.h}
 
-default: pdf png bw
+default:all
+all: pdf png bw
 
 pdf: ${PDFFILES}
 png: ${PNGFILES}
@@ -38,7 +39,8 @@ bw: ${DOTBWSOURCES} ${PDFBWFILES}
 	cpp $*.dotcc > $*.gv 
 %_bw.gv: %.gv ${HEADERS}
 	cat $*.gv | sed 's/fontcolor=white/fontcolor=black/g' | \
-		sed 's/COLOR="white"/COLOR="black"/g'> $*_bw.gv 
+		sed 's/COLOR="white"/COLOR="black"/g' | \
+		sed 's/color=red/color=black/g'> $*_bw.gv 
 
 	
 commit: pdf png
