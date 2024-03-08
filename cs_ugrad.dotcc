@@ -166,7 +166,8 @@ digraph cs_undergrad {
 	// REQUISITE: CS 3610 and EE 3613 and 3954 or CS 361 and EE 395A
 	PREREQ(cs4420,cs3610)
 	PREREQ(cs4420,ee3613)
-	PREREQ(cs4420,ee3954)
+	// EE3954 dropped from CS curriculum in Spring 2023/2024
+	// PREREQ(cs4420,ee3954)
 
 	CLASS4(cs4560,REQUIREDCS,FALL, Sen. Design I, Software Design and Development I, (seniors only))
 	// REQUISITE: (CS 3560 and 3610) and Sr only
