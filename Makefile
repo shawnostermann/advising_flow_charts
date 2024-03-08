@@ -54,4 +54,3 @@ commit: pdf png prime
 
 clean:
 	rm -f ${PNGFILES} ${PDFFILES} ${DOTSOURCES} ${PDFBWFILES} ${DOTBWSOURCES}
-	
