@@ -225,7 +225,7 @@ digraph cs_undergrad {
 	// Ive only listed cs4160 as the prereq, because PBIO4160 is cross listed as cs4160
 	
 	
-	CLASS(cs4440,TECHELECTCS, TBA, Data Comm, Data Communications)
+	CLASS(cs4440,TECHELECTCS, SPRING, Data Comm, Data Communications)
 	// REQUISITE: cs4420
 	PREREQ(cs4440,cs4420)
 	
