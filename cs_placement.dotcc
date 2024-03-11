@@ -93,4 +93,7 @@ digraph cs_placement {
 	PREREQ(cs2401_or,ma2301)
 	PREREQ_MPL(cs2401_or,math_placement,"MATH-PL3")
 
+	// put the version stamp in the upper right
+	INSERT_VERSION_SUBGRAPH
+
 }

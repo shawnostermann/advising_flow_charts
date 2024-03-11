@@ -72,3 +72,10 @@ node [type,width=0.25,margin="0,0",fontsize=28] ; classnumber [margin="0,0", lab
 	  	<FONT POINT-SIZE="48" face="Impact"> when   </FONT> \
 	   >, \
 	   ];
+
+// for timestamps
+#define INSERT_VERSION_SUBGRAPH    subgraph version { \
+		style = rounded; \
+		space [label = "0", penwidth=0, fontcolor=black, fillcolor=white, style=invisible, width=10] ; \
+		vstring [label = "version: " + __DATE__  , fontsize="60", penwidth=0, fontcolor=black, fillcolor=white] ;};
+
