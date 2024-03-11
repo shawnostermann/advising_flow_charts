@@ -18,6 +18,7 @@
 #define REMEDIAL_TEMPLATE(color) shape = box, penwidth=2, style = filled, fontcolor=black, fillcolor=color
 #define REMEDIALMATH REMEDIAL_TEMPLATE(lightpink)
 #define REMEDIALCS   REMEDIAL_TEMPLATE(lightpink)
+#define REMEDIALEE   REMEDIAL_TEMPLATE(lightpink)
 
 // this controls what the prerequisite arrows look like
 #define PREREQ(thisclass,prevclass) prevclass -> thisclass [penwidth=6]
@@ -28,6 +29,7 @@
 #define PREREQ_CSPL(thisclass,prevclass,condition)  PREREQ_PL(thisclass,prevclass,condition,green3) 
 #define PREREQ_C(thisclass,prevclass)   PREREQ_LABEL(thisclass,prevclass, " ≥C")
 #define PREREQ_INVIS(thisclass,prevclass)   prevclass -> thisclass [ style=invisible, dir=none]
+#define COREQ_INVIS(thisclass,prevclass)   prevclass -> thisclass [ dir=none, style=invisible] { rank=same thisclass prevclass }
 
 // this controls what the "semester" tags look like
 #define SEMESTER_TEMPLATE(fontcolor,semester) <FONT COLOR=fontcolor><b> semester </b></FONT>

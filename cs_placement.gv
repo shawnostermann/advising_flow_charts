@@ -30,15 +30,10 @@
 
 
 
+
 // this controls what the prerequisite arrows look like
 
-
-
-
-
-
-
-
+# 33 "./eecs_prereq_design.h"
 
 // this controls what the "semester" tags look like
 
@@ -75,7 +70,7 @@
 
 // classes with a caveat (4 lines)
 
-# 75 "./eecs_prereq_design.h"
+# 77 "./eecs_prereq_design.h"
 
 // for timestamps
 

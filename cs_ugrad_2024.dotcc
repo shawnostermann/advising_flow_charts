@@ -105,6 +105,12 @@ digraph cs_undergrad {
 	PREREQ(cs2401_or,math_intro)
 	PREREQ(cs2401_or,ma2301)
 
+	// new required class starting 2024/2025
+	// NOT a prereq for cs2401 until 25/26
+	CLASS(sec1034,REQUIREDCS,FALL,Intro Cybersec, Introduction to Cybersecurity)
+	COREQ_INVIS(cs2401,sec1034)
+
+
 
 	CLASS(cs3000,REQUIREDCS,FALLSPRING,Disc Struct, Discrete Structures)
 	// REQUISITE: CS 2400
@@ -132,7 +138,7 @@ digraph cs_undergrad {
 	PREREQ(ee3613,ee1024)
 	PREREQ(ee3613,cs2400)
 
-	CLASS(ee3954,REQUIREDEE, FALLSPRING, Micro, Microprocessors and Microcontrollers)
+	CLASS(ee3954,REMEDIALEE, FALLSPRING, Micro, Microprocessors and Microcontrollers)
 	// REQUISITE: (CS 210 or 240A or 2400) and (EE 1024 or 102)
 	PREREQ(ee3954,ee1024)
 	PREREQ(ee3954,cs2400)

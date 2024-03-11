@@ -30,15 +30,10 @@
 
 
 
+
 // this controls what the prerequisite arrows look like
 
-
-
-
-
-
-
-
+# 33 "./eecs_prereq_design.h"
 
 // this controls what the "semester" tags look like
 
@@ -75,7 +70,7 @@
 
 // classes with a caveat (4 lines)
 
-# 75 "./eecs_prereq_design.h"
+# 77 "./eecs_prereq_design.h"
 
 // for timestamps
 
@@ -189,6 +184,12 @@ digraph cs_undergrad {
 	math_intro -> cs2401_or [penwidth=6]
 	ma2301 -> cs2401_or [penwidth=6]
 
+	// new required class starting 2024/2025
+	// NOT a prereq for cs2401 until 25/26
+	node [shape=oval, sides=4, penwidth=4, style = "filled", fontcolor=white, fillcolor=green2,width=0.25,margin="0,0",fontsize=28] ; sec1034 [margin="0,0", label= < <FONT POINT-SIZE="72"> <b> sec1034 </b> </FONT> <br/> <FONT POINT-SIZE="55"> Intro Cybersec </FONT> <FONT POINT-SIZE="50"> <br /> </FONT> <FONT POINT-SIZE="48" face="Impact"> <FONT COLOR="goldenrod4"><b> Fall </b></FONT>   </FONT> >, ];
+	sec1034 -> cs2401 [ dir=none, style=invisible] { rank=same cs2401 sec1034 }
+
+
 
 	node [shape=oval, sides=4, penwidth=4, style = "filled", fontcolor=white, fillcolor=green2,width=0.25,margin="0,0",fontsize=28] ; cs3000 [margin="0,0", label= < <FONT POINT-SIZE="72"> <b> cs3000 </b> </FONT> <br/> <FONT POINT-SIZE="55"> Disc Struct </FONT> <FONT POINT-SIZE="50"> <br /> </FONT> <FONT POINT-SIZE="48" face="Impact"> <FONT COLOR="darkblue"><b> F/S </b></FONT>   </FONT> >, ];
 	// REQUISITE: CS 2400
@@ -216,7 +217,7 @@ digraph cs_undergrad {
 	ee1024 -> ee3613 [penwidth=6]
 	cs2400 -> ee3613 [penwidth=6]
 
-	node [shape=oval, sides=4, penwidth=4, style = "filled", fontcolor=black, fillcolor=goldenrod,width=0.25,margin="0,0",fontsize=28] ; ee3954 [margin="0,0", label= < <FONT POINT-SIZE="72"> <b> ee3954 </b> </FONT> <br/> <FONT POINT-SIZE="55">  Micro </FONT> <FONT POINT-SIZE="50"> <br /> </FONT> <FONT POINT-SIZE="48" face="Impact">  <FONT COLOR="darkblue"><b> F/S </b></FONT>   </FONT> >, ];
+	node [shape = box, penwidth=2, style = filled, fontcolor=black, fillcolor=lightpink,width=0.25,margin="0,0",fontsize=28] ; ee3954 [margin="0,0", label= < <FONT POINT-SIZE="72"> <b> ee3954 </b> </FONT> <br/> <FONT POINT-SIZE="55">  Micro </FONT> <FONT POINT-SIZE="50"> <br /> </FONT> <FONT POINT-SIZE="48" face="Impact">  <FONT COLOR="darkblue"><b> F/S </b></FONT>   </FONT> >, ];
 	// REQUISITE: (CS 210 or 240A or 2400) and (EE 1024 or 102)
 	ee1024 -> ee3954 [penwidth=6]
 	cs2400 -> ee3954 [penwidth=6]
@@ -272,7 +273,7 @@ digraph cs_undergrad {
 	cs3000 -> cs4060 [penwidth=6]
 
 
-# 224 "cs_ugrad_2024.dotcc"
+# 230 "cs_ugrad_2024.dotcc"
 
 
 
