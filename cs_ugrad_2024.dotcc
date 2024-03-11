@@ -240,16 +240,15 @@ digraph cs_undergrad {
 	// OR PREREQ(cs4170, PBIO 4160)
 	
 
-	
-	
 	CLASS(cs4440,TECHELECTCS, SPRING, Data Comm, Data Communications)
 	// REQUISITE: cs4420
 	PREREQ(cs4440,cs4420)
 	
-	CLASS(cs3620,TECHELECTCS, FALL, Database, Database Systems)
+	CLASS(cs3620,REQUIREDCS, FALL, Database, Database Systems)
 	// REQUISITE: CS 3610
 	PREREQ(cs3620,cs2401)
 	PREREQ(cs3620,cs3000)
+	// cs4620/3620 because a REQUIRED class starting in 24/25
 	
 	CLASS(cs4750,TECHELECTCS, FALL, Inet. Engr., Internet Engineering)
 	// REQUISITE: CS 3610
