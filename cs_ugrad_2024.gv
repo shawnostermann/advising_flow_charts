@@ -287,16 +287,15 @@ digraph cs_undergrad {
 	// OR  PBIO 4160 -> cs4170 [penwidth=6]
 	
 
-	
-	
 	node [shape = rectangle, sides=10, penwidth=4, fillcolor = palegreen, style = filled, fontcolor=black,width=0.25,margin="0,0",fontsize=28] ; cs4440 [margin="0,0", label= < <FONT POINT-SIZE="72"> <b> cs4440 </b> </FONT> <br/> <FONT POINT-SIZE="55">  Data Comm </FONT> <FONT POINT-SIZE="50"> <br /> </FONT> <FONT POINT-SIZE="48" face="Impact">  <FONT COLOR="red"><b> Spring </b></FONT>   </FONT> >, ];
 	// REQUISITE: cs4420
 	cs4420 -> cs4440 [penwidth=6]
 	
-	node [shape = rectangle, sides=10, penwidth=4, fillcolor = palegreen, style = filled, fontcolor=black,width=0.25,margin="0,0",fontsize=28] ; cs3620 [margin="0,0", label= < <FONT POINT-SIZE="72"> <b> cs3620 </b> </FONT> <br/> <FONT POINT-SIZE="55">  Database </FONT> <FONT POINT-SIZE="50"> <br /> </FONT> <FONT POINT-SIZE="48" face="Impact">  <FONT COLOR="goldenrod4"><b> Fall </b></FONT>   </FONT> >, ];
+	node [shape=oval, sides=4, penwidth=4, style = "filled", fontcolor=white, fillcolor=green2,width=0.25,margin="0,0",fontsize=28] ; cs3620 [margin="0,0", label= < <FONT POINT-SIZE="72"> <b> cs3620 </b> </FONT> <br/> <FONT POINT-SIZE="55">  Database </FONT> <FONT POINT-SIZE="50"> <br /> </FONT> <FONT POINT-SIZE="48" face="Impact">  <FONT COLOR="goldenrod4"><b> Fall </b></FONT>   </FONT> >, ];
 	// REQUISITE: CS 3610
 	cs2401 -> cs3620 [penwidth=6]
 	cs3000 -> cs3620 [penwidth=6]
+	// cs4620/3620 because a REQUIRED class starting in 24/25
 	
 	node [shape = rectangle, sides=10, penwidth=4, fillcolor = palegreen, style = filled, fontcolor=black,width=0.25,margin="0,0",fontsize=28] ; cs4750 [margin="0,0", label= < <FONT POINT-SIZE="72"> <b> cs4750 </b> </FONT> <br/> <FONT POINT-SIZE="55">  Inet. Engr. </FONT> <FONT POINT-SIZE="50"> <br /> </FONT> <FONT POINT-SIZE="48" face="Impact">  <FONT COLOR="goldenrod4"><b> Fall </b></FONT>   </FONT> >, ];
 	// REQUISITE: CS 3610
