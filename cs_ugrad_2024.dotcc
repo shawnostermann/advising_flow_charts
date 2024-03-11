@@ -107,8 +107,8 @@ digraph cs_undergrad {
 
 	// new required class starting 2024/2025
 	// NOT a prereq for cs2401 until 25/26
-	CLASS(sec1034,REQUIREDCS,FALL,Intro Cybersec, Introduction to Cybersecurity)
-	COREQ_INVIS(cs2401,sec1034)
+	CLASS(sec_its1034,REQUIREDCS,FALL,Intro Cybersec, Introduction to Cybersecurity)
+	COREQ_INVIS(cs2401,sec_its1034)
 
 
 

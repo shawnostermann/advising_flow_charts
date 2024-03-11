@@ -186,8 +186,8 @@ digraph cs_undergrad {
 
 	// new required class starting 2024/2025
 	// NOT a prereq for cs2401 until 25/26
-	node [shape=oval, sides=4, penwidth=4, style = "filled", fontcolor=white, fillcolor=green2,width=0.25,margin="0,0",fontsize=28] ; sec1034 [margin="0,0", label= < <FONT POINT-SIZE="72"> <b> sec1034 </b> </FONT> <br/> <FONT POINT-SIZE="55"> Intro Cybersec </FONT> <FONT POINT-SIZE="50"> <br /> </FONT> <FONT POINT-SIZE="48" face="Impact"> <FONT COLOR="goldenrod4"><b> Fall </b></FONT>   </FONT> >, ];
-	sec1034 -> cs2401 [ dir=none, style=invisible] { rank=same cs2401 sec1034 }
+	node [shape=oval, sides=4, penwidth=4, style = "filled", fontcolor=white, fillcolor=green2,width=0.25,margin="0,0",fontsize=28] ; sec_its1034 [margin="0,0", label= < <FONT POINT-SIZE="72"> <b> sec_its1034 </b> </FONT> <br/> <FONT POINT-SIZE="55"> Intro Cybersec </FONT> <FONT POINT-SIZE="50"> <br /> </FONT> <FONT POINT-SIZE="48" face="Impact"> <FONT COLOR="goldenrod4"><b> Fall </b></FONT>   </FONT> >, ];
+	sec_its1034 -> cs2401 [ dir=none, style=invisible] { rank=same cs2401 sec_its1034 }
 
 
 
