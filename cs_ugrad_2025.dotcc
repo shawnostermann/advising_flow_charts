@@ -31,7 +31,7 @@ digraph cs_undergrad {
 	// title for the whole page
 	labelloc="t"
 	fontsize=150
-    label="CS Prerequites - Students Entering After 2019"
+    label="CS Prerequites - Students Entering 2025/2026"
 
 // make a quick legend
 // leave some free space to the left of the legend
@@ -97,6 +97,9 @@ digraph cs_undergrad {
 	PREREQ(cs2400,cs_intro)
 	PREREQ(cs2400,math_intro)
 
+	// new required class starting 2024/2025
+	CLASS(sec_its1034,REQUIREDCS,FALL,Intro Cybersec, Introduction to Cybersecurity)
+
 	CLASS(cs2401,REQUIREDCS,FALLSPRING,CS2, Introduction to Computer Science II)
 	// REQUISITE: CS 2400 and (MATH 1300 or 2301 or Math Placement Level 3)
 	PREREQ(cs2401,cs2400)
@@ -104,7 +107,8 @@ digraph cs_undergrad {
 	PREREQ(cs2401,cs2401_or)
 	PREREQ(cs2401_or,math_intro)
 	PREREQ(cs2401_or,ma2301)
-
+	// Became a prereq for cs2401 starting calendar year 25/26
+	COREQ(cs2401,sec_its1034)
 
 	CLASS(cs3000,REQUIREDCS,FALLSPRING,Disc Struct, Discrete Structures)
 	// REQUISITE: CS 2400
@@ -132,7 +136,7 @@ digraph cs_undergrad {
 	PREREQ(ee3613,ee1024)
 	PREREQ(ee3613,cs2400)
 
-	CLASS(ee3954,REQUIREDEE, FALLSPRING, Micro, Microprocessors and Microcontrollers)
+	CLASS(ee3954,REMEDIALEE, FALLSPRING, Micro, Microprocessors and Microcontrollers)
 	// REQUISITE: (CS 210 or 240A or 2400) and (EE 1024 or 102)
 	PREREQ(ee3954,ee1024)
 	PREREQ(ee3954,cs2400)
@@ -234,17 +238,15 @@ digraph cs_undergrad {
 	// OR PREREQ(cs4170, PBIO 4160)
 	
 
-	
-	
 	CLASS(cs4440,TECHELECTCS, SPRING, Data Comm, Data Communications)
 	// REQUISITE: cs4420
 	PREREQ(cs4440,cs4420)
-
-	// no longer a tech elective starting in 24/25 (was renumbered)	
-	// CLASS(cs3620,TECHELECTCS, FALL, Database, Database Systems)
+	
+	CLASS(cs3620,REQUIREDCS, FALL, Database, Database Systems)
 	// REQUISITE: CS 3610
-	// PREREQ(cs3620,cs2401)
-	// PREREQ(cs3620,cs3000)
+	PREREQ(cs3620,cs2401)
+	PREREQ(cs3620,cs3000)
+	// cs4620/3620 became a REQUIRED class starting in 24/25
 	
 	CLASS(cs4750,TECHELECTCS, FALL, Inet. Engr., Internet Engineering)
 	// REQUISITE: CS 3610

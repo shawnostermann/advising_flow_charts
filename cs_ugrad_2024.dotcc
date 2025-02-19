@@ -31,7 +31,7 @@ digraph cs_undergrad {
 	// title for the whole page
 	labelloc="t"
 	fontsize=150
-    label="CS Prerequites - Students Entering After 2024/2025"
+    label="CS Prerequites - Students Entering 2024/2025"
 
 // make a quick legend
 // leave some free space to the left of the legend
@@ -248,7 +248,7 @@ digraph cs_undergrad {
 	// REQUISITE: CS 3610
 	PREREQ(cs3620,cs2401)
 	PREREQ(cs3620,cs3000)
-	// cs4620/3620 because a REQUIRED class starting in 24/25
+	// cs4620/3620 became a REQUIRED class starting in 24/25
 	
 	CLASS(cs4750,TECHELECTCS, FALL, Inet. Engr., Internet Engineering)
 	// REQUISITE: CS 3610
@@ -258,7 +258,6 @@ digraph cs_undergrad {
 	// REQUISITE: (CS 3000 or MATH 3050) and CS 2401
 	PREREQ(cs4800,cs3000)
 	PREREQ(cs4800,cs2401)
-
 
 
 	CLASS(cs4770,TECHELECTCS, FALL, Security, Introduction to Computer Software Security for Eng)
@@ -332,7 +331,6 @@ digraph cs_undergrad {
 //     CS 4250 - Interactive Computer Graphics Credit Hours: 3
 //     CS 4440 - Data Communications Credit Hours: 3
 //     CS 4580 - Operating Systems II Credit Hours: 3
-//     CS 4620 - Database Systems Credit Hours: 3
 //     CS 4750 - Internet Engineering Credit Hours: 4
 //     CS 4800 - Artificial Intelligence Credit Hours: 3
 //     CS 4830 - Machine Learning Credit Hours: 3

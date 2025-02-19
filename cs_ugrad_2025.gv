@@ -1,11 +1,11 @@
-# 0 "cs_ugrad_2024.dotcc"
+# 0 "cs_ugrad_2025.dotcc"
 # 0 "<built-in>"
 # 0 "<command-line>"
-# 1 "cs_ugrad_2024.dotcc"
+# 1 "cs_ugrad_2025.dotcc"
 
 
 # 1 "eecs_prereq_design.h" 1
-# 4 "cs_ugrad_2024.dotcc" 2
+# 4 "cs_ugrad_2025.dotcc" 2
 
 
 
@@ -36,7 +36,7 @@ digraph cs_undergrad {
 
  labelloc="t"
  fontsize=150
-    label="CS Prerequites - Students Entering 2024/2025"
+    label="CS Prerequites - Students Entering 2025/2026"
 
 
 
@@ -58,7 +58,7 @@ digraph cs_undergrad {
   node [shape=oval, sides=4, penwidth=4, style = "filled", fontcolor=black, fillcolor=goldenrod,width=0.25,margin="0,0",fontsize=28] ; eereq [margin="0,0", label= < <FONT POINT-SIZE="72"> <b> eereq </b> </FONT> <br/> <FONT POINT-SIZE="55"> EE Required </FONT> <FONT POINT-SIZE="50"> <br /> </FONT> <FONT POINT-SIZE="48" face="Impact">   </FONT> >, ];
   node [shape = rectangle, sides=10, penwidth=4, fillcolor = palegreen, style = filled, fontcolor=black,width=0.25,margin="0,0",fontsize=28] ; cstech [margin="0,0", label= < <FONT POINT-SIZE="72"> <b> cstech </b> </FONT> <br/> <FONT POINT-SIZE="55"> CS Tech Elect </FONT> <FONT POINT-SIZE="50"> <br /> </FONT> <FONT POINT-SIZE="48" face="Impact">   </FONT> >, ];
   node [shape=oval, sides=4, penwidth=4, style = "filled", fontcolor=white, fillcolor=green2,width=0.25,margin="0,0",fontsize=28] ; csreq [margin="0,0", label= < <FONT POINT-SIZE="72"> <b> csreq </b> </FONT> <br/> <FONT POINT-SIZE="55"> CS Required </FONT> <FONT POINT-SIZE="50"> <br /> </FONT> <FONT POINT-SIZE="48" face="Impact">   </FONT> >, ];
-# 65 "cs_ugrad_2024.dotcc"
+# 65 "cs_ugrad_2025.dotcc"
    };
 
  subgraph free_space {
@@ -94,6 +94,9 @@ digraph cs_undergrad {
  cs_intro -> cs2400 [penwidth=6]
  math_intro -> cs2400 [penwidth=6]
 
+
+ node [shape=oval, sides=4, penwidth=4, style = "filled", fontcolor=white, fillcolor=green2,width=0.25,margin="0,0",fontsize=28] ; sec_its1034 [margin="0,0", label= < <FONT POINT-SIZE="72"> <b> sec_its1034 </b> </FONT> <br/> <FONT POINT-SIZE="55"> Intro Cybersec </FONT> <FONT POINT-SIZE="50"> <br /> </FONT> <FONT POINT-SIZE="48" face="Impact"> <FONT COLOR="goldenrod4"><b> Fall </b></FONT>   </FONT> >, ];
+
  node [shape=oval, sides=4, penwidth=4, style = "filled", fontcolor=white, fillcolor=green2,width=0.25,margin="0,0",fontsize=28] ; cs2401 [margin="0,0", label= < <FONT POINT-SIZE="72"> <b> cs2401 </b> </FONT> <br/> <FONT POINT-SIZE="55"> CS2 </FONT> <FONT POINT-SIZE="50"> <br /> </FONT> <FONT POINT-SIZE="48" face="Impact"> <FONT COLOR="darkblue"><b> F/S </b></FONT>   </FONT> >, ];
 
  cs2400 -> cs2401 [penwidth=6]
@@ -102,12 +105,7 @@ digraph cs_undergrad {
  math_intro -> cs2401_or [penwidth=6]
  ma2301 -> cs2401_or [penwidth=6]
 
-
-
- node [shape=oval, sides=4, penwidth=4, style = "filled", fontcolor=white, fillcolor=green2,width=0.25,margin="0,0",fontsize=28] ; sec_its1034 [margin="0,0", label= < <FONT POINT-SIZE="72"> <b> sec_its1034 </b> </FONT> <br/> <FONT POINT-SIZE="55"> Intro Cybersec </FONT> <FONT POINT-SIZE="50"> <br /> </FONT> <FONT POINT-SIZE="48" face="Impact"> <FONT COLOR="goldenrod4"><b> Fall </b></FONT>   </FONT> >, ];
- sec_its1034 -> cs2401 [ dir=none, style=invisible] { rank=same cs2401 sec_its1034 }
-
-
+ sec_its1034 -> cs2401 [ dir=both, label = "Coreq", fontcolor=blue, color=blue, style=bold fontsize=60, penwidth=10, style=dashed] { rank=same cs2401 sec_its1034 }
 
  node [shape=oval, sides=4, penwidth=4, style = "filled", fontcolor=white, fillcolor=green2,width=0.25,margin="0,0",fontsize=28] ; cs3000 [margin="0,0", label= < <FONT POINT-SIZE="72"> <b> cs3000 </b> </FONT> <br/> <FONT POINT-SIZE="55"> Disc Struct </FONT> <FONT POINT-SIZE="50"> <br /> </FONT> <FONT POINT-SIZE="48" face="Impact"> <FONT COLOR="darkblue"><b> F/S </b></FONT>   </FONT> >, ];
 
@@ -189,7 +187,7 @@ digraph cs_undergrad {
  node [shape = rectangle, sides=10, penwidth=4, fillcolor = palegreen, style = filled, fontcolor=black,width=0.25,margin="0,0",fontsize=28] ; cs4060 [margin="0,0", label= < <FONT POINT-SIZE="72"> <b> cs4060 </b> </FONT> <br/> <FONT POINT-SIZE="55"> Theory </FONT> <FONT POINT-SIZE="50"> <br /> </FONT> <FONT POINT-SIZE="48" face="Impact"> <FONT COLOR="red"><b> Spring </b></FONT>   </FONT> >, ];
 
  cs3000 -> cs4060 [penwidth=6]
-# 233 "cs_ugrad_2024.dotcc"
+# 231 "cs_ugrad_2025.dotcc"
  node [shape = rectangle, sides=10, penwidth=4, fillcolor = palegreen, style = filled, fontcolor=black,width=0.25,margin="0,0",fontsize=28] ; cs4160 [margin="0,0", label= < <FONT POINT-SIZE="72"> <b> cs4160 </b> </FONT> <br/> <FONT POINT-SIZE="55"> BioInf Tools </FONT> <FONT POINT-SIZE="50"> <br /> </FONT> <FONT POINT-SIZE="48" face="Impact"> <FONT COLOR="red"><b> Spring </b></FONT>   </FONT> >, ];
 
  cs3610 -> cs4160 [penwidth=6]
@@ -218,6 +216,7 @@ digraph cs_undergrad {
 
  cs3000 -> cs4800 [penwidth=6]
  cs2401 -> cs4800 [penwidth=6]
+
 
 
  node [shape = rectangle, sides=10, penwidth=4, fillcolor = palegreen, style = filled, fontcolor=black,width=0.25,margin="0,0",fontsize=28] ; cs4770 [margin="0,0", label= < <FONT POINT-SIZE="72"> <b> cs4770 </b> </FONT> <br/> <FONT POINT-SIZE="55"> Security </FONT> <FONT POINT-SIZE="50"> <br /> </FONT> <FONT POINT-SIZE="48" face="Impact"> <FONT COLOR="goldenrod4"><b> Fall </b></FONT>   </FONT> >, ];
@@ -249,5 +248,5 @@ digraph cs_undergrad {
 
 
  subgraph version { style = rounded; space [label = "0", penwidth=0, fontcolor=black, fillcolor=white, style=invisible, width=10] ; vstring [label = "version: " + "Feb 19 2025" , fontsize="60", penwidth=0, fontcolor=black, fillcolor=white] ;};
-# 345 "cs_ugrad_2024.dotcc"
+# 344 "cs_ugrad_2025.dotcc"
 }
