@@ -1,0 +1,243 @@
+// C Preprocessor Style macros
+
+#include "eecs_prereq_design.h"
+
+// https://graphviz.org/docs/
+// https://graphviz.org/doc/info/colors.html
+// https://www.catalogs.ohio.edu/preview_program.php?catoid=70&poid=19841&hl=%22computer+science%22
+digraph csai_undergrad {
+	// draw prereqs from top to bottom
+	rankdir=TB;
+	// rankdir=LR;
+	
+	// Maximum width and height of drawing, in inches.
+	size="11,8.5"
+	margin="0.25,0.25"   // whole paper borders
+	
+	// Width and height of output pages, in inches.
+	// If only a single value is given, this is used for both the width and height.
+	// At present, page only works for PostScript output. 
+	// page="8,10"
+
+	// There are a TON of arrows between ranks 5 and 6, so this allows more space when it needs it
+	ranksep="4.0"   // default is 0.5
+
+	// to make better bitmap versions - but use PDF!!!
+	graph [ dpi = 600 ]; 	
+
+	// looks better this way
+	landscape=true	
+
+	// title for the whole page
+	labelloc="t"
+	fontsize=150
+    label="AI Prerequites - Students Entering 2024/2025"
+
+// make a quick legend
+// leave some free space to the left of the legend
+	subgraph free_space {	
+		EXTRA [ label = "S1", style = invis ]; FREESPACE1 [width=0,style = invis]; 
+  	};
+
+
+	subgraph cluster_Legend {
+    	style = rounded;
+		label=""
+		fontsize="0"
+		margin=50		// more space in the margin around the nodes
+		penwidth=10   	// thicker line around the legend
+
+    	CLASS(intro,	REMEDIALMATH, ,	Introductory,Introductory)
+		CLASS(math, 	MATH, ,		 	Math/Sci Required, Math/Sci Required)
+		CLASS(eetech,	TECHELECTEE, , 	EE Tech Elect, Electrical Engineering Technical Elective)
+		CLASS(eereq, 	REQUIREDEE, , 	EE Required, Electrical Engineering Required)
+		CLASS(cstech,	TECHELECTCS, , 	CS Tech Elect, Computer Science Technical Elective)
+		CLASS(csreq, 	REQUIREDCS, , 	AI/CS Required, AI/CS Required)
+		
+
+		// these fake dependencies constrain the order of where the legend goes
+		// csreq  -> eereq  -> math   [style=invis]  // for verticle 3x2
+		// cstech -> eetech -> intro   [style=invis]   // for horizontal 2x3
+		// cs4561 -> eetech [style=invis]
+		// csreq  -> eereq   [style=invis]  
+		// cstech -> eetech   [style=invis]   
+		// intro  -> math   [style=invis]  
+  	};
+// leave some free space to the right of the legend
+	subgraph free_space {	
+		EXTRA [ label = "S2", style = invis ]; FREESPACE2 [width=5,style = invis]; 
+  	};
+	
+
+
+
+    // CLASS(ma1200_MPL2,REMEDIALMATH,FALLSPRING,Algebra,Algebra)
+
+    CLASS(cs_intro,REMEDIALCS,FALLSPRING,CS PL or Intro CS,Introductory CS)
+
+    CLASS(math_intro,REMEDIALMATH,FALLSPRING,Math PL or Intro Math,Math Placement)
+
+    CLASS(ma2301,MATH,FALLSPRING,Calc I,Calculus I)
+	PREREQ(ma2301,math_intro)
+	// (B or better in MATH 1350) or (C or better in 1300 or 1322) or (Math placement level 3)
+
+	CLASS(ma2302,MATH,FALLSPRING,Calc II,Calculus II)
+	PREREQ_C(ma2302,ma2301)
+	// REQUISITE: C or better in MATH 2301 or 263B
+
+	CLASS(ma3200or3210,MATH,FALLSPRING,Linear Algebra,Linear Algebra)
+	// 3200: C or better in (MATH 163A or 263A or 1350 or 2301 or 2302) 
+	// 3210 hasnt been offered in 2 years!!  (ignoring cs3000 prereq - too messy)
+	// 3210: MATH 2302 and (3050 or CS 3000)
+	PREREQ_C(ma3200or3210,ma2301)
+	PREREQ_C(ma3200or3210,ma2302)
+
+	CLASS(cs2400,REQUIREDCS,FALLSPRING,CS1, Introduction to Computer Science I)
+	// REQUISITE: (MATH 1200 or Math Placement level 2 or higher) and (CS 1400 or 2300 or ET 2100 or Computer Science Placement level 3)
+	PREREQ(cs2400,cs_intro)
+	PREREQ(cs2400,math_intro)
+
+	CLASS(cs2401,REQUIREDCS,FALLSPRING,CS2, Introduction to Computer Science II)
+	// REQUISITE: CS 2400 and (MATH 1300 or 2301 or Math Placement Level 3)
+	PREREQ(cs2401,cs2400)
+	NODE_OR(cs2401_or)
+	PREREQ(cs2401,cs2401_or)
+	PREREQ(cs2401_or,math_intro)
+	PREREQ(cs2401_or,ma2301)
+
+	// new required class starting 2024/2025
+	// NOT a prereq for cs2401 until 25/26
+	CLASS(sec_its1034,REQUIREDCS,FALL,Intro Cybersec, Introduction to Cybersecurity)
+	COREQ_INVIS(cs2401,sec_its1034)
+
+
+
+	CLASS(cs3000,REQUIREDCS,FALLSPRING,Disc Struct, Discrete Structures)
+	// REQUISITE: CS 2400
+	PREREQ(cs3000,cs2400)
+
+	CLASS(cs3610,REQUIREDCS,FALLSPRING,Data Struct, Data Structures)
+	// REQUISITE: (CS 3000 or MATH 3050) and C or better in CS 2401
+	PREREQ_C(cs3610,cs2401)
+	PREREQ(cs3610,cs3000)
+
+	CLASS(cs3560,REQUIREDCS,FALLSPRING,Sw Tools, Software Tools)
+	// REQUISITE: CS 3610 or concurrent
+	COREQ(cs3560,cs3610)
+
+
+	// left out since its not in the prereq chain
+    // CLASS PAREN et1000,REQUIREDEE, FALLSPRING,The History of Engineering and Technology in Society PAREN
+
+	CLASS(ee1024,REQUIREDEE, FALLSPRING, Intro CpE, Introduction to Computer Engineering)
+	PREREQ(ee1024,math_intro)
+	// MATH 1200 or math placement level 2 or higher
+
+    CLASS(ee3613,REQUIREDEE, FALLSPRING,Comp Org, Computer Organization)	
+	// REQUISITE: CS 2400 and EE 1024
+	PREREQ(ee3613,ee1024)
+	PREREQ(ee3613,cs2400)
+
+	CLASS(ee3954,TECHELECTEE, FALLSPRING, Micro, Microprocessors and Microcontrollers)
+	// REQUISITE: (CS 210 or 240A or 2400) and (EE 1024 or 102)
+	PREREQ(ee3954,ee1024)
+	PREREQ(ee3954,cs2400)
+
+    CLASS(ee3713,REQUIREDEE,FALLSPRING,EE Stats, Applied Probability and Statistics for Electrical Engineers)
+	// REQUISITE: MATH 2302
+	PREREQ(ee3713,ma2302)
+
+	CLASS(cs2653,REQUIREDCS,FALLSPRING, Comp Ethics, Professional and Ethical Aspects of Computing)
+	// REQUISITE: CS 2400 or Concurrent
+	COREQ(cs2653,cs2400)
+
+	CLASS(cs3200,REQUIREDCS,FALL, Prog Lang, Organization of Programming Languages)
+	// REQUISITE: CS 3610 or concurrent
+	COREQ(cs3200,cs3610)
+
+	CLASS(cs4000,REQUIREDCS,SPRING,Dist.  Par., Introduction to Distributed Parallel and Web-Centric Computing)
+	// REQUISITE: CS 3560 and 3610
+	PREREQ(cs4000,cs3560)
+	PREREQ(cs4000,cs3610)
+
+	CLASS(cs4040,REQUIREDCS,FALL, Algorithms, Design and Analysis of Algorithms)
+	// REQUISITE: CS 3610
+	PREREQ(cs4040,cs3610)
+
+	CLASS(cs4100,REQUIREDCS,SPRING, Compilers, Introduction to Formal Languages and Compiler)
+	// REQUISITE: CS 3200 and 3610
+	PREREQ(cs4100,cs3200)
+	PREREQ(cs4100,cs3610)
+
+	CLASS(cs4420,TECHELECTCS,FALL ,Op Sys, Operating Systems)
+	// REQUISITE: CS 3610 and EE 3613 and 3954 or CS 361 and EE 395A
+	PREREQ(cs4420,cs3610)
+	PREREQ(cs4420,ee3613)
+	// EE3954 dropped from CS curriculum in Spring 2023/2024
+	// PREREQ(cs4420,ee3954)
+
+	CLASS(ai2100,REQUIREDCS,FALL, Concepts of AI, Concepts of Artificial Intelligence)
+	PREREQ(ai2100,cs2400)
+
+	CLASS(ai3100,REQUIREDCS,FALL, Foundations of AI, Foundations of Artificial Intelligence)
+	PREREQ(ai3100,ai2100)
+	PREREQ(ai3100,cs2401)
+
+	CLASS(ai3300,REQUIREDCS,SPRING, Statistical Learning, Statistical Learning)
+	PREREQ(ai3300,ai3100)
+	PREREQ(ai3300,cs3610)
+
+	CLASS(ai4010,REQUIREDCS,FALL, Foundations of Deep Learning, Foundations of Deep Learning)
+	PREREQ(ai4010,ai3300)
+
+	// senior design sequence - crosslisted with CS4560/4561
+	CLASS4(ai4560,REQUIREDCS,FALL, Sen. Design I, Software Design and Development I, (seniors only))
+	// REQUISITE: (CS 3560 and 3610) and Sr only
+	PREREQ(ai4560,cs3560)
+	PREREQ(ai4560,cs3610)  // note that 3560 and 3610 are corequisites
+
+	CLASS(ai4561,REQUIREDCS,SPRING, Sen. Design II, Software Design and Development II)
+	// REQUISITE: CS 4560	
+	PREREQ(ai4561,ai4560)
+
+
+// =====================================================================================
+// Tech Electives
+// =====================================================================================
+	CLASS(cs4060,TECHELECTCS, SPRING, Theory, Computation Theory)
+	// REQUISITE: CS 3000
+	PREREQ(cs4060,cs3000)
+
+
+	CLASS(cs4150,TECHELECTCS, SPRING, Data Science, Data Science)
+	// REQUISITE: CS 3610
+	PREREQ(cs4150,cs3610)
+
+	CLASS(cs4160,TECHELECTCS, SPRING, BioInf Tools, Problem Solving with Bioinformatics Tools)
+	// REQUISITE: CS 3610
+	PREREQ(cs4160,cs3610)
+
+	CLASS(cs4170,TECHELECTCS, FALL, Data Mining, Data Mining With Applications in the Life Sciences)
+	// REQUISITE: CS 3610 or PBIO 4160
+	PREREQ(cs4170,cs3610)
+	// OR PREREQ(cs4170, PBIO 4160)
+	
+	CLASS(cs4830,TECHELECTCS, SPRING, Machine Learning, Machine Learning)
+	// REQUISITE: ???
+	{ rank=same cs4830 cs4170}
+
+	
+	CLASS(cs3620,REQUIREDCS, FALL, Database, Database Systems)
+	// REQUISITE: CS 3610
+	PREREQ(cs3620,cs2401)
+	PREREQ(cs3620,cs3000)
+	// cs4620/3620 became a REQUIRED class starting in 24/25
+	
+
+	{ rank=same cs2400 ee1024 ma2301 cs2401_or}
+	
+	// put the version stamp in the upper right
+	INSERT_VERSION_SUBGRAPH
+
+
+}
